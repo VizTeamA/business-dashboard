@@ -13,14 +13,14 @@ function drawMarkerSelect(data) {
 	var facilities = xf.dimension(function(d) { return d.geo; });
 	var facilitiesGroup = facilities.group().reduceCount();
 
-  dc.leafletMarkerChart("#chart-map .map",groupname)
+var mapChart =  dc.leafletMarkerChart("#chart-map .map",groupname)
       .dimension(facilities)
       .group(facilitiesGroup)
       .width(800)
 	    .height(1400)
       .center([1.35,103.8198])
       .zoom(12)
-      .cluster(true);  
+      .cluster(true);
 
 	var types = xf.dimension(function(d) { return d.type; });
 	var typesGroup = types.group().reduceCount();
@@ -36,7 +36,7 @@ function drawMarkerSelect(data) {
         return -p.value;
       });
 
-	  
+
 	var products = xf.dimension(function(d) {return d["Product"]});
 	var productSales = products.group().reduceSum( function(d) {return d["Sales"]});
 	var productChart = dc.rowChart("#chart-top .product", groupname);
@@ -46,7 +46,7 @@ function drawMarkerSelect(data) {
 		.width(500)
 		.xAxis().ticks(5);
 	dc.renderAll(groupname);
-		
+
 	function AddXAxis(chartToUpdate, displayText, offsetY) {
     chartToUpdate.svg()
                 .append("text")
@@ -57,8 +57,6 @@ function drawMarkerSelect(data) {
                 .text(displayText)
 				.style("font-size","10px");
 	}
-	
+
 	AddXAxis(productChart, "Sale ($)", -5);
 }
-
-
