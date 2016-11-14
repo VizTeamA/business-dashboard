@@ -2,44 +2,72 @@
 <html>
 <head>
 	<title>Business Dashboard</title>
+
 	<meta itemprop="name" content="Dashboard"/>
 	<meta itemprop="description" content="Dashboard"/>
 	<meta charset="UTF-8">
-	<link type="text/css" href="css/main.css" rel="stylesheet"/>
+
 	<link type="text/css" href="js/lib/leaflet.css" rel="stylesheet"/>
 	<link type="text/css" href="js/lib/leaflet.markercluster.css" rel="stylesheet"/>
 	<link type="text/css" href="js/lib/dc.css" rel="stylesheet"/>
 	<link type="text/css" href="css/bulletChart.css" rel="stylesheet"/>
-  <head>
+
+  <style>
+    #holder {
+      width:850px;
+      margin:20px auto;
+    }
+    #holder>div {
+      padding:30px 0;
+      clear:both;
+    }
+    .map {
+      width:600px;
+      height:400px;
+    }
+    .pie {
+      margin-left:30px;
+    }
+  </style>
+</head>
 <body>
 
-<div id="container" >
+<div id="holder">
 	<h2>Hotel in Singapore</h2>
-  <div id="chart-top" >
-	<div class="sales-year-chart"  style = "float:left"></div>
-	<div class="product"  style = "float:left"></div>
+  <div id="chart-top-sale">
+	
+  </div>
+  
+  <div id="chart-top">
+	<div class="sales-year-chart"></div>
+	<div class="product"></div>
   </div>
 
-  <div id="chart-map" style="clear:both">
+  <div id="chart-map">
     <div class="map"></div>
+  </div>
+
+   <div id="chart-detail">
+    <div class="pie">	</div>
+	<span>Pie Chart - room count (S:100, M:300, L:300+)<br>	</span>
   </div>
 
 
 </div>
 
-
 <script type="text/javascript" src="js/lib/d3.js"></script>
 <script type="text/javascript" src="js/lib/crossfilter.js"></script>
 <script type="text/javascript" src="js/lib/dc-1.7.0.js"></script>
-
 <script type="text/javascript" src="js/lib/leaflet.js"></script>
 
 <!--Optional-->
 <script type="text/javascript" src="js/lib/leaflet.markercluster.js"></script>
-<script type="text/javascript" src="js/lib/dc.leaflet.js"></script>
-<script type="text/javascript" src="js/lib/bullet.js"></script>
 
-<script type="text/javascript" src="js/charts/charts.js"></script>
+<script type="text/javascript" src="js/lib/dc.leaflet.js"></script>
+<script type="text/javascript" src="js/charts/maps.0.2.js"></script>
+
+<script type="text/javascript" src="js/lib/bullet.js"></script>
+<script type="text/javascript" src="js/charts/sales-bulletChart.js"></script>
 
 <!--- GOOGLE ANALYTICS -->
 <script>
@@ -50,6 +78,7 @@
 
   ga('create', 'UA-87174444-1', 'auto');
   ga('send', 'pageview');
+
 </script>
 </body>
 </html>

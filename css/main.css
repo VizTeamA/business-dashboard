@@ -1,0 +1,15 @@
+#container {
+  width:1200px;
+  margin:20px auto;
+}
+#container>div {
+  padding:30px 0;
+  clear:both;
+}
+.map {
+  width:600px;
+  height:400px;
+}
+.pie {
+  margin-left:30px;
+}

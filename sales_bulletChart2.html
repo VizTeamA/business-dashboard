@@ -1,13 +1,31 @@
-var margin = {top: 5, right: 5, bottom: 50, left: 30},
-    width = 80 - margin.left - margin.right,
-    height = 250 - margin.top - margin.bottom;
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<link type="text/css" href="css/bulletChart.css" rel="stylesheet"/>
+
+<button>Update</button>
+<script type="text/javascript" src="js/lib/d3.js"></script>
+<script type="text/javascript" src="js/lib/crossfilter.js"></script>
+ <script type="text/javascript" src="js/lib/dc.js"></script> 
+<script type="text/javascript" src="js/lib/bullet.js"></script>
+<body>
+  <div id="chart-top">
+	   <div class="sales-year-chart"></div>
+     <div class="sales-product-chart"></div>
+  </div>
+</body>
+<script>
+
+var margin = {top: 5, right: 40, bottom: 50, left: 40},
+    width = 192 - margin.left - margin.right,
+    height = 450 - margin.top - margin.bottom;
 
 var saleBulletChart = d3.bullet()
     .orient("bottom")
     .width(width)
     .height(height);
 
-<!-- Data input -->
+<!-- Data input --> 
 var dataExample = [
   {"title":"2012","subtitle":"","ranges":[150,225,300],"measures":[220,270],"markers":[250]},
   {"title":"2013","subtitle":"","ranges":[150,225,300],"measures":[220,230],"markers":[240]},
@@ -22,9 +40,9 @@ var datacf       	= crossfilter(dataExample),
       all: function(){
         return dataExample;
     }};
-
+	
 data = titleDimension.top(Infinity);
-
+	
 var salesYearBulletChart = d3.select("#chart-top .sales-year-chart").selectAll("svg")
   .data(data)
 .enter().append("svg")
@@ -32,7 +50,8 @@ var salesYearBulletChart = d3.select("#chart-top .sales-year-chart").selectAll("
   .attr("width", width + margin.left + margin.right)
   .attr("height", height + margin.top + margin.bottom)
   .on("click", function(d) {
-    updateProductChart(d.title);
+	alert(d.title);
+	console.log(d.title);
   })
 .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
@@ -53,3 +72,25 @@ title.append("text")
   .attr("class", "subtitle")
   .attr("dy", "1em")
   .text(function(d) { return d.subtitle; });
+/*
+d3.selectAll("button").on("click", function() {
+salesYearBulletChart.datum(randomize).transition().duration(1000).call(saleBulletChart);
+});
+*/
+
+function randomize(d) {
+  if (!d.randomizer) d.randomizer = randomizer(d);
+  d.ranges = d.ranges.map(d.randomizer);
+  d.markers = d.markers.map(d.randomizer);
+  d.measures = d.measures.map(d.randomizer);
+  return d;
+}
+
+function randomizer(d) {
+  var k = d3.max(d.ranges) * .2;
+  return function(d) {
+    return Math.max(0, d + k * (Math.random() - .5));
+  };
+}
+
+</script>
