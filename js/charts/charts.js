@@ -16,8 +16,6 @@ var targetDataJson = [
   {"Year":"2016","ranges":[150,225,300],"measures":[220,260],"markers":[290]},
 ];
 
-d3.json(targetDataJson)
-
 d3.csv(inputSaleTrans, function(data) {
   xfProductSaleData = crossfilter(data);
   drawProductBarChart(xfProductSaleData);
@@ -49,19 +47,19 @@ function drawMapChart(data) {
 
 
 function drawProductBarChart(xfProductSaleData) {
-	var groupname = "marker-select2";
 	var productCol = 'Product_Grp';
 	var saleCol = 'Sales';
 	var yearCol = 'Year';
 
-	var products = xfProductSaleData.dimension(function(d) {return d[productCol]});
-	var productSales = products.group().reduceSum( function(d) {return d[saleCol]});
-
+	 products = xfProductSaleData.dimension(function(d) {return d[productCol]});
+	 productSales = products.group().reduceSum( function(d) {return d[saleCol]});
+   yearDim = xfProductSaleData.dimension(function(d) {return d["Year"]});
 
 	productChart
 		.dimension(products)
 		.group(productSales)
 		.width(500)
+    .elasticX(true)
 		.xAxis().ticks(5);
 	dc.renderAll(groupname);
 
@@ -79,11 +77,9 @@ function drawProductBarChart(xfProductSaleData) {
 }
 
 function updateProductChart(year) {
-  var yearDim = xfProductSaleData.dimension(function(d) {return d["Year"]});
-  yearDim.filterAll();
+  yearDim.filter(null);
   yearDim.filter(year);
-  //drawProductBarChart(xfProductSaleData, productChart);
-
+  dc.renderAll(groupname);
 }
 
 function drawSaleBulletChart (datacf) {
