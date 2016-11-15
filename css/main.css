@@ -1,6 +1,7 @@
 #container {
   width:1200px;
   margin:20px auto;
+  font-family: 'Roboto', sans-serif;
 }
 #container>div {
   padding:30px 0;
@@ -12,4 +13,23 @@
 }
 .pie {
   margin-left:30px;
+}
+#text-info .text-box{
+	float:left;
+	background:#ededed;
+	margin:0 0 5px 5px;
+	padding:5px;
+	min-height:60px;
+}
+#text-info .header{
+  font-size: 15px;
+  font-weight: 300;
+  font-style: normal;
+}
+
+#text-info .value{
+  clear: both;
+  font-size: 30px;
+  font-weight: 400;
+  font-style: normal;
 }
