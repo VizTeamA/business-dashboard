@@ -63,8 +63,8 @@ function drawProductBarChart(xfProductSaleData) {
 		.xAxis().ticks(5);
 	dc.renderAll(groupname);
 
-	
-	
+
+
 	function AddXAxis(chartToUpdate, displayText, offsetY) {
 	chartToUpdate.svg()
 				.append("text")
@@ -90,7 +90,7 @@ function drawSaleBulletChart (datacf) {
 	  height = 250 - margin.top - margin.bottom;
 
 	//var saleBulletChart = d3.bullet()
-	saleBulletChart	
+	saleBulletChart
 	  .orient("bottom")
 	  .width(width)
 	  .height(height);
@@ -122,6 +122,7 @@ function drawSaleBulletChart (datacf) {
 		.attr("height", height + margin.top + margin.bottom)
 		.on("click", function(d) {
 		  updateProductChart(d.Year);
+      updateNumbers(d.Year);
 		})
 	  .append("g")
 		.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
@@ -140,7 +141,7 @@ function drawSaleBulletChart (datacf) {
 
 	  d3.selectAll("button").on("click", function() {
 		bulletChartSvg.datum(randomize).transition().duration(1000).call(saleBulletChart);
-	  });		
+	  });
 
 	});
 }
@@ -159,3 +160,14 @@ function randomizer(d) {
     return Math.max(0, d + k * (Math.random() - .5));
   };
 }
+
+
+ function updateNumbers(d) {
+   var o = d3.selectAll("#opportunity .value");
+   var c = d3.selectAll("#coverage .value");
+   var s = d3.selectAll("#status-graph .value");
+
+   o.text(d*5-5230);
+   c.text(d/50 + "%");
+   s.text("pies("+d+")");
+ }
