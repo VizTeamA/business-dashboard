@@ -8,6 +8,10 @@ var inputSaleTrans = 'data/tables/SALES_TRANS.csv';
 var productChart = dc.rowChart("#chart-top .product", groupname);
 var saleBulletChart = d3.bullet();
 
+//Create UI
+createUI()
+
+
 <!-- Data input -->
 var targetDataJson = [
   {"Year":"2012","ranges":[150,225,300],"measures":[220,270],"markers":[250]},
@@ -27,14 +31,19 @@ d3.csv(inputSaleTrans, function(data) {
 });
 
 //Select All radio buttons that used for Market Sector Selection
-var radios = document.forms["market-sector"].elements["marketSector"];
-  for(radio in radios) {
+//var radios = document.forms["market-sector"].elements["marketSector"];
+d3.selectAll("market-sector").on("click", function() {
+	bulletChartSvg.datum(randomize).transition().duration(1000).call(saleBulletChart);
+}); 
+/*
+for(radio in radios) {
+	alert("hallo");
     radio.onclick = function() {
-        alert(radio.value);
-        toggleOptionPannel();
+        alert("hallo");
+        //toggleOptionPannel();
     }
 }
-
+*/
 function drawMapChart(data) {
 	var xf = crossfilter(data);
 	var groupname = "marker-select";
@@ -128,8 +137,8 @@ function drawSaleBulletChart (datacf) {
 		.attr("width", width + margin.left + margin.right)
 		.attr("height", height + margin.top + margin.bottom)
 		.on("click", function(d) {
-		  updateProductChart(d.Year);
-      updateNumbers(d.Year);
+			updateProductChart(d.Year);
+			updateNumbers(d.Year);
 		})
 	  .append("g")
 		.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
@@ -194,3 +203,31 @@ function randomizer(d) {
    }
 
  }
+
+ 
+ //function to load UI 
+ function createUI() {
+ var shapeData = ["Hospitality", "Residential"], 
+  selectedId = 0;  // Choose the rectangle as default
+
+// Create the shape selectors
+var form = d3.select("#market-sector").append("form");		
+var labelEnter = form.selectAll("label")
+    .data(shapeData)
+    .enter().append("label");
+labelEnter.append("input")
+    .attr({
+        type: "radio",
+        class: "shape",
+        name: "mode",
+        value: function(d, i) {return i;}
+    })
+    .property("checked", function(d, i) { 
+        return (i===selectedId); 
+    })
+	;
+labelEnter.append("label").text(function(d) {return d;});
+labelEnter.append("br");
+					
+	;
+}
