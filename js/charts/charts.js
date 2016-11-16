@@ -34,7 +34,7 @@ d3.csv(inputSaleTrans, function(data) {
 //var radios = document.forms["market-sector"].elements["marketSector"];
 d3.selectAll("market-sector").on("click", function() {
 	bulletChartSvg.datum(randomize).transition().duration(1000).call(saleBulletChart);
-}); 
+});
 /*
 for(radio in radios) {
 	alert("hallo");
@@ -191,27 +191,29 @@ function randomizer(d) {
 // activeObjectName is "hospitality" or else (residential)
  function toggleOptionPannel() {
    //var containerObjectName = "filter-market-sector";
-   var selectedObjectName = d3.select('input[name="marketSector"]:checked').node().value;
+   var selectedObjectName = d3.select('input[name='+'marketSector'+']:checked').node().value;
    var containerHospitality = d3.selectAll("#hospitality-filter-market-sector");
    var containerResidential = d3.selectAll("#residential-filter-market-sector");
-   if (activeObjectName="hospitality") {
-     containerHospitality.style("visibility",visibility);
-     containerResidential.style("visibility",hidden);
+   if (selectedObjectName=="Hospitality") {
+     containerHospitality.attr("class","content-pannel-visible");
+     containerResidential.attr("class","content-pannel-hidden");
+     //console.log("visibile containerHospitality");
    } else {
-     containerHospitality.style("visibility",hidden);
-     containerResidential.style("visibility",visibility);
+     containerHospitality.attr("class","content-pannel-hidden");
+     containerResidential.attr("class","content-pannel-visible");
+     //console.log("visibile containerResidential");
    }
 
  }
 
- 
- //function to load UI 
+
+ //function to load UI
  function createUI() {
- var shapeData = ["Hospitality", "Residential"], 
-  selectedId = 0;  // Choose the rectangle as default
+ var shapeData = ["Hospitality", "Residential"],
+  selectedId = "Hospitality";  // Choose the rectangle as default
 
 // Create the shape selectors
-var form = d3.select("#market-sector").append("form");		
+var form = d3.select("#market-sector").append("form");
 var labelEnter = form.selectAll("label")
     .data(shapeData)
     .enter().append("label");
@@ -219,15 +221,19 @@ labelEnter.append("input")
     .attr({
         type: "radio",
         class: "shape",
-        name: "mode",
-        value: function(d, i) {return i;}
+        name: "marketSector",
+        value: function(d, i) {return d;}
     })
-    .property("checked", function(d, i) { 
-        return (i===selectedId); 
+    .property("checked", function(d) {
+        return (d===selectedId);
+    })
+    .on("click",function(d){
+      //console.log("hey click"+ d);
+      toggleOptionPannel();
     })
 	;
 labelEnter.append("label").text(function(d) {return d;});
 labelEnter.append("br");
-					
-	;
+toggleOptionPannel();
+
 }
