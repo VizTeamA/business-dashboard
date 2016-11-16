@@ -26,7 +26,14 @@ d3.csv(inputSaleTrans, function(data) {
   });
 });
 
-
+//Select All radio buttons that used for Market Sector Selection
+var radios = document.forms["market-sector"].elements["marketSector"];
+  for(radio in radios) {
+    radio.onclick = function() {
+        alert(radio.value);
+        toggleOptionPannel();
+    }
+}
 
 function drawMapChart(data) {
 	var xf = crossfilter(data);
@@ -170,4 +177,20 @@ function randomizer(d) {
    o.text(d*5-5230);
    c.text(d/50 + "%");
    s.text("pies("+d+")");
+ }
+
+// activeObjectName is "hospitality" or else (residential)
+ function toggleOptionPannel() {
+   //var containerObjectName = "filter-market-sector";
+   var selectedObjectName = d3.select('input[name="marketSector"]:checked').node().value;
+   var containerHospitality = d3.selectAll("#hospitality-filter-market-sector");
+   var containerResidential = d3.selectAll("#residential-filter-market-sector");
+   if (activeObjectName="hospitality") {
+     containerHospitality.style("visibility",visibility);
+     containerResidential.style("visibility",hidden);
+   } else {
+     containerHospitality.style("visibility",hidden);
+     containerResidential.style("visibility",visibility);
+   }
+
  }

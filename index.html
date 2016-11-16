@@ -10,7 +10,7 @@
 	<link type="text/css" href="js/lib/leaflet.markercluster.css" rel="stylesheet"/>
 	<link type="text/css" href="js/lib/dc.css" rel="stylesheet"/>
 	<link type="text/css" href="css/bulletChart.css" rel="stylesheet"/>
-	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,600,900" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,600,900" rel="stylesheet">
   <head>
 <body>
 
@@ -34,20 +34,28 @@
 	</div>
 	<div id = "status-graph" class = "text-box">
 		<div class="header">PIE CHART</div>
-		<div class="value">pie()</div>	
+		<div class="value">pie()</div>
 	</div>
 	<div id = "range-bar" class = "text-box">
 		<div class="header">SLIDER</div>
 		<div class="value">
 			<input type="range" />
-		</div>	
-	</div>	
-	
+		</div>
+	</div>
+	<form name='market-sector'>
+	  <input type="radio" name="marketSector" value="hospitality" checked>Hospitality<br>
+	  <input type="radio" name="marketSector" value="residential">Residential<br>
+	</form>
   </div>
-   
+
   <div id="chart-map">
     <div class="map"></div>
   </div>
+
+	<div id="filter-market-sector">
+		<div id="hospitality-filter-market-sector" class="content-pannel">THIS IS HOTEL MARKET<div>
+		<div id="residential-filter-market-sector" class="content-pannel">THIS IS RESIDENTIAL MARKET<div>
+	</div>
 
 </div>
 
@@ -57,8 +65,6 @@
 <script type="text/javascript" src="js/lib/dc-1.7.0.js"></script>
 
 <script type="text/javascript" src="js/lib/leaflet.js"></script>
-
-<!--Optional-->
 <script type="text/javascript" src="js/lib/leaflet.markercluster.js"></script>
 <script type="text/javascript" src="js/lib/dc.leaflet.js"></script>
 <script type="text/javascript" src="js/lib/bullet.js"></script>
