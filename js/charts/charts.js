@@ -4,9 +4,7 @@
 *************************************************************************************************/
 /*     Markers      */
 var groupname = "marker-select2";
-var inputFile1 = 'data/hotelsg.csv';
-var inputFile2 = 'data/hotelsg-sales.csv';
-var inputFileDemo = "demo1.tsv";
+var inputFile2 = 'data/tables/hotelsg-sales.csv';
 var inputSaleTrans = 'data/tables/SALES_TRANS.csv';
 var productChart = dc.rowChart("#chart-top .product", groupname);
 var saleBulletChart = d3.bullet();

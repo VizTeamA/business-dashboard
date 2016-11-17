@@ -1,11 +1,13 @@
 
 /*     Markers      */
-var groupname = "marker-select2";
-var inputFile1 = 'data/hotelsg.csv';
-var inputFile2 = 'data/hotelsg-sales.csv';
-var inputFileDemo = "demo1.tsv";
-var inputSaleTrans = 'data/tables/SALES_TRANS.csv';
-var productChart = dc.rowChart("#chart-top .product", groupname);
+
+//Input files - global vars load in Charts.js
+//var inputFile1 = 'data/hotelsg.csv';
+//var inputFileDemo = "demo1.tsv";
+//var groupname = "marker-select2";
+//var inputFile2 = 'data/tables/hotelsg-sales.csv';
+//var inputSaleTrans = 'data/tables/SALES_TRANS.csv';
+//var productChart = dc.rowChart("#chart-top .product", groupname);
 
 d3.csv(inputFile2, function(data) {
   drawMapChart(data);
@@ -34,7 +36,6 @@ function drawMapChart(data) {
 		  .cluster(true);
 	dc.renderAll(groupname);
 }
-
 
 function drawProductBarChart(xfProductSaleData, productChart) {
 	var groupname = "marker-select2";
