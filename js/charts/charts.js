@@ -6,7 +6,7 @@
 var groupname = "marker-select2";
 var inputFile2 = 'data/tables/hotelsg-sales.csv';
 var inputSaleTrans = 'data/tables/SALES_TRANS_v1.0.csv';
-var productChart = dc.rowChart("#chart-top .product", groupname);
+var productChart = dc.rowChart("#sales-product-chart", groupname);
 var saleBulletChart = d3.bullet();
 
 
@@ -20,14 +20,6 @@ var yearDim;
 //Create UI
 createUI()
 
-// Data input
-var targetDataJson = [
-  {"Year":"2012","ranges":[150,225,300],"measures":[220,270],"markers":[250]},
-  {"Year":"2013","ranges":[150,225,300],"measures":[220,230],"markers":[240]},
-  {"Year":"2014","ranges":[150,225,300],"measures":[210,230],"markers":[260]},
-  {"Year":"2015","ranges":[150,225,300],"measures":[200,210],"markers":[230]},
-  {"Year":"2016","ranges":[150,225,300],"measures":[220,260],"markers":[290]},
-];
 
 d3.csv(inputSaleTrans, function(data) {
 	// Since its a csv file we need to format the data a bit.
@@ -95,10 +87,11 @@ function drawProductBarChart(xfProductSaleData) {
 		.dimension(products)
 		.group(productSales)
 		.on("click",function(d) {console.log("Pressed");  })
-		.width(500)
+		.width(300)
+    .height(220)
 		.elasticX(true)
 		//.controlsUseVisibility(true)
-		.xAxis().ticks(5)
+		.xAxis().ticks(3)
 		;
 	dc.renderAll(groupname);
 
@@ -124,7 +117,7 @@ function updateProductChart(year) {
 function drawSaleBulletChart (datacf) {
 	var margin = {top: 5, right: 5, bottom: 50, left: 30},
 	  width = 80 - margin.left - margin.right,
-	  height = 250 - margin.top - margin.bottom;
+	  height = 180 - margin.top - margin.bottom;
 
 	//var saleBulletChart = d3.bullet()
 	saleBulletChart
@@ -133,13 +126,12 @@ function drawSaleBulletChart (datacf) {
 	  .height(height);
 
 
-	d3.csv("./data/tables/TARGET.csv", function(data) {
-	  var targetDataJson = [
-		{"Year":"2012","ranges":[150,225,300],"measures":[220,270],"markers":[250]},
-		{"Year":"2013","ranges":[150,225,300],"measures":[220,230],"markers":[240]},
+    var targetDataJson = [
+		{"Year":"2016","ranges":[150,225,300],"measures":[220,270],"markers":[250]},
+		{"Year":"2015","ranges":[150,225,300],"measures":[220,230],"markers":[240]},
 		{"Year":"2014","ranges":[150,225,300],"measures":[210,230],"markers":[260]},
-		{"Year":"2015","ranges":[150,225,300],"measures":[200,210],"markers":[230]},
-		{"Year":"2016","ranges":[150,225,300],"measures":[220,260],"markers":[290]},
+		{"Year":"2013","ranges":[150,225,300],"measures":[200,210],"markers":[230]},
+		{"Year":"2012","ranges":[150,225,300],"measures":[220,260],"markers":[290]},
 	  ];
 
 	  var datacf       	= crossfilter(targetDataJson),
@@ -149,9 +141,9 @@ function drawSaleBulletChart (datacf) {
 			  return dataExample;
 		  }};
 
-	  data = titleDimension.top(Infinity);
+	  data = titleDimension.bottom(Infinity);
 
-	  bulletChartSvg = d3.select("#chart-top .sales-year-chart").selectAll("svg")
+	  bulletChartSvg = d3.select("#sales-year-chart").selectAll("svg")
 		.data(data)
 	  .enter().append("svg")
 		.attr("class", "bullet")
@@ -179,7 +171,6 @@ function drawSaleBulletChart (datacf) {
 	  d3.selectAll("#button-control button#rand-bullet-chart").on("click", function() {
 		bulletChartSvg.datum(randomize).transition().duration(1000).call(saleBulletChart);
 	  });
-	});
 }
 
 function randomize(d) {
@@ -302,8 +293,8 @@ function drawYearPerformanceBarChart(xfProductSaleData) {
 	maxDate = strmDateExtent[1];
 
 	chart
-		 .height(200)
-		 .width(300)
+		 .height(250)
+		 .width(700)
         .margins({top: 0, right: 50, bottom: 60, left: 60})
         .dimension(monthFmtDim)
         .group(productSalesByMonth)
@@ -348,11 +339,41 @@ function drawYearPerformanceBarChart(xfProductSaleData) {
 
  //function to load UI
  function createUI() {
-	// Add reset Button
-	d3.selectAll("#button-control button#reset-chart").on("click", function() {
-		yearDim.filter(null);
-		dc.renderAll(groupname);
-	});
+  // Add section
+  var headerNames = [ "#overview-header", "#detail-analysis-header",  "#sales-by-product-header"];
+  var toggleSections = [ "div#overview",      "#detail-analysis",         "#sales-by-product"];
+  var classNameVisible = "section";
+  var classNameHide = "section-hide";
+
+  for (i=0; i<headerNames.length; i++ ) {
+    headerName = headerNames[i];
+    toggleSection = toggleSections[i];
+    console.log(headerName + "***" +  toggleSection);
+
+    d3.selectAll(headerName)
+      .append("b")
+      .text(" [+] ")
+      .on("click", function() {
+          d3.selectAll(toggleSection).attr("class",classNameVisible);
+          console.log("+" + toggleSection + ">>" + classNameVisible);
+      });
+    d3.selectAll(headerName)
+      .append("b")
+      .text(" [-] ")
+      .on("click", function() {
+          d3.selectAll(toggleSection).attr("class",classNameHide);
+          console.log("-" + toggleSection + ">>" + classNameHide);
+      });
+    // Add reset Button
+    d3.selectAll("#button-control button#reset-chart").on("click", function() {
+      yearDim.filter(null);
+      dc.renderAll(groupname);
+    });
+  }
+
+
+
+
 
 	// Options for Market Sector
 	var shapeData = ["Hospitality", "Residential"],
