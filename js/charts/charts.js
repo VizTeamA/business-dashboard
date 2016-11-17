@@ -369,15 +369,15 @@ function drawYearPerformanceBarChart(xfProductSaleData) {
 */
 
     d3.selectAll("#overview-header")
-      .append("b")
-      .text(" [+] ")
+      .append("text")
+      .text(" [show] ")
       .on("click", function() {
           d3.selectAll("#overview").attr("class","section");
           //console.log("+" + toggleSection + ">>" + "section");
       });
     d3.selectAll("#overview-header")
-      .append("b")
-      .text(" [-] ")
+      .append("text")
+      .text(" [hide] ")
       .on("click", function() {
           d3.selectAll("#overview").attr("class","section-hide");
           //console.log("-" + toggleSection + ">>" + "section-hide");
@@ -385,15 +385,15 @@ function drawYearPerformanceBarChart(xfProductSaleData) {
 
 
     d3.selectAll("#detail-analysis-header")
-      .append("b")
-      .text(" [+] ")
+      .append("text")
+      .text(" [show] ")
       .on("click", function() {
           d3.selectAll("#detail-analysis").attr("class","section");
           //console.log("+" + "#detail-analysis" + ">>" + "section");
       });
     d3.selectAll("#detail-analysis-header")
-      .append("b")
-      .text(" [-] ")
+      .append("text")
+      .text(" [hide] ")
       .on("click", function() {
           d3.selectAll("#detail-analysis").attr("class","section-hide");
           //console.log("-" + toggleSection + ">>" + "section-hide");
@@ -402,15 +402,15 @@ function drawYearPerformanceBarChart(xfProductSaleData) {
 
 
     d3.selectAll("#sale-by-product-header")
-      .append("b")
-      .text(" [+] ")
+      .append("text")
+      .text(" [show] ")
       .on("click", function() {
           d3.selectAll("#sale-by-product").attr("class","section");
           //console.log("+" + toggleSection + ">>" + "section");
       });
     d3.selectAll("#sale-by-product-header")
-      .append("b")
-      .text(" [-] ")
+      .append("text")
+      .text(" [hide] ")
       .on("click", function() {
           d3.selectAll("#sale-by-product").attr("class","section-hide");
           //console.log("-" + toggleSection + ">>" + "section-hide");
