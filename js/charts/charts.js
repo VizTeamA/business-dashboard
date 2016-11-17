@@ -341,10 +341,10 @@ function drawYearPerformanceBarChart(xfProductSaleData) {
  function createUI() {
   // Add section
   var headerNames = [ "#overview-header", "#detail-analysis-header",  "#sales-by-product-header"];
-  var toggleSections = [ "div#overview",      "#detail-analysis",         "#sales-by-product"];
+  var toggleSections = [ "#overview",      "#detail-analysis",         "#sales-by-product"];
   var classNameVisible = "section";
   var classNameHide = "section-hide";
-
+/*
   for (i=0; i<headerNames.length; i++ ) {
     headerName = headerNames[i];
     toggleSection = toggleSections[i];
@@ -364,12 +364,72 @@ function drawYearPerformanceBarChart(xfProductSaleData) {
           d3.selectAll(toggleSection).attr("class",classNameHide);
           console.log("-" + toggleSection + ">>" + classNameHide);
       });
+    }
+
+*/
+
+    d3.selectAll("#overview-header")
+      .append("b")
+      .text(" [+] ")
+      .on("click", function() {
+          d3.selectAll("#overview").attr("class","section");
+          //console.log("+" + toggleSection + ">>" + "section");
+      });
+    d3.selectAll("#overview-header")
+      .append("b")
+      .text(" [-] ")
+      .on("click", function() {
+          d3.selectAll("#overview").attr("class","section-hide");
+          //console.log("-" + toggleSection + ">>" + "section-hide");
+      });
+
+
+    d3.selectAll("#detail-analysis-header")
+      .append("b")
+      .text(" [+] ")
+      .on("click", function() {
+          d3.selectAll("#detail-analysis").attr("class","section");
+          //console.log("+" + "#detail-analysis" + ">>" + "section");
+      });
+    d3.selectAll("#detail-analysis-header")
+      .append("b")
+      .text(" [-] ")
+      .on("click", function() {
+          d3.selectAll("#detail-analysis").attr("class","section-hide");
+          //console.log("-" + toggleSection + ">>" + "section-hide");
+      });
+
+
+
+    d3.selectAll("#sale-by-product-header")
+      .append("b")
+      .text(" [+] ")
+      .on("click", function() {
+          d3.selectAll("#sale-by-product").attr("class","section");
+          //console.log("+" + toggleSection + ">>" + "section");
+      });
+    d3.selectAll("#sale-by-product-header")
+      .append("b")
+      .text(" [-] ")
+      .on("click", function() {
+          d3.selectAll("#sale-by-product").attr("class","section-hide");
+          //console.log("-" + toggleSection + ">>" + "section-hide");
+      });
+
+
+
+
+
+
+
+
+
+
     // Add reset Button
     d3.selectAll("#button-control button#reset-chart").on("click", function() {
       yearDim.filter(null);
       dc.renderAll(groupname);
     });
-  }
 
 
 
