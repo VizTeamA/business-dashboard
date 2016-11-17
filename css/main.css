@@ -19,7 +19,7 @@
 	background:#ededed;
 	margin:0 0 5px 5px;
 	padding:5px;
-	min-height:60px;
+	min-height:120px;
 }
 #text-info .header{
   font-size: 15px;
@@ -43,10 +43,11 @@
 }
 
 div#filter-market-sector {
-  padding: 5px;
+  float:left;
+  padding: 10px;
   max-width: 250px;
   max-height: 550px;
-  min-height: 250px;
+  min-height: 380px;
   border: lightgrey;
   border-style: solid;
   border-width: 1px;

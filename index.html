@@ -16,61 +16,57 @@
 
 <div id="container" >
 	<h2>Sales in Singapore</h2>
-  <div id="chart-top" >
-	<div class="sales-year-chart"  style = "float:left"></div>
-	<div class="product"  style = "float:left"></div>
-  </div>
-  <div style="padding:0; margin:0;">
-	<button>Rand() Bullet Chart</button>
-  </div>
-  <div id="text-info">
-	<div id = "opportunity" class = "text-box">
-		<div class="header">OPPORTUNITIES</div>
-		<div class="value">500</div>
+	<div id="chart-top" >
+		<div class="sales-year-chart"  style = "float:left"></div>
+		<div class="product"  style = "float:left"></div>
 	</div>
-	<div id = "coverage" class = "text-box" >
-		<div class="header">COVERAGE %</div>
-		<div class="value">20%</div>
+	<div style="padding:0; margin:0;">
+		<button>Rand() Bullet Chart</button>
 	</div>
-	<div id = "status-graph" class = "text-box">
-		<div class="header">PIE CHART</div>
-		<div class="value">pie()</div>
-	</div>
-	<div id = "range-bar" class = "text-box">
-		<div class="header">SLIDER</div>
-		<div class="value">
-			<input type="range" />
+	<div id="text-info">
+		<div id = "opportunity" class = "text-box">
+			<div class="header">OPPORTUNITIES</div>
+			<div class="value">500</div>
 		</div>
-	</div>
-	<div id="market-sector"></div>
-  </div>
-
-	<div id="filter-market-sector">
-		<div id="hospitality-filter-market-sector" class="content-pannel-visible">
-				<h4>GEORAPHICAL</h4>
-				<div id="filter-customer"></div>
-				<div id="prospect-filter" class="content-pannel-hidden">lead...</div>
-				<div id="customer-filter" class="content-pannel-visible">
-					<div>barChartBrushable()</div>
-					<div>Rolling Period</div>
-					<ul>
-						<li>Quarter</li>
-						<li>Year</li>
-						<li>2Years</li>
-					</ul>
-					<div>gainLost()</div>
-				</div>
+		<div id = "coverage" class = "text-box" >
+			<div class="header">COVERAGE %</div>
+			<div class="value">20%</div>
 		</div>
-		<div id="residential-filter-market-sector" class="content-pannel-hidden">
-			<h4>RESIDENTIAL</h4>
+		<div id = "status-graph" class = "text-box">
+			<div class="header">PIE CHART</div>
+			<div class="value">
+				<div id="earning-by-year-chart"></div>
+			</div>
+		</div>
+		<div id = "range-bar" class = "text-box">
+			<div class="header">SLIDER</div>
+			<div class="value">
+				<input type="range" />
+			</div>
 		</div>
 	</div>
 
-  <div id="chart-map">
-    <div class="map"></div>
-  </div>
-
-
+	<div id="chart-map">
+		<div class="map">mmm</div>
+		<div id="filter-market-sector">
+			<div id="market-sector"></div>
+			<br>
+			<div id="hospitality-filter-market-sector" class="content-pannel-visible">
+					<!--<h4>GEORAPHICAL</h4>-->
+					<div id="filter-customer"></div>
+					<div id="prospect-filter" class="content-pannel-hidden">lead...</div>
+					<div id="customer-filter" class="content-pannel-visible">
+						<div id="year-performance-chart">Historical Sales</div>
+						<div id="rolling-period-filter">Rolling Period</div>
+						<div id="gain-loss-chart"></div>
+					</div>
+			</div>
+			<div id="residential-filter-market-sector" class="content-pannel-hidden">
+				<!--<h4>RESIDENTIAL</h4>-->
+				<div>something here?</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 
@@ -86,6 +82,7 @@
 <script type="text/javascript" src="js/charts/charts.js"></script>
 
 <!--- GOOGLE ANALYTICS -->
+<!--
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -95,5 +92,6 @@
   ga('create', 'UA-87174444-1', 'auto');
   ga('send', 'pageview');
 </script>
+-->
 </body>
 </html>

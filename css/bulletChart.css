@@ -1,3 +1,4 @@
+/****** BULLET CHART ******/
 .bullet { font: 10px sans-serif; }
 .bullet .marker { stroke: #000; stroke-width: 2px; }
 .bullet .tick line { stroke: #666; stroke-width: .5px;}
@@ -13,3 +14,10 @@
 .bullet .subtitle { fill: #999; }
 
 .bullet .axis line, .bullet .axis path { opacity: 0.5; }
+
+/****** BAR CHART ******/
+#year-performance-chart--mzxxxxx .x.axis text {
+    text-anchor: end !important;
+	padding: 10px;
+    transform: rotate(-90deg);
+}

@@ -1,0 +1,56 @@
+Name	X	Y	geo	Address	Website	Rooms	type
+Sheraton Towers Singapore Hotel	103.8364622	1.311950542	"103.8364622,1.311950542"	39 Scotts Road	http://www.sheratonsingapore.com	420	L
+Four Seasons Hotel	103.8286527	1.305210226	"103.8286527,1.305210226"	190 Orchard Boulevard	http://www.fourseasons.com/singapore	255	M
+The South Beach	103.8555287	1.294687026	"103.8555287,1.294687026"	30 Beach Road	http://www.thesouthbeach.com.sg	700	L
+The Fullerton Hotel	103.8529704	1.286193239	"103.8529704,1.286193239"	1 Fullerton Square	http://www.fullertonhotel.com	400	L
+Hotel Michael	103.8202592	1.255005803	"103.8202592,1.255005803"	8 Sentosa Gateway	http://www.rwsentosa.com	476	L
+"Le Meridien Singapore, Sentosa"	103.8195576	1.253293664	"103.8195576,1.253293664"	23 Beach View	http://www.moevenpick-sentosa.com	191	M
+Sofitel So Singapore	103.8496548	1.279921977	"103.8496548,1.279921977"	35 Robinson Road	http://www.sofitel.com	134	M
+One Farrer Hotel & Spa	103.8538422	1.312756687	"103.8538422,1.312756687"	1 Farrer Park Station Road	http://www.onefarrer.com	243	M
+Big Hotel	103.8515065	1.300916403	"103.8515065,1.300916403"	200 Middle Road	http://www.bighotel.com	308	L
+"Shangri-La's Rasa Sentosa Resort & Spa, Singapore"	103.8097979	1.257802059	"103.8097979,1.257802059"	101 Siloso Road Sentosa	http://www.shangri-la.com	454	L
+Grand Park Orchard	103.836202	1.303105268	"103.836202,1.303105268"	270 Orchard Road	http://www.parkhotelgroup.com/gpor/	308	L
+Hotel Fort Canning	103.8453621	1.295812677	"103.8453621,1.295812677"	11 Canning Walk	http://www.hfcsingapore.com	86	S
+"The Ritz-Carlton, Millenia Singapore"	103.8600473	1.290718319	"103.8600473,1.290718319"	7 Raffles Avenue	http://www.ritzcarlton.com/en/Properties/Singapore/Default.htm	608	L
+The Fullerton Bay Hotel	103.8534802	1.283966678	"103.8534802,1.283966678"	80 Collyer Quay	http://www.fullertonbayhotel.com	98	S
+The Regent Singapore	103.8248974	1.304673228	"103.8248974,1.304673228"	1 Cuscaden Road	http://www.regenthotels.com/EN/Singapore	440	L
+InterContinental Singapore	103.854867	1.298469654	"103.854867,1.298469654"	80 Middle Road	http://www.ihg.com/intercontinental/hotels/gb/en/singapore/sinhb/hoteldetail	403	L
+Sofitel Singapore Sentosa Resort & Spa	103.8275257	1.245060096	"103.8275257,1.245060096"	2 Bukit Manis Road	http://www.sofitel.com/9474	215	M
+Naumi	103.8551817	1.2958681	"103.8551817,1.2958681"	41 Seah Street	http://www.naumihotel.com	73	S
+Ascott Singapore Raffles Place	103.8515444	1.282084557	"103.8515444,1.282084557"	2 Finlayson Green	http://www.the-ascott.com	146	M
+Crowne Plaza Changi Airport	103.9879472	1.358680347	"103.9879472,1.358680347"	75 Airport Boulevard	http://www.ihg.com/crowneplaza/hotels/us/en/singapore/sincp/hoteldetail	563	L
+Grand Park City Hall	103.8501239	1.292628949	"103.8501239,1.292628949"	10 Coleman Street	http://www.parkhotelgroup.com	329	L
+"Amara Sanctuary Resort, Sentosa"	103.8220166	1.252128005	"103.8220166,1.252128005"	1 Larkhill Road	http://www.amarasanctuary.com	140	M
+W Singapore Sentosa Cove Hotel	103.8424281	1.246165494	"103.8424281,1.246165494"	21 Ocean Way	http://www.wsingaporesentosacove.com	240	M
+Raffles Hotel Singapore	103.8540683	1.295097417	"103.8540683,1.295097417"	1 Beach Road	http://www.raffleshotel.com	103	M
+The Pan Pacific Hotel Singapore	103.8588044	1.292372906	"103.8588044,1.292372906"	7 Raffles Boulevard	https://www.panpacific.com/en/hotels-resorts/singapore/marina.html	790	L
+Hotel Vagabond	103.8583028	1.307019139	"103.8583028,1.307019139"	39 Syed Alwi Road	http://hotelvagabondsingapore.com/	41	S
+Singapore Marriott Tang Plaza Hotel	103.8328767	1.305108979	"103.8328767,1.305108979"	320 Orchard Road	http://www.singaporemarriott.com	393	L
+St. Regis Hotel Singapore	103.8260535	1.305661657	"103.8260535,1.305661657"	29 Tanglin Road	http://www.stregis.com/singapore	299	M
+The Westin Singapore	103.8507952	1.278307303	"103.8507952,1.278307303"	12 Marina View Asia Square Tower 2	http://www.thewestinsingapore.com	305	L
+"Capella Hotel, Singapore"	103.8243782	1.249482971	"103.8243782,1.249482971"	1 The Knolls	http://www.capellasingapore.com	112	M
+Goodwood Park Hotel	103.8341091	1.30822215	"103.8341091,1.30822215"	22 Scotts Road	http://www.goodwoodparkhotel.com	233	M
+Hilton Singapore	103.8293149	1.305879028	"103.8293149,1.305879028"	581 Orchard Road	http://www.singapore.hilton.com	421	L
+Marina Bay Sands Singapore	103.8581206	1.282202175	"103.8581206,1.282202175"	1 Bayfront Avenue	http://www.marinabaysands.com	2560	L
+"Swissotel The Stamford, Singapore"	103.8533288	1.293274791	"103.8533288,1.293274791"	2 Stamford Road	http://www.swissotel.com/hotels/singapore-stamford/	1261	L
+Mandarin Orchard Singapore	103.836341	1.302064514	"103.836341,1.302064514"	333 Orchard Road	http://www.meritushotels.com	1077	L
+Carlton Hotel	103.8525189	1.295926453	"103.8525189,1.295926453"	76 Bras Basah Road	http://www.carltonhotel.sg	940	L
+V Hotel Bencoolen	103.8507632	1.29894387	"103.8507632,1.29894387"	48 Bencoolen Street	http://www.vhotel.sg	270	M
+Pan Pacific Orchard	103.8298879	1.307388241	"103.8298879,1.307388241"	10 Claymore Road	http://www.panpacific.com/orchard.html	206	M
+Fairmont Singapore	103.8539661	1.294004299	"103.8539661,1.294004299"	80 Bras Basah Road	http://www.fairmont.com/singapore	769	L
+Shangri-La Hotel	103.8267568	1.311247411	"103.8267568,1.311247411"	22 Orange Grove Road	http://www.shangri-la.com	747	L
+Grand Hyatt Singapore	103.8332833	1.30634534	"103.8332833,1.30634534"	10 Scotts Road	http://www.singapore.grand.hyatt.com	677	L
+Orchard Hotel Singapore	103.8281644	1.307668615	"103.8281644,1.307668615"	442 Orchard Road	http://www.millenniumhotels.com.sg	656	L
+Furama Riverfront Singapore	103.8360928	1.287634548	"103.8360928,1.287634548"	405 Havelock Road	http://www.furama.com/riverfront/	605	L
+Peninsula.Excelsior Hotel	103.8498204	1.291945931	"103.8498204,1.291945931"	5 Coleman Street	http://www.ytchotels.com.sg	600	L
+Marina Mandarin	103.8570073	1.291455268	"103.8570073,1.291455268"	6 Raffles Boulevard Marina Square	http://www.meritushotels.com/marina-mandarin-singapore/	575	L
+Grand Copthorne Waterfront Hotel Singapore	103.835148	1.290281942	"103.835148,1.290281942"	392 Havelock Road	http://www.grandcopthorne.com.sg	574	L
+Grand Mercure Roxy Hotel	103.9040511	1.304326009	"103.9040511,1.304326009"	50 East Coast Road	http://www.grandmercureroxy.com.sg	576	L
+Ibis Singapore on Bencoolen	103.8524227	1.300963179	"103.8524227,1.300963179"	170 Bencoolen Street	http://www.ibishotel.com/6557	538	L
+PARKROYAL on Kitchener Road	103.8556574	1.310530254	"103.8556574,1.310530254"	181 Kitchener Road	http://www.parkroyalhotels.com	534	L
+"Mandarin Oriental, Singapore"	103.858324	1.290660596	"103.858324,1.290660596"	5 Raffles Avenue Marina Square		527	L
+Conrad Centennial Singapore	103.8587748	1.293525048	"103.8587748,1.293525048"	2 Temasek Boulevard		507	L
+Holiday Inn Singapore Atrium	103.8340683	1.2890702	"103.8340683,1.2890702"	317 Outram Road	http://www.holiday-inn.com/atrium-sin	512	L
+Royal Plaza	103.8314458	1.307089333	"103.8314458,1.307089333"	25 Scotts Road	http://www.royalplaza.com.sg	511	L
+"Four Points by Sheraton Singapore, Riverview"	103.8366038	1.289371	"103.8366038,1.289371"	382 Havelock Road	http://www.fourpointssingaporeriverview.com	476	L
+"Swissotel Merchant Court,Singapore"	103.8456923	1.28821803	"103.8456923,1.28821803"	20 Merchant Road	http://www.swissotel.com/singapore-merchantcourt	476	L

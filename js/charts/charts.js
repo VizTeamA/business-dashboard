@@ -1,4 +1,7 @@
-
+/****************************************** GLOBAL VARS ***************************************** 
+* Global Variable Declarations
+* Avoid using Global Vars as much as we can ok.
+*************************************************************************************************/
 /*     Markers      */
 var groupname = "marker-select2";
 var inputFile1 = 'data/hotelsg.csv';
@@ -8,11 +11,16 @@ var inputSaleTrans = 'data/tables/SALES_TRANS.csv';
 var productChart = dc.rowChart("#chart-top .product", groupname);
 var saleBulletChart = d3.bullet();
 
+
+/****************************************** GLOBAL VARS ***************************************** 
+* Main ()
+* As a controller to call other function() to load UI, add charts and Interaction 
+*************************************************************************************************/
+
 //Create UI
 createUI()
 
-
-<!-- Data input -->
+// Data input 
 var targetDataJson = [
   {"Year":"2012","ranges":[150,225,300],"measures":[220,270],"markers":[250]},
   {"Year":"2013","ranges":[150,225,300],"measures":[220,230],"markers":[240]},
@@ -22,9 +30,22 @@ var targetDataJson = [
 ];
 
 d3.csv(inputSaleTrans, function(data) {
+	// Since its a csv file we need to format the data a bit.
+    var dateFormat = d3.time.format('%Y%b%d');
+    //var numberFormat = d3.format('.2f');
+    data.forEach(function (d) {
+		dumbDate = 01;
+        d.dd = dateFormat.parse(d.Year+ d.Month +dumbDate);
+        d.monthFmt = d3.time.month(d.dd); // pre-calculate month for better performance
+        d.yearFmt = d3.time.month(d.dd); // pre-calculate month for better performance
+        //d.close = +d.close; // coerce to number
+       // d.open = +d.open;
+    });
   xfProductSaleData = crossfilter(data);
+  
   drawProductBarChart(xfProductSaleData);
   drawSaleBulletChart(xfProductSaleData);
+  drawYearPerformanceBarChart(xfProductSaleData);
   d3.csv(inputFile2, function(data) {
     drawMapChart(data);
   });
@@ -35,15 +56,15 @@ d3.csv(inputSaleTrans, function(data) {
 d3.selectAll("market-sector").on("click", function() {
 	bulletChartSvg.datum(randomize).transition().duration(1000).call(saleBulletChart);
 });
-/*
-for(radio in radios) {
-	alert("hallo");
-    radio.onclick = function() {
-        alert("hallo");
-        //toggleOptionPannel();
-    }
-}
-*/
+
+drawEarningByYearPieChart();
+drawGainLossPieChart();
+
+/****************************************** CHARTS ***************************************** 
+* Draw charts
+*
+*******************************************************************************************/
+
 function drawMapChart(data) {
 	var xf = crossfilter(data);
 	var groupname = "marker-select";
@@ -76,10 +97,10 @@ function drawProductBarChart(xfProductSaleData) {
 		.on("click",function(d) {console.log("Pressed");  })
 		.width(500)
 		.elasticX(true)
-		.xAxis().ticks(5);
+		//.controlsUseVisibility(true)
+		.xAxis().ticks(5)
+		;
 	dc.renderAll(groupname);
-
-
 
 	function AddXAxis(chartToUpdate, displayText, offsetY) {
 	chartToUpdate.svg()
@@ -178,16 +199,146 @@ function randomizer(d) {
 }
 
 
- function updateNumbers(d) {
+function updateNumbers(d) {
    var o = d3.selectAll("#opportunity .value");
    var c = d3.selectAll("#coverage .value");
-   var s = d3.selectAll("#status-graph .value");
+   //var s = d3.selectAll("#status-graph .value");
 
    o.text(d*5-5230);
    c.text(d/50 + "%");
-   s.text("pies("+d+")");
- }
+   //s.text("pies("+d+")");
+}
 
+function drawEarningByYearPieChart() {
+	var gainLossFile = "data/tables/GAIN_LOSS.csv";
+	var chart = dc.pieChart("#earning-by-year-chart");
+	d3.csv(gainLossFile, function(error, experiments) {
+	  var ndx           = crossfilter(experiments);
+	  var typeDimension  = ndx.dimension(function(d) {return d.Type ;})
+	  var yearDimension  = ndx.dimension(function(d) {return d.Year ;})
+	  var amountSumGroup = yearDimension
+							.group()
+							.reduceSum(function(d) {
+								if (d.Type =="gain") {
+									return d.Amount;
+								} else if (d.Type =="loss") {
+									return -d.Amount;
+								} else {
+									return 0;
+								}
+								});
+	  chart
+		  .width(100)
+		  .height(100)
+		  //.slicesCap(4)
+		  .innerRadius(10)
+		  .dimension(yearDimension)
+		  .group(amountSumGroup)
+		  .legend(dc.legend());
+	   chart.on('pretransition', function(chart) {
+		  chart.selectAll('.dc-legend-item text')
+			  .text('')
+			.append('tspan')
+			  .text(function(d) { return d.name; })
+			.append('tspan')
+			  .attr('x', 100)
+			  .attr('text-anchor', 'end')
+			  .text(function(d) { return d.data; });
+	  });
+	  chart.render();
+	});
+} 
+
+function drawGainLossPieChart() {
+	var gainLossFile = "data/tables/GAIN_LOSS.csv";
+	var chart = dc.pieChart("#gain-loss-chart");
+	d3.csv(gainLossFile, function(error, experiments) {
+	  var ndx           = crossfilter(experiments);
+	  var typeDimension  = ndx.dimension(function(d) {return d.Type ;})
+	  var amountSumGroup = typeDimension
+							.group()
+							.reduceSum(function(d) { return d.Amount});
+	  chart
+		  .width(100)
+		  .height(100)
+		  .slicesCap(2)
+		  .innerRadius(0)
+		  .dimension(typeDimension)
+		  .group(amountSumGroup)
+		  .legend(dc.legend());
+	   chart.on('pretransition', function(chart) {
+		  chart.selectAll('.dc-legend-item text')
+			  .text('')
+			.append('tspan')
+			  .text(function(d) { return d.name; })
+			.append('tspan')
+			  .attr('x', 100)
+			  .attr('text-anchor', 'end')
+			  .text(function(d) { return d.data; });
+	  });
+	  chart.render();
+	});
+} 
+
+function XXXXdrawYearPerformanceBarChart(xfProductSaleData) {
+	var productCol = 'Product_Grp';
+	var saleCol = 'Sales';
+	var yearCol = 'Year';
+
+	products = xfProductSaleData.dimension(function(d) {return d[productCol]});
+	productSales = products.group().reduceSum( function(d) {return d[saleCol]});
+	yearDim = xfProductSaleData.dimension(function(d) {return d["Year"]});
+	monthDim = xfProductSaleData.dimension(function(d) {return d["Month"]});
+	yearmonthDim = xfProductSaleData.dimension(function(d) {return d["Year"]-d["Month"]});
+	
+	var chart = dc.rowChart('#year-performance-chart',groupname);
+	chart.dimension(yearDim)
+		.group(products)
+		.on("click",function(d) {console.log("Pressed");  })
+		.width(500)
+		.elasticX(true)
+		//.controlsUseVisibility(true)
+		.xAxis().ticks(5)
+		;
+	dc.renderAll(groupname);
+}
+
+function drawYearPerformanceBarChart(xfProductSaleData) {
+
+	var productCol = 'Product_Grp';
+	var saleCol = 'Sales';
+	var yearCol = 'Year';
+	var monthCol = 'Month';
+	
+	products = xfProductSaleData.dimension(function(d) {return d[productCol]});
+	yearDim = xfProductSaleData.dimension(function(d) {return d.yearFmt});
+	monthDim = xfProductSaleData.dimension(function(d) {return d.monthFmt});
+
+	productSales = yearDim.group().reduceSum( function(d) {return d[saleCol]});
+var chart = dc.barChart('#year-performance-chart',groupname);
+	chart
+		 .height(200)
+		 .width(300)
+        .margins({top: 0, right: 50, bottom: 60, left: 60})
+        .dimension(monthDim)
+        .group(productSales)
+        .centerBar(true)
+        .gap(1)
+        .x(d3.time.scale().domain([new Date(2015, 0, 1), new Date(2016, 12, 31)]))
+        .round(d3.time.month.round)
+        .xUnits(d3.time.months);
+	 chart.renderlet(function (chart) {
+	   // rotate x-axis labels
+	   chart.selectAll('g.x text')
+		 .attr('transform', 'translate(-10,20) rotate(270)');
+		 });
+	dc.renderAll(groupname);
+}
+
+/****************************************** UI ***************************************** 
+* UI SECTION: Options, Class update, Drop list, ratio button, ect...
+*
+****************************************************************************************/
 // activeObjectName is "hospitality" or else (residential)
  function toggleOptionPannel() {
    //var containerObjectName = "filter-market-sector";
@@ -209,31 +360,50 @@ function randomizer(d) {
 
  //function to load UI
  function createUI() {
- var shapeData = ["Hospitality", "Residential"],
-  selectedId = "Hospitality";  // Choose the rectangle as default
+ 
+	// Options for Market Sector
+	var shapeData = ["Hospitality", "Residential"],
+	  selectedId = "Hospitality";  // Choose the rectangle as default
 
-// Create the shape selectors
-var form = d3.select("#market-sector").append("form");
-var labelEnter = form.selectAll("label")
-    .data(shapeData)
-    .enter().append("label");
-labelEnter.append("input")
-    .attr({
-        type: "radio",
-        class: "shape",
-        name: "marketSector",
-        value: function(d, i) {return d;}
-    })
-    .property("checked", function(d) {
-        return (d===selectedId);
-    })
-    .on("click",function(d){
-      //console.log("hey click"+ d);
-      toggleOptionPannel();
-    })
-	;
-labelEnter.append("label").text(function(d) {return d;});
-labelEnter.append("br");
-toggleOptionPannel();
+	// Create the shape selectors
+	var formMarketSector = d3.select("#market-sector").append("form");
+	var labelEnter = formMarketSector.selectAll("label")
+		.data(shapeData)
+		.enter().append("label");
+	labelEnter.append("input")
+		.attr({
+			type: "radio",
+			class: "shape",
+			name: "marketSector",
+			value: function(d, i) {return d;}
+		})
+		.property("checked", function(d) {
+			return (d===selectedId);
+		})
+		.on("click",function(d){
+		  //console.log("hey click"+ d);
+		  toggleOptionPannel();
+		})
+		;
+	labelEnter.append("label").text(function(d) {return d;});
+	labelEnter.append("br");
+	toggleOptionPannel();
 
+	var listRollingPeriod = ["Quarter","Year","2 Years"];
+	var dropDownRollingPeriod = d3.select("#rolling-period-filter").append("select")
+						.attr("name", "country-list");
+	var optionsRollingPeriod = dropDownRollingPeriod.selectAll("option")
+			   .data(listRollingPeriod)
+			 .enter()
+			   .append("option");	
+	optionsRollingPeriod.text(function (d) { 
+								return d; })
+		   .attr("value", function (d) { return d; });		   
+	dropDownRollingPeriod.on("change",dropDownRollingPeriodChanged);					
+
+	//Option for rolling period
+	function dropDownRollingPeriodChanged() {
+		var selectedValue = d3.event.target.value;  
+		console.log("dropDownRollingPeriodChanged" + "option selected = " + selectedValue);
+	}
 }
