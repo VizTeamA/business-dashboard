@@ -10,6 +10,8 @@ var productChart = dc.rowChart("#chart-top .product", groupname);
 var saleBulletChart = d3.bullet();
 
 
+var yearDim;
+
 /****************************************** GLOBAL VARS ***************************************** 
 * Main ()
 * As a controller to call other function() to load UI, add charts and Interaction 
@@ -33,9 +35,9 @@ d3.csv(inputSaleTrans, function(data) {
     //var numberFormat = d3.format('.2f');
     data.forEach(function (d) {
 		dumbDate = 01;
-        d.dd = dateFormat.parse(d.Year+ d.Month +dumbDate);
-        d.monthFmt = d3.time.month(d.dd); // pre-calculate month for better performance
-        d.yearFmt = d3.time.month(d.dd); // pre-calculate month for better performance
+        d.dateFull = dateFormat.parse(d.Year+ d.Month +dumbDate);
+        d.monthFmt = d3.time.month(d.dateFull); // pre-calculate month for better performance
+        d.yearFmt = d3.time.year(d.dateFull); // pre-calculate year for better performance
         //d.close = +d.close; // coerce to number
        // d.open = +d.open;
     });
@@ -87,7 +89,7 @@ function drawProductBarChart(xfProductSaleData) {
 
 	products = xfProductSaleData.dimension(function(d) {return d[productCol]});
 	productSales = products.group().reduceSum( function(d) {return d[saleCol]});
-	yearDim = xfProductSaleData.dimension(function(d) {return d["Year"]});
+	yearDim = xfProductSaleData.dimension(function(d) {return d[yearCol]});
 
 	productChart
 		.dimension(products)
@@ -174,10 +176,9 @@ function drawSaleBulletChart (datacf) {
 		alert(d.title);
 		});
 
-	  d3.selectAll("button").on("click", function() {
+	  d3.selectAll("#button-control button#rand-bullet-chart").on("click", function() {
 		bulletChartSvg.datum(randomize).transition().duration(1000).call(saleBulletChart);
 	  });
-
 	});
 }
 
@@ -278,29 +279,6 @@ function drawGainLossPieChart() {
 	});
 } 
 
-function XXXXdrawYearPerformanceBarChart(xfProductSaleData) {
-	var productCol = 'Product_Grp';
-	var saleCol = 'Sales';
-	var yearCol = 'Year';
-
-	products = xfProductSaleData.dimension(function(d) {return d[productCol]});
-	productSales = products.group().reduceSum( function(d) {return d[saleCol]});
-	yearDim = xfProductSaleData.dimension(function(d) {return d["Year"]});
-	monthDim = xfProductSaleData.dimension(function(d) {return d["Month"]});
-	yearmonthDim = xfProductSaleData.dimension(function(d) {return d["Year"]-d["Month"]});
-	
-	var chart = dc.rowChart('#year-performance-chart',groupname);
-	chart.dimension(yearDim)
-		.group(products)
-		.on("click",function(d) {console.log("Pressed");  })
-		.width(500)
-		.elasticX(true)
-		//.controlsUseVisibility(true)
-		.xAxis().ticks(5)
-		;
-	dc.renderAll(groupname);
-}
-
 function drawYearPerformanceBarChart(xfProductSaleData) {
 
 	var productCol = 'Product_Grp';
@@ -309,20 +287,32 @@ function drawYearPerformanceBarChart(xfProductSaleData) {
 	var monthCol = 'Month';
 	
 	products = xfProductSaleData.dimension(function(d) {return d[productCol]});
-	yearDim = xfProductSaleData.dimension(function(d) {return d.yearFmt});
-	monthDim = xfProductSaleData.dimension(function(d) {return d.monthFmt});
+	yearFmtDim = xfProductSaleData.dimension(function(d) {return d.yearFmt});
+	monthFmtDim = xfProductSaleData.dimension(function(d) {return d.monthFmt});
+	dateMonthYearFmtDim = xfProductSaleData.dimension(function(d) {return d.dateFull});
+	productSalesByMonth = monthFmtDim.group().reduceSum( function(d) {return d[saleCol]});
+	productSalesByYear = yearFmtDim.group().reduceSum( function(d) {return d[saleCol]});
+	
+	var chart = dc.barChart('#year-performance-chart',groupname);
 
-	productSales = yearDim.group().reduceSum( function(d) {return d[saleCol]});
-var chart = dc.barChart('#year-performance-chart',groupname);
+	var strmDateAccessor = function (d){return d.dateFull;};
+	strmDateExtent = [];
+	strmDateExtent = d3.extent(products.top(Infinity), strmDateAccessor);
+	minDate = strmDateExtent[0];
+	maxDate = strmDateExtent[1];
+	
 	chart
 		 .height(200)
 		 .width(300)
         .margins({top: 0, right: 50, bottom: 60, left: 60})
-        .dimension(monthDim)
-        .group(productSales)
+        .dimension(monthFmtDim)
+        .group(productSalesByMonth)
         .centerBar(true)
         .gap(1)
-        .x(d3.time.scale().domain([new Date(2015, 0, 1), new Date(2016, 12, 31)]))
+        //.x(d3.time.scale().domain([new Date(2015, 0, 1), new Date(2016, 12, 31)]))
+        .x(d3.time.scale().domain([minDate,maxDate]))
+		.elasticY(true)
+		.elasticX(true)
         .round(d3.time.month.round)
         .xUnits(d3.time.months);
 	 chart.renderlet(function (chart) {
@@ -358,6 +348,11 @@ var chart = dc.barChart('#year-performance-chart',groupname);
 
  //function to load UI
  function createUI() {
+	// Add reset Button
+	d3.selectAll("#button-control button#reset-chart").on("click", function() {
+		yearDim.filter(null);
+		dc.renderAll(groupname);
+	});
  
 	// Options for Market Sector
 	var shapeData = ["Hospitality", "Residential"],
