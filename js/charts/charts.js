@@ -1,26 +1,26 @@
-/****************************************** GLOBAL VARS ***************************************** 
+/****************************************** GLOBAL VARS *****************************************
 * Global Variable Declarations
 * Avoid using Global Vars as much as we can ok.
 *************************************************************************************************/
 /*     Markers      */
 var groupname = "marker-select2";
 var inputFile2 = 'data/tables/hotelsg-sales.csv';
-var inputSaleTrans = 'data/tables/SALES_TRANS.csv';
+var inputSaleTrans = 'data/tables/SALES_TRANS_v1.0.csv';
 var productChart = dc.rowChart("#chart-top .product", groupname);
 var saleBulletChart = d3.bullet();
 
 
 var yearDim;
 
-/****************************************** GLOBAL VARS ***************************************** 
+/****************************************** GLOBAL VARS *****************************************
 * Main ()
-* As a controller to call other function() to load UI, add charts and Interaction 
+* As a controller to call other function() to load UI, add charts and Interaction
 *************************************************************************************************/
 
 //Create UI
 createUI()
 
-// Data input 
+// Data input
 var targetDataJson = [
   {"Year":"2012","ranges":[150,225,300],"measures":[220,270],"markers":[250]},
   {"Year":"2013","ranges":[150,225,300],"measures":[220,230],"markers":[240]},
@@ -42,7 +42,7 @@ d3.csv(inputSaleTrans, function(data) {
        // d.open = +d.open;
     });
   xfProductSaleData = crossfilter(data);
-  
+
   drawProductBarChart(xfProductSaleData);
   drawSaleBulletChart(xfProductSaleData);
   drawYearPerformanceBarChart(xfProductSaleData);
@@ -60,7 +60,7 @@ d3.selectAll("market-sector").on("click", function() {
 drawEarningByYearPieChart();
 drawGainLossPieChart();
 
-/****************************************** CHARTS ***************************************** 
+/****************************************** CHARTS *****************************************
 * Draw charts
 *
 *******************************************************************************************/
@@ -246,7 +246,7 @@ function drawEarningByYearPieChart() {
 	  });
 	  chart.render();
 	});
-} 
+}
 
 function drawGainLossPieChart() {
 	var gainLossFile = "data/tables/GAIN_LOSS.csv";
@@ -277,7 +277,7 @@ function drawGainLossPieChart() {
 	  });
 	  chart.render();
 	});
-} 
+}
 
 function drawYearPerformanceBarChart(xfProductSaleData) {
 
@@ -285,14 +285,14 @@ function drawYearPerformanceBarChart(xfProductSaleData) {
 	var saleCol = 'Sales';
 	var yearCol = 'Year';
 	var monthCol = 'Month';
-	
+
 	products = xfProductSaleData.dimension(function(d) {return d[productCol]});
 	yearFmtDim = xfProductSaleData.dimension(function(d) {return d.yearFmt});
 	monthFmtDim = xfProductSaleData.dimension(function(d) {return d.monthFmt});
 	dateMonthYearFmtDim = xfProductSaleData.dimension(function(d) {return d.dateFull});
 	productSalesByMonth = monthFmtDim.group().reduceSum( function(d) {return d[saleCol]});
 	productSalesByYear = yearFmtDim.group().reduceSum( function(d) {return d[saleCol]});
-	
+
 	var chart = dc.barChart('#year-performance-chart',groupname);
 
 	var strmDateAccessor = function (d){return d.dateFull;};
@@ -300,7 +300,7 @@ function drawYearPerformanceBarChart(xfProductSaleData) {
 	strmDateExtent = d3.extent(products.top(Infinity), strmDateAccessor);
 	minDate = strmDateExtent[0];
 	maxDate = strmDateExtent[1];
-	
+
 	chart
 		 .height(200)
 		 .width(300)
@@ -323,7 +323,7 @@ function drawYearPerformanceBarChart(xfProductSaleData) {
 	dc.renderAll(groupname);
 }
 
-/****************************************** UI ***************************************** 
+/****************************************** UI *****************************************
 * UI SECTION: Options, Class update, Drop list, ratio button, ect...
 *
 ****************************************************************************************/
@@ -353,7 +353,7 @@ function drawYearPerformanceBarChart(xfProductSaleData) {
 		yearDim.filter(null);
 		dc.renderAll(groupname);
 	});
- 
+
 	// Options for Market Sector
 	var shapeData = ["Hospitality", "Residential"],
 	  selectedId = "Hospitality";  // Choose the rectangle as default
@@ -388,15 +388,15 @@ function drawYearPerformanceBarChart(xfProductSaleData) {
 	var optionsRollingPeriod = dropDownRollingPeriod.selectAll("option")
 			   .data(listRollingPeriod)
 			 .enter()
-			   .append("option");	
-	optionsRollingPeriod.text(function (d) { 
+			   .append("option");
+	optionsRollingPeriod.text(function (d) {
 								return d; })
-		   .attr("value", function (d) { return d; });		   
-	dropDownRollingPeriod.on("change",dropDownRollingPeriodChanged);					
+		   .attr("value", function (d) { return d; });
+	dropDownRollingPeriod.on("change",dropDownRollingPeriodChanged);
 
 	//Option for rolling period
 	function dropDownRollingPeriodChanged() {
-		var selectedValue = d3.event.target.value;  
+		var selectedValue = d3.event.target.value;
 		console.log("dropDownRollingPeriodChanged" + "option selected = " + selectedValue);
 	}
 }
