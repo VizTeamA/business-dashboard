@@ -9,17 +9,15 @@ var inputSaleTrans = 'data/tables/SALES_TRANS_v1.0.csv';
 var productChart = dc.rowChart("#sales-product-chart", groupname);
 var saleBulletChart = d3.bullet();
 
-
 var yearDim;
 
-/****************************************** GLOBAL VARS *****************************************
+/****************************************** MAIN ************************************************
 * Main ()
 * As a controller to call other function() to load UI, add charts and Interaction
 *************************************************************************************************/
 
 //Create UI
 createUI()
-
 
 d3.csv(inputSaleTrans, function(data) {
 	// Since its a csv file we need to format the data a bit.
@@ -115,7 +113,7 @@ function updateProductChart(year) {
 }
 
 function drawSaleBulletChart (datacf) {
-	var margin = {top: 5, right: 5, bottom: 50, left: 60},
+	var margin = {top: 5, right: 5, bottom: 40, left: 40},
 	  width = 80 - margin.left - margin.right,
 	  height = 180 - margin.top - margin.bottom;
 
@@ -134,13 +132,13 @@ function drawSaleBulletChart (datacf) {
     {"Year":"2016","ranges":[20000000,24000000,28000000],"measures":[20157650,24157650],"markers":[24157650]}
 	  ];
     var targetDataJson = [
-    {"Year":"2011","ranges":[10000.000,12500.000,15000.000],"measures":[11000.000,15000.000],"markers":[15000.000]},
-    {"Year":"2012","ranges":[16000.000,18000.000,20000.000],"measures":[18500.000,18500.000],"markers":[16500.000]},
-    {"Year":"2013","ranges":[16000.000,18000.000,20000.000],"measures":[19150.000,19150.000],"markers":[18150.000]},
-    {"Year":"2014","ranges":[16000.000,18000.000,20000.000],"measures":[16965.000,19965.000],"markers":[19965.000]},
-    {"Year":"2015","ranges":[18000.000,21000.000,28000.000],"measures":[25961.502,25961.502],"markers":[21961.502]},
-    {"Year":"2016","ranges":[20000.000,24000.000,28000.000],"measures":[20157.650,24157.650],"markers":[24157.650]}
-    ];
+    {"Year":"2011","ranges":[10.000000,12.500000,30.000000],"measures":[11.000000,15.000000],"markers":[15.000000]},
+		{"Year":"2012","ranges":[16.000000,18.000000,30.000000],"measures":[18.500000,18.500000],"markers":[16.500000]},
+		{"Year":"2013","ranges":[16.000000,18.000000,30.000000],"measures":[19.150000,19.150000],"markers":[18.150000]},
+		{"Year":"2014","ranges":[16.000000,18.000000,30.000000],"measures":[16.965000,19.965000],"markers":[19.965000]},
+		{"Year":"2015","ranges":[18.000000,21.000000,30.000000],"measures":[25.961502,25.961502],"markers":[21.961502]},
+    {"Year":"2016","ranges":[20.000000,24.000000,30.000000],"measures":[20.157650,24.157650],"markers":[24.157650]}
+	  ];
 
 	  var datacf       	= crossfilter(targetDataJson),
 		  titleDimension 	= datacf.dimension(function(d) {return d.Year;}),
@@ -150,6 +148,7 @@ function drawSaleBulletChart (datacf) {
 		  }};
 
 	  data = titleDimension.bottom(Infinity);
+    lastYear = titleDimension.top(1)[0].Year;
 
 	  bulletChartSvg = d3.select("#sales-year-chart").selectAll("svg")
 		.data(data)
@@ -171,10 +170,18 @@ function drawSaleBulletChart (datacf) {
 
 	  title.append("text")
 		.attr("class", "title")
-		.text(function(d) { return d.Year; })
+		.text(function(d) {
+      var retYear;
+      if (d.Year == lastYear) {
+        retYear = d.Year + " (YTD)";
+      } else {
+        retYear = d.Year;
+      }
+      return retYear })
 		.on("click", function(d) {
-		alert(d.title);
-		});
+		    //alert(d.Year);
+		})
+    ;
 
 	  d3.selectAll("#button-control button#rand-bullet-chart").on("click", function() {
 		bulletChartSvg.datum(randomize).transition().duration(1000).call(saleBulletChart);
@@ -407,8 +414,6 @@ function drawYearPerformanceBarChart(xfProductSaleData) {
           //console.log("-" + toggleSection + ">>" + "section-hide");
       });
 
-
-
     d3.selectAll("#sale-by-product-header")
       .append("text")
       .text(" [show] ")
@@ -424,24 +429,14 @@ function drawYearPerformanceBarChart(xfProductSaleData) {
           //console.log("-" + toggleSection + ">>" + "section-hide");
       });
 
-
-
-
-
-
-
-
-
-
     // Add reset Button
     d3.selectAll("#button-control button#reset-chart").on("click", function() {
       yearDim.filter(null);
       dc.renderAll(groupname);
+      //reset the color of selected sale performance
+      d3.selectAll(".measure-active.s0").attr("class","measure s0");
+      d3.selectAll(".measure-active.s1").attr("class","measure s1");
     });
-
-
-
-
 
 	// Options for Market Sector
 	var shapeData = ["Hospitality", "Residential"],

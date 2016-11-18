@@ -1,5 +1,5 @@
 #container {
-  width:1200px;
+  width:1800px;
   margin:20px auto;
   font-family: 'Roboto', sans-serif;
   padding-left:5%;
@@ -38,20 +38,33 @@ h4 {
 }
 
 .section-hide {
-  display: none;
+  display: hide;
 }
 
 .chart-title {
   font-weight: 100;
   font-size: 20px;
   color:grey;
+  padding:10px;
 }
+
+.subtitle {
+  font-weight: 100;
+  font-size: 12px;
+  color:grey;
+}
+
+.chart-container {
+  padding:5px;
+  float: left;
+}
+
 #text-info .text-box{
-	float:left;
+	/*float:left;*/
 	background:#ededed;
 	margin:0 0 5px 5px;
 	padding:5px;
-	min-height:120px;
+	min-height:60px;
 }
 #text-info .header{
   font-size: 15px;

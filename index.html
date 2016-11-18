@@ -18,11 +18,14 @@
 	<h2>Sales in Singapore</h2>
 	<h4>Updated version: 18.NOV.2016 3:29AM </h4>
 	<h3 style="clear:both;" id="overview-header" >Overview</h3>
-	<div id="overview" >
-		<div id="sales-year-chart"  style = "float:left">
-				<div class = "chart-title">Sale Targets (K)</div>
+	<div id="overview">
+		<div id="sales-year-chart"  class="chart-container">
+				<div class = "chart-title">
+					<span>Sale performance</span>
+					<span class="subtitle">(in Millions)</span>
+				</div>
 		</div>
-		<div id="text-info" style = "float:left">
+		<div id="text-info" class="chart-container">
 			<div class = "chart-title">Performance Indices</div>
 			<div id = "opportunity" class = "text-box">
 				<div class="header">OPPORTUNITIES</div>
@@ -32,30 +35,18 @@
 				<div class="header">COVERAGE %</div>
 				<div class="value">20%</div>
 			</div>
-			<div id = "status-graph" class = "text-box">
-				<div class="header">PIE CHART</div>
-				<div class="value">
-					<div id="earning-by-year-chart"></div>
-				</div>
-			</div>
-			<div id = "range-bar" class = "text-box">
-				<div class="header">SLIDER</div>
-				<div class="value">
-					<input type="range" />
-				</div>
-			</div>
 		</div>
 	</div>
 	<h3 style="clear:both;" id="sale-by-product-header">Sales by Product</h3>
 	<div id="sale-by-product">
 		<div class = "chart-title">Sales by Month</div>
-		<div id="year-performance-chart"></div>
+		<div id="year-performance-chart" class="chart-container"></div>
 		<div class = "chart-title">Sales by Product</div>
-		<div id="sales-product-chart"  style = "float:left"></div>
+		<div id="sales-product-chart"  class="chart-container"></div>
 	</div>
 	<div id="button-control" style="padding:0; margin:0;">
-		<button id="rand-bullet-chart">Rand() Bullet Chart</button>
-		<button id="reset-chart">Reset Year</button>
+		<button id="rand-bullet-chart" class="chart-container">Rand() Bullet Chart</button>
+		<button id="reset-chart" class="chart-container">Reset Year</button>
 	</div>
 	<h3 style="clear:both;" id="detail-analysis-header">Detail Analysis</h3>
 	<div id="detail-analysis">
@@ -90,7 +81,7 @@
 <script type="text/javascript" src="js/lib/leaflet.js"></script>
 <script type="text/javascript" src="js/lib/leaflet.markercluster.js"></script>
 <script type="text/javascript" src="js/lib/dc.leaflet.js"></script>
-<script type="text/javascript" src="js/lib/bullet.js"></script>
+<script type="text/javascript" src="js/lib/bulletTooltips.js"></script>
 
 <script type="text/javascript" src="js/charts/charts.js"></script>
 

@@ -1,4 +1,4 @@
-/****** BULLET CHART ******/
+
 .bullet { font: 10px sans-serif; }
 .bullet .marker { stroke: #000; stroke-width: 2px; }
 .bullet .tick line { stroke: #666; stroke-width: .5px;}
@@ -8,16 +8,9 @@
 .bullet .range.s2 { fill: #ccc; }
 .bullet .measure.s0 { fill: lightsteelblue; }
 .bullet .measure.s1 { fill: steelblue; }
-.bullet .measure-inactive.s0 { fill: lightsteelblue; }
-.bullet .measure-inactive.s1 { fill: steelblue; }
+.bullet .measure-active.s0 { fill: #def; }
+.bullet .measure-active.s1 { fill: #38f; }
 .bullet .title { font-size: 10px; font-weight: bold; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
 .bullet .subtitle { fill: #999; }
 
-.bullet .axis line, .bullet .axis path { opacity: 0.5; }
-
-/****** BAR CHART ******/
-#year-performance-chart--mzxxxxx .x.axis text {
-    text-anchor: end !important;
-	padding: 10px;
-    transform: rotate(-90deg);
-}
+.bullet .axis line, .bullet .axis path { opacity: 0.5;fill:none;}
