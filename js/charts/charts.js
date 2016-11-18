@@ -115,7 +115,7 @@ function updateProductChart(year) {
 }
 
 function drawSaleBulletChart (datacf) {
-	var margin = {top: 5, right: 5, bottom: 50, left: 30},
+	var margin = {top: 5, right: 5, bottom: 50, left: 60},
 	  width = 80 - margin.left - margin.right,
 	  height = 180 - margin.top - margin.bottom;
 
@@ -125,13 +125,13 @@ function drawSaleBulletChart (datacf) {
 	  .width(width)
 	  .height(height);
 
-
     var targetDataJson = [
-		{"Year":"2016","ranges":[150,225,300],"measures":[220,270],"markers":[250]},
-		{"Year":"2015","ranges":[150,225,300],"measures":[220,230],"markers":[240]},
-		{"Year":"2014","ranges":[150,225,300],"measures":[210,230],"markers":[260]},
-		{"Year":"2013","ranges":[150,225,300],"measures":[200,210],"markers":[230]},
-		{"Year":"2012","ranges":[150,225,300],"measures":[220,260],"markers":[290]},
+		{"Year":"2011","ranges":[10000000,12500000,15000000],"measures":[11000000,15000000],"markers":[15000000]},
+		{"Year":"2012","ranges":[16000000,18000000,20000000],"measures":[18500000,18500000],"markers":[16500000]},
+		{"Year":"2013","ranges":[16000000,18000000,20000000],"measures":[19150000,19150000],"markers":[18150000]},
+		{"Year":"2014","ranges":[16000000,18000000,20000000],"measures":[16965000,19965000],"markers":[19965000]},
+		{"Year":"2015","ranges":[18000000,21000000,28000000],"measures":[25961502,25961502],"markers":[21961502]},
+    {"Year":"2016","ranges":[20000000,24000000,28000000],"measures":[20157650,24157650],"markers":[24157650]}
 	  ];
 
 	  var datacf       	= crossfilter(targetDataJson),
