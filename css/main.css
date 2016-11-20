@@ -2,7 +2,14 @@
 
 table {
  width: 100%;
- font-family: 'Roboto', sans-serif;
+}
+
+th {
+    font-family: 'Roboto', sans-serif;
+    padding: 15px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
 }
 
 /*End Here --> Added in by Han Ying */
