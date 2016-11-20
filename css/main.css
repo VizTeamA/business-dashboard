@@ -1,14 +1,14 @@
 /*Start Here --> Added in by Han Ying */
 
 table, tr, th {
- width:100%;
+ width: 100%;
  font-family: 'Roboto', sans-serif;
 }
 
 /*End Here --> Added in by Han Ying */
 
 #container {
-  width:100px;
+  width:1800px;
   margin:20px auto;
   font-family: 'Roboto', sans-serif;
   padding-left:5%;
