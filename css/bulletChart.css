@@ -6,7 +6,7 @@
 .bullet .range.s0 { fill: #eee; }
 .bullet .range.s1 { fill: #ddd; }
 .bullet .range.s2 { fill: #ccc; }
-.bullet .measure.s0 { fill: steelblue; }
+.bullet .measure.s0 { fill: red; }
 .bullet .measure.s1 { fill: black; }
 .bullet .measure-active.s0 { fill: #def; }
 .bullet .measure-active.s1 { fill: #38f; }
