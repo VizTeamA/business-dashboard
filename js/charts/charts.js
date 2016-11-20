@@ -448,8 +448,8 @@ function toggleOptionPannel() {
 //function to load UI
 function createUI() {
     // Add section //HY: Added in 2 more additional headers
-    var headerNames = ["#Description-header","#MarketSector-header", "#overview-header", "#detail-analysis-header", "#sales-by-product-header"];
-    var toggleSections = ["#Description", "#MarketSector", "#overview", "#detail-analysis", "#sales-by-product"];
+    var headerNames = ["#description-header","#marketsector-header", "#overview-header", "#detail-analysis-header", "#sales-by-product-header"];
+    var toggleSections = ["#description", "#marketsector", "#overview", "#detail-analysis", "#sales-by-product"];
     var classNameVisible = "section";
     var classNameHide = "section-hide";
     /*
@@ -477,21 +477,21 @@ function createUI() {
 */
 //Start here: HY: Added in 2 more sections
 
-	d3.selectAll("#Description-header").append("text").text(" [show] ").on("click", function() {
-        d3.selectAll("#Description").attr("class", "section");
+	d3.selectAll("#description-header").append("text").text(" [show] ").on("click", function() {
+        d3.selectAll("#description").attr("class", "section");
         //console.log("+" + toggleSection + ">>" + "section");
     });
-	d3.selectAll("#Description-header").append("text").text(" [hide] ").on("click", function() {
-        d3.selectAll("#Description").attr("class", "section-hide");
+	d3.selectAll("#description-header").append("text").text(" [hide] ").on("click", function() {
+        d3.selectAll("#description").attr("class", "section-hide");
         //console.log("+" + toggleSection + ">>" + "section");
     });
 	
-	d3.selectAll("#MarketSector-header").append("text").text(" [show] ").on("click", function() {
-        d3.selectAll("#MarketSector").attr("class", "section");
+	d3.selectAll("#marketsector-header").append("text").text(" [show] ").on("click", function() {
+        d3.selectAll("#marketsector").attr("class", "section");
         //console.log("+" + toggleSection + ">>" + "section");
 
-	d3.selectAll("#MarketSector-header").append("text").text(" [hide] ").on("click", function() {
-        d3.selectAll("#MarketSector").attr("class", "section-hide");
+	d3.selectAll("#marketSector-header").append("text").text(" [hide] ").on("click", function() {
+        d3.selectAll("#marketSector").attr("class", "section-hide");
         //console.log("+" + toggleSection + ">>" + "section");
 	
 //End here: HY: Added in 2 more sections
