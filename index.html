@@ -16,12 +16,24 @@
 <!--Start Here: Added by HY: to create the header to link to the wiki page. Attempted to do it in CSS page, doesnt work -->     
 
 <style>
-table, th {
+table.table1, th {
     width: 10%;
     border-radius:5px
 }
+    
+table.table2, th {
+    width: 50%;
+}
+    
+table.table2 th {
+    font size: 3px;
+    font-weight: 300;
+    font-family:sans-serif;
+    text-align: center;
+    color: black;
+}  
 
-th {
+table.table1 th {
     font size: 3px;
     font-weight: 300;
     font-family:sans-serif;
@@ -39,7 +51,7 @@ a {
     color: White;
 }
 
-th:hover, th:active {
+table.table1 th:hover, th:active {
     background-color: #668D3C;
 }
     
@@ -57,15 +69,17 @@ a:hover, a:active {
 <!--Start Here: Added by HY: to create the header to link to the wiki page --> 
             
 <!-- Add in project logo-->   
-
-<h2><img src="https://raw.githubusercontent.com/VizTeamA/business-dashboard/master/data/800px-TeamA_lg.png" 
-         alt="Project A Logo" style="width:80px;height:60px;"> 
-    
-    Project A - The Non-Conventional Sales Dashboard for Company A </h2>
+            
+                <table class = "table2">
+                    <tr>
+                    <th><img src="https://raw.githubusercontent.com/VizTeamA/business-dashboard/master/data/800px-TeamA_lg.png" 
+                                 alt="Project A Logo" style="width:80px;height:60px;"> </th>
+                    <th>Project A - The Non-Conventional Sales Dashboard for Company A</th>
+                </table>
             
             <div id="App_Header">
                 <!--Add in Header to contain the web links--> 
-                <table style="width:100%">
+                <table class = "table1">
                     <tr> 
                     <th><a href="https://wiki.smu.edu.sg/1617t1ISSS608g1/ISSS608_2016-17_T1_Project_Team_11">About</a></th>
                     <th><a href="https://wiki.smu.edu.sg/1617t1ISSS608g1/ISSS608_2016-17_T1_Project_Team_11_-_Project_Proposal">
