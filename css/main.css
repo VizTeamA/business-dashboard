@@ -1,6 +1,6 @@
 /*Start Here --> Added in by Han Ying */
 
-table, tr, th {
+table {
  width: 100%;
  font-family: 'Roboto', sans-serif;
 }
@@ -13,7 +13,9 @@ table, tr, th {
   font-family: 'Roboto', sans-serif;
   padding-left:5%;
 }
-#container>div {
+#container>
+
+div {
   /*padding:30px 0;*/
   clear:both;
 }
