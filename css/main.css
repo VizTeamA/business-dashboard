@@ -20,6 +20,7 @@ div {
 }
 
 h3 {
+  float: left;	
   font-weight: 300;
   font-size: 15px;
 }
