@@ -16,12 +16,11 @@
 <!--Start Here: Added by HY: to create the header to link to the wiki page. Attempted to do it in CSS page, doesnt work -->     
 
 <style>
-table {
-    border-radius:5px;
-          width = 100%;
-    }
-       
-table.table1 th {
+table, th {
+    width: 10%;
+    border-radius:5px
+}
+th {
     font size: 3px;
     font-weight: 300;
     font-family:sans-serif;
@@ -29,7 +28,6 @@ table.table1 th {
     background-color: #B1DDA1;
     color: White;
 }
-    
 a {
     font size: 3px;
     font-weight: 300;
@@ -38,8 +36,7 @@ a {
     text-decoration: none;
     color: White;
 }
-
-table.table1 th:hover, th:active {
+th:hover, th:active {
     background-color: #668D3C;
 }
     
@@ -54,31 +51,35 @@ a:hover, a:active {
      
         <body>
             
-        <div id="Header1">
-        <!--Start Here: Added by HY: to create the header to link to the wiki page --> 
+<!--Start Here: Added by HY: to create the header to link to the wiki page --> 
             
-        <!-- Add in project logo-->   
-        <h3><img src="https://raw.githubusercontent.com/VizTeamA/business-dashboard/master/data/800px-TeamA_lg.png" 
-                                 alt="Project A Logo" style="width:80px;height:60px;">
-        <b><center>Project A - The Non-Conventional Sales Dashboard for Company A</center></b><h3>
-
-        <!--Add in Header to contain the web links--> 
-                <table style = "width:100%">
+            <!-- Add in project logo-->   
+            <img src="https://raw.githubusercontent.com/VizTeamA/business-dashboard/master/data/800px-TeamA_lg.png" 
+                 alt="Project A Logo" style="width:80px;height:60px;">
+            
+            <div id="App_Header">
+                <!--Add in Header to contain the web links--> 
+                <table style="width:100%">
                     <tr> 
-                    <th><a href="https://wiki.smu.edu.sg/1617t1ISSS608g1/ISSS608_2016-17_T1_Project_Team_11">About</a></th>
+                    <th><a href="https://wiki.smu.edu.sg/1617t1ISSS608g1/ISSS608_2016-17_T1_Project_Team_11">About</a></th>
                     <th><a href="https://wiki.smu.edu.sg/1617t1ISSS608g1/ISSS608_2016-17_T1_Project_Team_11_-_Project_Proposal">
                         Proposal</a></th>
-                    <th>Poster</th>
+                    <th>Poster</th>
                     <th><a href="https://rawgit.com/VizTeamA/business-dashboard/master/index.html">Application</a></th>                        
-                    <th>Report</th>
+                    <th>Report</th>
                     <th>Blog</th>
-                    </tr>
+                    </tr>
                 </table>
-        <!--End Here: Added by HY: to create the header to link to the wiki page -->
+                
+            </div>
+            
+<!--End Here: Added by HY: to create the header to link to the wiki page --> 
 
             <div id="container">
-                <h4>Updated version: 20.NOV.2016 2:35PM </h4>
-                <h3 style="clear:both;" id="-header">Overview</h3>
+                <h2>Project A - The Non-Conventional Sales Dashboard for Company A </h2>
+                <h4>Updated version: 20.NOV.2016 1:10PM </h4>
+                <h3 style="clear:both;" id="
+                                            -header">Overview</h3>
                 <div id="overview">
                     <div class="chart-cart">
                         <div id="sales-year-chart" class="chart-container">
@@ -157,13 +158,10 @@ a:hover, a:active {
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
   ga('create', 'UA-87174444-1', 'auto');
   ga('send', 'pageview');
 </script>
 -->
         </body>
-        
-            
 
 </html>
