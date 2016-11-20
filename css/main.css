@@ -1,19 +1,3 @@
-/*Start Here --> Added in by Han Ying */
-
-table, th {
- width: 100%;
-}
-
-th {
-    font-family: 'Roboto', sans-serif;
-    padding: 15px;
-    text-align: center;
-    background-color: #4CAF50;
-    color: white;
-}
-
-/*End Here --> Added in by Han Ying */
-
 #container {
   width:1800px;
   margin:20px auto;
