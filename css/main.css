@@ -37,10 +37,12 @@ h4 {
 }
 
 .section {
+ font-weight: 100;
 
 }
 
 .section-hide {
+  font-weight: 100;
   display: none;
 }
 
