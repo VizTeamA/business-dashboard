@@ -447,9 +447,9 @@ function toggleOptionPannel() {
 
 //function to load UI
 function createUI() {
-    // Add section
-    var headerNames = ["#overview-header", "#detail-analysis-header", "#sales-by-product-header"];
-    var toggleSections = ["#overview", "#detail-analysis", "#sales-by-product"];
+    // Add section //HY: Added in 2 more additional headers
+    var headerNames = ["#Description-header","#MarketSector-header", "#overview-header", "#detail-analysis-header", "#sales-by-product-header"];
+    var toggleSections = ["#Description", "#MarketSector", "#overview", "#detail-analysis", "#sales-by-product"];
     var classNameVisible = "section";
     var classNameHide = "section-hide";
     /*
@@ -475,7 +475,27 @@ function createUI() {
     }
 
 */
+//Start here: HY: Added in 2 more sections
 
+	d3.selectAll("#Description-header").append("text").text(" [show] ").on("click", function() {
+        d3.selectAll("#Description").attr("class", "section");
+        //console.log("+" + toggleSection + ">>" + "section");
+    });
+	d3.selectAll("#Description-header").append("text").text(" [hide] ").on("click", function() {
+        d3.selectAll("#Description").attr("class", "section-hide");
+        //console.log("+" + toggleSection + ">>" + "section");
+    });
+	
+	d3.selectAll("#MarketSector-header").append("text").text(" [show] ").on("click", function() {
+        d3.selectAll("#MarketSector").attr("class", "section");
+        //console.log("+" + toggleSection + ">>" + "section");
+
+	d3.selectAll("#MarketSector-header").append("text").text(" [hide] ").on("click", function() {
+        d3.selectAll("#MarketSector").attr("class", "section-hide");
+        //console.log("+" + toggleSection + ">>" + "section");
+	
+//End here: HY: Added in 2 more sections
+	
     d3.selectAll("#overview-header").append("text").text(" [show] ").on("click", function() {
         d3.selectAll("#overview").attr("class", "section");
         //console.log("+" + toggleSection + ">>" + "section");
