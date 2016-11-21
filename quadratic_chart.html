@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>dc.js - US Venture Capital Landscape 2011</title>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="./js/lib/dc.css"/>
+</head>
+<body>
+
+<div class="container">
+    <div id="quadratic-bubble-chart">
+        <a class="reset" href="javascript:industryChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+<script type="text/javascript" src="./js/lib/d3.js"></script>
+<script type="text/javascript" src="./js/lib/crossfilter.js"></script>
+<script type="text/javascript" src="./js/lib/dc-1.7.0.js"></script>
+<script type="text/javascript">
+    var numberFormat = d3.format(".2f");
+    var industryChart = dc.bubbleChart("#quadratic-bubble-chart");
+    var inputFile = "./data/tables/SALES_TRANS_v1.0.csv"
+    d3.csv(inputFile, function (csv) {
+        var xfProductSaleData = crossfilter(csv);
+
+        var states = xfProductSaleData.dimension(function (d) {
+            return d["Month"];
+        });
+        var stateRaisedSum = states.group().reduceSum(function (d) {
+            return d["Sales"];
+        });
+
+        var hotelDim = xfProductSaleData.dimension(function (d) {
+            return d["Hotel"];
+        });
+        var salesByHotel = hotelDim.group().reduce(
+                function (p, v) {
+                    p.Sales += +v["Sales"];
+                    p.Growth += +v["Growth"];
+                    return p;
+                },
+                function (p, v) {
+                    p.Sales -= +v["Sales"];
+                    //if (p.Sales < 0.001) p.Sales = 0; // do some clean up
+                    p.Growth -= +v["Growth"];
+                    return p;
+                },
+                function () {
+                    return {Sales: 0, Growth: 0}
+                }
+        );
+
+            industryChart.width(990)
+                    .height(200)
+                    .margins({top: 10, right: 50, bottom: 30, left: 60})
+                    .dimension(hotelDim)
+                    .group(salesByHotel)
+                    .colors(d3.scale.category10())
+                    .keyAccessor(function (p) {
+                        return p.value.Sales;
+                    })
+                    .valueAccessor(function (p) {
+                        return p.value.Growth;
+                    })
+                    .radiusValueAccessor(function (p) {
+                        return p.value.Sales;
+                    })
+                    .x(d3.scale.linear().domain([0, 3000000]))
+                    .r(d3.scale.linear().domain([0, 5000000]))
+                    .minRadiusWithLabel(15)
+                    .elasticY(true)
+                    .yAxisPadding(1000)
+                    .elasticX(true)
+                    .xAxisPadding(200)
+                    .maxBubbleRelativeSize(0.07)
+                    .renderHorizontalGridLines(true)
+                    .renderVerticalGridLines(true)
+                    .renderLabel(true)
+                    .renderTitle(true)
+                    .title(function (p) {
+                        return p.key
+                                + "\n"
+                                + "Sales: " + numberFormat(p.value.Sales) + "M\n"
+                                + "Growth: " + numberFormat(p.value.Growth);
+                    });
+            industryChart.yAxis().tickFormat(function (s) {
+                return s + " %";
+            });
+            industryChart.xAxis().tickFormat(function (s) {
+                return s + "M";
+            });
+
+            dc.renderAll();
+
+    });
+</script>
+</body>
+</html>

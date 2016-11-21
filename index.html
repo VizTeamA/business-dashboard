@@ -13,19 +13,19 @@
     <link type="text/css" href="css/bulletChart.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,600,900" rel="stylesheet">
 
-<!--Start Here: Added by HY: to create the header to link to the wiki page. Attempted to do it in CSS page, doesnt work -->     
+<!--Start Here: Added by HY: to create the header to link to the wiki page. Attempted to do it in CSS page, doesnt work -->
 
 <style>
 #App_Header1 {
-    float: left; 
+    float: left;
     width: 100%;
     padding: 10px;
 }
-    
+
 img {
-    float: left;        
+    float: left;
 }
-    
+
 table, th {
     width: 10%;
     border-radius:7px
@@ -43,7 +43,7 @@ h100 {
     font-weight: 700;
     border-bottom: 3px solid #668D3C;
 }
-    
+
 h99{
     font size: 10px;
     font-weight: 300;
@@ -51,13 +51,13 @@ h99{
     padding-top: 3px;
     padding-bottom: 10px;
     }
-    
+
 h98 {
     font size: 2px;
     font-family:sans-serif;
     text-align: center;
 }
-    
+
 a {
     font size: 3px;
     font-weight: 300;
@@ -70,65 +70,63 @@ th:hover, th:active, h100:hover {
     background-color: #668D3C;
     color: white;
 }
-    
+
 a:hover, a:active, h100:hover {
     background-color: #668D3C;
     color: white;
 }
 </style>
 
-<!--End Here: Added by HY: to create the header to link to the wiki page. Attempted to do it in CSS page, doesnt work -->    
-    
-    <head>
-     
-        <body>
-            
-<!--Start Here: Added by HY: to create the header to link to the wiki page --> 
-            
-            <!-- Add in project logo-->   
-            
-           <div id="App_Header1">
-           <img src="https://raw.githubusercontent.com/VizTeamA/business-dashboard/master/data/800px-TeamA_lg.png" 
-                alt="Project A Logo" style="width:80px;height:60px;"> 
-            <h99><font size = 6> Project A - The Non-Conventional Sales Dashboard for Company A </font><br>
-                 <font size = 2> A Visualization Project to Maximize Sales Potential by Team A </font></h99>
+<!--End Here: Added by HY: to create the header to link to the wiki page. Attempted to do it in CSS page, doesnt work -->
 
-            </div>
-            
+    <head>
+
+        <body>
+
+<!--Start Here: Added by HY: to create the header to link to the wiki page -->
+
+            <!-- Add in project logo-->
+
+           <div id="App_Header1">
+             <img src="https://raw.githubusercontent.com/VizTeamA/business-dashboard/master/data/800px-TeamA_lg.png"
+                  alt="Project A Logo" style="width:80px;height:60px;">
+              <h99><font size = 6> Project A - The Non-Conventional Sales Dashboard for Company A </font><br>
+                   <font size = 2> A Visualization Project to Maximize Sales Potential by Team A </font></h99>
+           </div>
+
             <div id="App_Header2">
-                <!--Add in Header to contain the web links--> 
+                <!--Add in Header to contain the web links-->
                 <table style="width:100%">
-                    <tr> 
+                    <tr>
                     <th><a href="https://wiki.smu.edu.sg/1617t1ISSS608g1/ISSS608_2016-17_T1_Project_Team_11">About</a></th>
                     <th><a href="https://wiki.smu.edu.sg/1617t1ISSS608g1/ISSS608_2016-17_T1_Project_Team_11_-_Project_Proposal">
                         Proposal</a></th>
                     <th><a href="https://wiki.smu.edu.sg/1617t1ISSS608g1/ISSS608_2016-17_T1_Project_Team_11_-_Project_Poster">
-                        Poster</a></th> 
+                        Poster</a></th>
                     <th> <a href="https://rawgit.com/VizTeamA/business-dashboard/master/index.html"> <b><h100> Application
-                        </h100></b></a></th>                        
+                        </h100></b></a></th>
                     <th><a href="https://wiki.smu.edu.sg/1617t1ISSS608g1/ISSS608_2016-17_T1_Project_Team_11_-_Project_Report">
-                        Report</a></th> 
+                        Report</a></th>
                     <th><a href="https://wiki.smu.edu.sg/1617t1ISSS608g1/ISSS608_2016-17_T1_Project_Team_11_-_Project_Logbook">
-                        Blog</a></th> 
+                        Blog</a></th>
                     </tr>
                 </table>
-                
+
             </div>
-            
-<!--End Here: Added by HY: to create the header to link to the wiki page --> 
- 
-            <div id="container"> 
+
+<!--End Here: Added by HY: to create the header to link to the wiki page -->
+
+            <div id="container">
                 <!--Start Here: Added in by HY: Description-->
                 <h98><b>Description:</b><br>
-                        <font size = 1>This is an integrated business dashboard for an interior furnishing business (Company A) in 
-                        Singapore so as to to conduct customers, sales, and product analysis through visual analytics. 
-                        <br>The dashboard will also compare current business performance with the current market's potential 
-                            and identify untapped market opportunities </font> </h98>
-                
-                <h4>Updated version: 20.NOV.2016 7:13PM </h4>
+                        <font size = 1>This is an integrated business dashboard for an interior furnishing business (Company A) in
+                        Singapore so as to to conduct customers, sales, and product analysis through visual analytics.
+                        <br>The dashboard will also compare current business performance with the current market's potential
+                            and identify untapped market opportunities </font>
+                </h98>
 
-                <h3 style="clear:both;" id="market-sector-selection">Market Sector: </h3> 
-                
+                <h4>Updated version: 20.NOV.2016 7:13PM </h4>
+                <h3 style="clear:both;" id="market-sector-selection">Market Sector: </h3>
                 <h3 style="clear:both;" id="overview-header">Overview</h3>
                 <div id="overview">
                     <div class="chart-cart">
@@ -156,7 +154,7 @@ a:hover, a:active, h100:hover {
                 <div id="sale-by-product">
                     <div class="chart-cart">
                         <div class="chart-title">Sales by Month</div>
-                        <div id="year-performance-chart" class="chart-container"></div>
+                        <div id="monthly-performance-chart" class="chart-container"></div>
                     </div>
                     <div class="chart-cart">
                         <div class="chart-title">Sales by Product</div>
@@ -167,7 +165,10 @@ a:hover, a:active, h100:hover {
                 <div id="detail-analysis">
                     <div class="chart-cart">
                         <div id="chart-map" class="chart-container">
-                            <div class="map"></div>
+                            <div id="geographical-chart"></div>
+                            <div id="quadratic-bubble-chart"></div>
+                            <div id="sale-size-filter-silder"></div>
+                            <div class = "clear-fix"></div>
                             <div id="filter-market-sector">
                                 <div id="market-sector"></div>
                                 <br>
@@ -189,7 +190,7 @@ a:hover, a:active, h100:hover {
                     </div>
                 </div>
 
-
+              </div>
                 <script type="text/javascript" src="js/lib/d3.js"></script>
                 <script type="text/javascript" src="js/lib/crossfilter.js"></script>
                 <script type="text/javascript" src="js/lib/dc-1.7.0.js"></script>

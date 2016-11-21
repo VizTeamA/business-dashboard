@@ -9,6 +9,10 @@
   clear:both;
 }
 
+.clear-fix {
+  clear:both;
+}
+
 .map {
   width:600px;
   height:400px;

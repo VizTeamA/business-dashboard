@@ -5,13 +5,25 @@
 /*     Markers      */
 var groupname = "marker-select2";
 var inputFile2 = 'data/tables/hotelsg-sales.csv';
-var inputSaleTrans = 'data/tables/SALES_TRANS_v1.0.csv';
+var inputSaleTrans = 'data/tables/SALES_TRANS_v2.0.csv';
 var yearSaleBulletChart = d3.bullet();
-var productChart = dc.rowChart("#sales-product-chart", groupname);
-var yearPerformanceChart = dc.barChart('#year-performance-chart', groupname);
-var mapChart = dc.leafletMarkerChart("#chart-map .map", groupname);
+var productSaleChart = dc.rowChart("#sales-product-chart", groupname);
+var monthlyPerformanceChart = dc.barChart('#monthly-performance-chart', groupname);
+var hotelQuadBubbleChart = dc.bubbleChart('#quadratic-bubble-chart', groupname);
+// var saleSizeFilterBarChart = dc.barChart('#sale-size-filter-chart', groupname);
+//var mapChart = dc.leafletMarkerChart("#chart-map .map", groupname);
 
 var yearDim;
+
+var productCol = 'Product';
+var saleCol = 'Sales';
+var yearCol = 'Year';
+var monthCol = 'Month';
+var sectorCol = 'Sector';
+var saleCodeCol = 'Sale_Code';
+
+
+numberFormat = d3.format('.2f');
 
 /****************************************** MAIN ************************************************
 * Main ()
@@ -24,33 +36,70 @@ createUI()
 d3.csv(inputSaleTrans, function(data) {
     // Since its a csv file we need to format the data a bit.
     var dateFormat = d3.time.format('%Y%b%d');
-    //var numberFormat = d3.format('.2f');
     data.forEach(function(d) {
         dumbDate = 01;
         d.dateFull = dateFormat.parse(d.Year + d.Month + dumbDate);
         d.monthFmt = d3.time.month(d.dateFull); // pre-calculate month for better performance
         d.yearFmt = d3.time.year(d.dateFull); // pre-calculate year for better performance
-        //d.close = +d.close; // coerce to number
-        // d.open = +d.open;
+        d.Sales = numberFormat(d[saleCol]);
     });
     xfProductSaleData = crossfilter(data);
+    // Set up dinmensions and groups that commonly used
+    yearDim = xfProductSaleData.dimension(function(d) {
+        return d[yearCol]
+    });
+    productDim = xfProductSaleData.dimension(function(d) {
+        return d[productCol]
+    });
+    sectorDim = xfProductSaleData.dimension(function(d) {
+        return d[sectorCol]
+    });
+    // saleCodeDim = xfProductSaleData.dimension(function(d) {
+    //     return d[saleCodeCol]
+    // });
+    saleByProductGroup = productDim.group().reduceSum(function(d) {
+      //  return d[saleCol]
+        return numberFormat(d[saleCol]);
+    });
+    // saleBySaleCodeGroup = saleCodeDim.group().reduceSum(function(d) {
+    //   return numberFormat(d[saleCol]);
+    // });
 
+    yearFmtDim = xfProductSaleData.dimension(function(d) {
+        return d.yearFmt
+    });
+    monthFmtDim = xfProductSaleData.dimension(function(d) {
+        return d.monthFmt
+    });
+    dateMonthYearFmtDim = xfProductSaleData.dimension(function(d) {
+        return d.dateFull
+    });
+    productSalesByMonth = monthFmtDim.group().reduceSum(function(d) {
+        //return d[saleCol]
+        return numberFormat(d[saleCol]);
+    });
+    productSalesByYear = yearFmtDim.group().reduceSum(function(d) {
+        //return d[saleCol]
+        return numberFormat(d[saleCol]);
+    });
+
+    // Draw all charts
     drawProductBarChart(xfProductSaleData);
     drawyearSaleBulletChart(xfProductSaleData);
-    drawYearPerformanceBarChart(xfProductSaleData);
+    drawMonthlyPerformanceBarChart(xfProductSaleData);
+    drawHotelQuadBubbleChart(xfProductSaleData);
+    // drawsaleSizeFilterBarChart(xfProductSaleData);
+    /*
     d3.csv(inputFile2, function(data) {
         drawMapChart(data);
     });
+    */
 });
 
 //Select All radio buttons that used for Market Sector Selection
-//var radios = document.forms["market-sector"].elements["marketSector"];
 d3.selectAll("market-sector").on("click", function() {
     bulletChartSvg.datum(randomize).transition().duration(1000).call(yearSaleBulletChart);
 });
-
-//drawEarningByYearPieChart();
-//drawGainLossPieChart();
 
 /****************************************** CHARTS *****************************************
 * Draw charts
@@ -69,31 +118,17 @@ function drawMapChart(data) {
 }
 
 function drawProductBarChart(xfProductSaleData) {
-    var productCol = 'Product_Grp';
-    var saleCol = 'Sales';
-    var yearCol = 'Year';
-
-    products = xfProductSaleData.dimension(function(d) {
-        return d[productCol]
-    });
-    productSales = products.group().reduceSum(function(d) {
-        return d[saleCol]
-    });
-    yearDim = xfProductSaleData.dimension(function(d) {
-        return d[yearCol]
-    });
-
-    productChart.dimension(products).group(productSales).on("click", function(d) {
+    productSaleChart.dimension(productDim).group(saleByProductGroup).on("click", function(d) {
         console.log("Pressed");
     }).width(300).height(220).elasticX(true)
     //.controlsUseVisibility(true)
         .xAxis().ticks(3);
-    productChart.render();
+    productSaleChart.render();
 
     function AddXAxis(chartToUpdate, displayText, offsetY) {
         chartToUpdate.svg().append("text").attr("class", "x-axis-label").attr("text-anchor", "middle").attr("x", chartToUpdate.width() - 25).attr("y", chartToUpdate.height() + offsetY).text(displayText).style("font-size", "10px");
     }
-    AddXAxis(productChart, "Sale ($)", -5);
+    AddXAxis(productSaleChart, "Sale ($)", -5);
 }
 
 function updateChartByYear(year) {
@@ -103,13 +138,13 @@ function updateChartByYear(year) {
 }
 
 function resetAll() {
-  //Reset css
-  d3.selectAll(".measure-active.s0").attr("class", "measure s0");
-  d3.selectAll(".measure-active.s1").attr("class", "measure s1");
-  //Reset data
-  yearDim.filter(null);
-  //Reset charts
-  dc.redrawAll(groupname);
+    //Reset css
+    d3.selectAll(".measure-active.s0").attr("class", "measure s0");
+    d3.selectAll(".measure-active.s1").attr("class", "measure s1");
+    //Reset data
+    yearDim.filter(null);
+    //Reset charts
+    dc.redrawAll(groupname);
 }
 
 function drawyearSaleBulletChart(datacf) {
@@ -303,122 +338,100 @@ function updateNumbers(d) {
     //s.text("pies("+d+")");
 }
 
-/*
-function drawEarningByYearPieChart() {
-	var gainLossFile = "data/tables/GAIN_LOSS.csv";
-	var chart = dc.pieChart("#earning-by-year-chart");
-	d3.csv(gainLossFile, function(error, experiments) {
-	  var ndx           = crossfilter(experiments);
-	  var typeDimension  = ndx.dimension(function(d) {return d.Type ;})
-	  var yearDimension  = ndx.dimension(function(d) {return d.Year ;})
-	  var amountSumGroup = yearDimension
-							.group()
-							.reduceSum(function(d) {
-								if (d.Type =="gain") {
-									return d.Amount;
-								} else if (d.Type =="loss") {
-									return -d.Amount;
-								} else {
-									return 0;
-								}
-								});
-	  chart
-		  .width(100)
-		  .height(100)
-		  //.slicesCap(4)
-		  .innerRadius(10)
-		  .dimension(yearDimension)
-		  .group(amountSumGroup)
-		  .legend(dc.legend());
-	   chart.on('pretransition', function(chart) {
-		  chart.selectAll('.dc-legend-item text')
-			  .text('')
-			.append('tspan')
-			  .text(function(d) { return d.name; })
-			.append('tspan')
-			  .attr('x', 100)
-			  .attr('text-anchor', 'end')
-			  .text(function(d) { return d.data; });
-	  });
-	  chart.render();
-	});
-}
-function drawGainLossPieChart() {
-	var gainLossFile = "data/tables/GAIN_LOSS.csv";
-	var chart = dc.pieChart("#gain-loss-chart");
-	d3.csv(gainLossFile, function(error, experiments) {
-	  var ndx           = crossfilter(experiments);
-	  var typeDimension  = ndx.dimension(function(d) {return d.Type ;})
-	  var amountSumGroup = typeDimension
-							.group()
-							.reduceSum(function(d) { return d.Amount});
-	  chart
-		  .width(100)
-		  .height(100)
-		  .slicesCap(2)
-		  .innerRadius(0)
-		  .dimension(typeDimension)
-		  .group(amountSumGroup)
-		  .legend(dc.legend());
-	   chart.on('pretransition', function(chart) {
-		  chart.selectAll('.dc-legend-item text')
-			  .text('')
-			.append('tspan')
-			  .text(function(d) { return d.name; })
-			.append('tspan')
-			  .attr('x', 100)
-			  .attr('text-anchor', 'end')
-			  .text(function(d) { return d.data; });
-	  });
-	  chart.render();
-	});
-}
-*/
-
-function drawYearPerformanceBarChart(xfProductSaleData) {
-
-    var productCol = 'Product_Grp';
-    var saleCol = 'Sales';
-    var yearCol = 'Year';
-    var monthCol = 'Month';
-    //yearPerformanceChart = dc.barChart('#year-performance-chart', groupname);
-
-    products = xfProductSaleData.dimension(function(d) {
-        return d[productCol]
-    });
-    yearFmtDim = xfProductSaleData.dimension(function(d) {
-        return d.yearFmt
-    });
-    monthFmtDim = xfProductSaleData.dimension(function(d) {
-        return d.monthFmt
-    });
-    dateMonthYearFmtDim = xfProductSaleData.dimension(function(d) {
-        return d.dateFull
-    });
-    productSalesByMonth = monthFmtDim.group().reduceSum(function(d) {
-        return d[saleCol]
-    });
-    productSalesByYear = yearFmtDim.group().reduceSum(function(d) {
-        return d[saleCol]
-    });
-
+function drawMonthlyPerformanceBarChart(xfProductSaleData) {
     var strmDateAccessor = function(d) {
         return d.dateFull;
     };
     strmDateExtent = [];
-    strmDateExtent = d3.extent(products.top(Infinity), strmDateAccessor);
+    strmDateExtent = d3.extent(productDim.top(Infinity), strmDateAccessor);
     minDate = strmDateExtent[0];
     maxDate = strmDateExtent[1];
 
-    yearPerformanceChart.height(250).width(700).margins({top: 0, right: 50, bottom: 60, left: 60}).dimension(monthFmtDim).group(productSalesByMonth).centerBar(true).gap(1)
-    //.x(d3.time.scale().domain([new Date(2015, 0, 1), new Date(2016, 12, 31)]))
+    monthlyPerformanceChart.height(250).width(700).margins({top: 0, right: 50, bottom: 60, left: 60}).dimension(monthFmtDim).group(productSalesByMonth).centerBar(true)
         .x(d3.time.scale().domain([minDate, maxDate])).elasticY(true).elasticX(true).round(d3.time.month.round).xUnits(d3.time.months);
-    yearPerformanceChart.renderlet(function(yearPerformanceChart) {
+    monthlyPerformanceChart.renderlet(function(monthlyPerformanceChart) {
         // rotate x-axis labels
-        yearPerformanceChart.selectAll('g.x text').attr('transform', 'translate(-10,20) rotate(270)');
+        //monthlyPerformanceChart.selectAll('g.x text').attr('transform', 'translate(-10,20) rotate(270)');
     });
-    yearPerformanceChart.render();
+    monthlyPerformanceChart.render();
 }
+
+function drawHotelQuadBubbleChart(xfProductSaleData) {
+      var states = xfProductSaleData.dimension(function (d) {
+          return d["Month"];
+      });
+      var stateRaisedSum = states.group().reduceSum(function (d) {
+          return d["Sales"];
+      });
+
+      var hotelDim = xfProductSaleData.dimension(function (d) {
+          return d["Property"];
+      });
+      var salesByHotel = hotelDim.group().reduce(
+              function (p, v) {
+                  p.Sales += +v["Sales"];
+                  p.Growth += +v["Growth"];
+                  return p;
+              },
+              function (p, v) {
+                  p.Sales -= +v["Sales"];
+                  //if (p.Sales < 0.001) p.Sales = 0; // do some clean up
+                  p.Growth -= +v["Growth"];
+                  return p;
+              },
+              function () {
+                  return {Sales: 0, Growth: 0}
+              }
+      );
+
+      hotelQuadBubbleChart.width(990)
+              .height(500)
+              .margins({top: 10, right: 50, bottom: 30, left: 60})
+              .dimension(hotelDim)
+              .group(salesByHotel)
+              .colors(d3.scale.category10())
+              .keyAccessor(function (p) {
+                  return p.value.Sales;
+              })
+              .valueAccessor(function (p) {
+                  return p.value.Growth;
+              })
+              .radiusValueAccessor(function (p) {
+                  return p.value.Sales;
+              })
+              .x(d3.scale.linear().domain([0, 4000000]))
+              .r(d3.scale.linear().domain([0, 10000000]))
+              .minRadiusWithLabel(15)
+              .elasticY(true)
+              .yAxisPadding(1000)
+              .elasticX(true)
+              .xAxisPadding(100000)
+              .maxBubbleRelativeSize(0.15)
+              .renderHorizontalGridLines(true)
+              .renderVerticalGridLines(true)
+              .renderLabel(true)
+              .renderTitle(true)
+              .title(function (p) {
+                  return p.key
+                          + "\n"
+                          + "Sales: " + numberFormat(p.value.Sales/1000000) + "M\n"
+                          + "Growth: " + numberFormat(p.value.Growth);
+              });
+      hotelQuadBubbleChart.yAxis().tickFormat(function (s) {
+          return s + " %";
+      });
+      hotelQuadBubbleChart.xAxis().tickFormat(function (s) {
+          return s + "M";
+      });
+      hotelQuadBubbleChart.render();
+
+}
+
+// function drawsaleSizeFilterBarChart(xfProductSaleData) {
+//   saleSizeFilterBarChart.dimension(saleCodeCol).group(saleBySaleCodeGroup).width(300).height(220).elasticX(true)
+//       .xAxis().ticks(3);
+//   productSaleChart.render();
+// }
 
 /****************************************** UI *****************************************
 * UI SECTION: Options, Class update, Drop list, ratio button, ect...
@@ -435,10 +448,14 @@ function toggleOptionPannel() {
     if (selectedObjectName == "Hospitality") {
         containerHospitality.attr("class", "content-pannel-visible");
         containerResidential.attr("class", "content-pannel-hidden");
+        sectorDim.filter("Hospitality");
+        dc.redrawAll(groupname);
         //console.log("visibile containerHospitality");
     } else {
         containerHospitality.attr("class", "content-pannel-hidden");
         containerResidential.attr("class", "content-pannel-visible");
+        sectorDim.filter("Residential");
+        dc.redrawAll(groupname);
         //console.log("visibile containerResidential");
     }
 
@@ -451,28 +468,6 @@ function createUI() {
     var toggleSections = ["#overview", "#detail-analysis", "#sales-by-product"];
     var classNameVisible = "section";
     var classNameHide = "section-hide";
-    /*
-  for (i=0; i<headerNames.length; i++ ) {
-    headerName = headerNames[i];
-    toggleSection = toggleSections[i];
-    console.log(headerName + "***" +  toggleSection);
-    d3.selectAll(headerName)
-      .append("b")
-      .text(" [+] ")
-      .on("click", function() {
-          d3.selectAll(toggleSection).attr("class",classNameVisible);
-          console.log("+" + toggleSection + ">>" + classNameVisible);
-      });
-    d3.selectAll(headerName)
-      .append("b")
-      .text(" [-] ")
-      .on("click", function() {
-          d3.selectAll(toggleSection).attr("class",classNameHide);
-          console.log("-" + toggleSection + ">>" + classNameHide);
-      });
-    }
-*/
-
     d3.selectAll("#overview-header").append("text").text(" [show] ").on("click", function() {
         d3.selectAll("#overview").attr("class", "section");
         //console.log("+" + toggleSection + ">>" + "section");
@@ -535,7 +530,7 @@ function createUI() {
         return d;
     });
     labelEnter.append("br");
-    toggleOptionPannel();
+    //toggleOptionPannel();
 
     var listRollingPeriod = ["Quarter", "Year", "2 Years"];
     var dropDownRollingPeriod = d3.select("#rolling-period-filter").append("select").attr("name", "country-list");
@@ -547,6 +542,10 @@ function createUI() {
     });
     dropDownRollingPeriod.on("change", dropDownRollingPeriodChanged);
 
+
+    /************************
+    * Functions support UI
+    *************************/
     //Option for rolling period
     function dropDownRollingPeriodChanged() {
         var selectedValue = d3.event.target.value;
@@ -554,6 +553,3 @@ function createUI() {
             "option selected = " + selectedValue);
     }
 }
-
-
-//dc.renderAll(groupname);
