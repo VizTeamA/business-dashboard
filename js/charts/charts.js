@@ -68,15 +68,6 @@ function drawMapChart(data) {
     mapChart.render();
 }
 
-//start - added in by HY
-function SelectMarketSector(data) {
-    var marketCol = 'Sector';
-	
-    marketsector = xfProductSalesData.dimension(function(d) {
-	    return d[marketCol] 
-    });
-//end - added by HY	
-
 function drawProductBarChart(xfProductSaleData) {
     var productCol = 'Product_Grp';
     var saleCol = 'Sales';
