@@ -70,13 +70,14 @@
                   </h98>
                   <h4>Updated version: 22.NOV.2016 5:02PM </h4>
                   <h3 style="clear:both;" id="market-sector-selection">Market Sector: </h3>
+                  <a class="subtitle" href="javascript:resetAll();" style="display: ;">reset all filter</a>
                   <h3 style="clear:both;" id="overview-header">Overview</h3>
                   <div id="overview">
                       <div class="chart-cart">
                           <div class="chart-title">
                               <span>Sale performance</span>
                               <span class="subtitle">(in Millions)</span>
-                              <a class="subtitle" href="javascript:resetAll();dc.redrawAll();" style="display: ;">reset</a>
+                              <a class="subtitle" href="javascript:resetYear();dc.redrawAll();" style="display: ;">reset</a>
                           </div>
                           <div id="sales-year-chart" class="chart-container" style="padding-left:35px">
                           </div>
@@ -106,12 +107,13 @@
                       </div>
                   </div>
                   <h3 style="clear:both;" id="detail-analysis-header">Detail Analysis</h3>
+                  <a class="subtitle" href="javascript:resetHotel();dc.redrawAll();" style="display: ;">reset</a>
                   <div id="detail-analysis">
                       <div class="chart-cart">
                           <div id="chart-map" class="chart-container">
                               <div id="geographical-chart"></div>
                               <div id="quadratic-bubble-chart"></div>
-                              <div id="sale-size-filter-silder"></div>
+                              <div id="sale-size-filter-bar-chart"></div>
                               <div class="clear-fix"></div>
                               <div id="filter-market-sector">
                                   <div id="market-sector"></div>
@@ -131,11 +133,13 @@
                                   </div>
                               </div>
                           </div>
+
                       </div>
                   </div>
 
               </div>
             </div>
+
             <script type="text/javascript" src="js/lib/d3.js"></script>
             <script type="text/javascript" src="js/lib/crossfilter.js"></script>
             <script type="text/javascript" src="js/lib/dc-1.7.0.js"></script>

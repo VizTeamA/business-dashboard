@@ -10,7 +10,7 @@ var yearSaleBulletChart = d3.bullet();
 var productSaleChart = dc.rowChart("#sales-product-chart", groupname);
 var monthlyPerformanceChart = dc.barChart('#monthly-performance-chart', groupname);
 var hotelQuadBubbleChart = dc.bubbleChart('#quadratic-bubble-chart', groupname);
-// var saleSizeFilterBarChart = dc.barChart('#sale-size-filter-chart', groupname);
+// var saleSizeFilterBarChart = dc.barChart('#sale-size-filter-bar-chart', groupname);
 //var mapChart = dc.leafletMarkerChart("#chart-map .map", groupname);
 
 var yearDim;
@@ -21,6 +21,7 @@ var yearCol = 'Year';
 var monthCol = 'Month';
 var sectorCol = 'Sector';
 var saleCodeCol = 'Sale_Code';
+var propertyCol = 'Property';
 
 
 numberFormat = d3.format('.2f');
@@ -42,6 +43,7 @@ d3.csv(inputSaleTrans, function(data) {
         d.monthFmt = d3.time.month(d.dateFull); // pre-calculate month for better performance
         d.yearFmt = d3.time.year(d.dateFull); // pre-calculate year for better performance
         d.Sales = numberFormat(d[saleCol]);
+        d.propertyNameFmt = d[propertyCol];
     });
     xfProductSaleData = crossfilter(data);
     // Set up dinmensions and groups that commonly used
@@ -57,16 +59,15 @@ d3.csv(inputSaleTrans, function(data) {
     sectorDim = xfProductSaleData.dimension(function(d) {
         return d[sectorCol]
     });
-    // saleCodeDim = xfProductSaleData.dimension(function(d) {
-    //     return d[saleCodeCol]
-    // });
-    saleByProductGroup = productDim.group().reduceSum(function(d) {
+
+    hotelDim = xfProductSaleData.dimension(function (d) {
+        return d.propertyNameFmt;
+    });
+
+    salesByProductGroup = productDim.group().reduceSum(function(d) {
       //  return d[saleCol]
         return Math.round(d[saleCol]);
     });
-    // saleBySaleCodeGroup = saleCodeDim.group().reduceSum(function(d) {
-    //   return numberFormat(d[saleCol]);
-    // });
 
     yearFmtDim = xfProductSaleData.dimension(function(d) {
         return d.yearFmt
@@ -78,12 +79,30 @@ d3.csv(inputSaleTrans, function(data) {
         return d.dateFull
     });
     productSalesByMonth = monthFmtDim.group().reduceSum(function(d) {
-        return numberFormat(d[saleCol]);
+        return Math.round(d[saleCol]);
     });
     productSalesByYear = yearFmtDim.group().reduceSum(function(d) {
         //return d[saleCol]
         return numberFormat(d[saleCol]);
     });
+
+    salesByHotel = hotelDim.group().reduce(
+            function (p, v) {
+                p.Sales += +v["Sales"];
+                p.Growth += +v["Growth"];
+                return p;
+            },
+            function (p, v) {
+                p.Sales -= +v["Sales"];
+                //if (p.Sales < 0.001) p.Sales = 0; // do some clean up
+                p.Growth -= +v["Growth"];
+                return p;
+            },
+            function () {
+                return {Sales: 0, Growth: 0}
+            }
+    );
+
 
     // Draw all charts
     drawProductBarChart(xfProductSaleData);
@@ -120,11 +139,12 @@ function drawMapChart(data) {
 }
 
 function drawProductBarChart(xfProductSaleData) {
-    productSaleChart.dimension(productDim).group(saleByProductGroup).on("click", function(d) {
+    productSaleChart.dimension(productDim).group(salesByProductGroup).on("click", function(d) {
         console.log("Pressed");
     }).width(300).height(220).elasticX(true)
     //.controlsUseVisibility(true)
         .xAxis().ticks(3);
+    productSaleChart.colors(['#0078a8']);
     productSaleChart.render();
 
     function AddXAxis(chartToUpdate, displayText, offsetY) {
@@ -141,13 +161,38 @@ function updateChartByYear(year) {
     dc.redrawAll(groupname);
 }
 
-function resetAll() {
+/*
+* Reset in different dimension
+*/
+function resetYear() {
     //Reset css
     d3.selectAll(".measure-active.s0").attr("class", "measure s0");
     d3.selectAll(".measure-active.s1").attr("class", "measure s1");
     //Reset data
     yearDim.filter(null);
+
     //Reset charts
+    dc.redrawAll(groupname);
+}
+
+function resetHotel() {
+    //Reset css
+    d3.selectAll(".measure-active.s0").attr("class", "measure s0");
+    d3.selectAll(".measure-active.s1").attr("class", "measure s1");
+    //Reset data
+    hotelDim.filterAll(groupname);
+    //Reset charts
+    hotelQuadBubbleChart.redraw(groupname);
+    dc.redrawAll(groupname);
+}
+
+function resetAll() {
+    //Reset css
+    d3.selectAll(".measure-active.s0").attr("class", "measure s0");
+    d3.selectAll(".measure-active.s1").attr("class", "measure s1");
+    //Reset all dimension filters
+    yearDim.filter(null);
+    dc.filterAll(groupname);
     dc.redrawAll(groupname);
 }
 
@@ -316,21 +361,6 @@ function drawYearSaleBulletChart(datacf) {
     });
 }
 
-function randomize(d) {
-    if (!d.randomizer)
-        d.randomizer = randomizer(d);
-    d.ranges = d.ranges.map(d.randomizer);
-    d.markers = d.markers.map(d.randomizer);
-    d.measures = d.measures.map(d.randomizer);
-    return d;
-}
-
-function randomizer(d) {
-    var k = d3.max(d.ranges) * .2;
-    return function(d) {
-        return Math.max(0, d + k * (Math.random() - .5));
-    };
-}
 
 function updateBulletChart(yearList) {
     //Reset css
@@ -399,15 +429,15 @@ function drawMonthlyPerformanceBarChart(xfProductSaleData) {
     monthlyPerformanceChart.yAxis().tickFormat(function (s) {
         return s/1000 + "k$";
     }).ticks(3);
-  
+    monthlyPerformanceChart.colors(['#0078a8']);
     monthlyPerformanceChart.on("filtered", function(){
       updateBulletChart(null);
       if (yearDim.top(Infinity).length!=0) {
         var highYear = +yearDim.top(1)[0].Year;
         var lowYear = +yearDim.bottom(1)[0].Year;
-        var highMonth = yearDim.top(1)[0].Month;
-        var lowMonth = yearDim.top(1)[0].Month;
-        //console.log(high+"--"+low);
+        var highMonth = dateMonthYearFmtDim.top(1)[0].Month;
+        var lowMonth = dateMonthYearFmtDim.bottom(1)[0].Month;
+        //console.log(lowMonth + "/" +lowYear +" --> " + highMonth+"/" +highYear);
         updateOnBrush(lowYear, highYear);
         updateBrushRange(lowMonth + "/" +lowYear, highMonth+"/" +highYear);
       }
@@ -427,39 +457,13 @@ function updateBrushRange(low, high) {
 }
 
 function drawHotelQuadBubbleChart(xfProductSaleData) {
-      var states = xfProductSaleData.dimension(function (d) {
-          return d["Month"];
-      });
-      var stateRaisedSum = states.group().reduceSum(function (d) {
-          return d["Sales"];
-      });
-
-      var hotelDim = xfProductSaleData.dimension(function (d) {
-          return d["Property"];
-      });
-      var salesByHotel = hotelDim.group().reduce(
-              function (p, v) {
-                  p.Sales += +v["Sales"];
-                  p.Growth += +v["Growth"];
-                  return p;
-              },
-              function (p, v) {
-                  p.Sales -= +v["Sales"];
-                  //if (p.Sales < 0.001) p.Sales = 0; // do some clean up
-                  p.Growth -= +v["Growth"];
-                  return p;
-              },
-              function () {
-                  return {Sales: 0, Growth: 0}
-              }
-      );
-
       hotelQuadBubbleChart.width(990)
               .height(500)
               .margins({top: 10, right: 50, bottom: 30, left: 60})
               .dimension(hotelDim)
               .group(salesByHotel)
-              .colors(d3.scale.category10())
+              //.colors(d3.scale.category10())
+              .colors(['#0078a8'])
               .keyAccessor(function (p) {
                   return p.value.Sales;
               })
@@ -496,11 +500,11 @@ function drawHotelQuadBubbleChart(xfProductSaleData) {
       hotelQuadBubbleChart.render();
 
 }
-
+//
 // function drawsaleSizeFilterBarChart(xfProductSaleData) {
-//   saleSizeFilterBarChart.dimension(saleCodeCol).group(saleBySaleCodeGroup).width(300).height(220).elasticX(true)
-//       .xAxis().ticks(3);
-//   productSaleChart.render();
+//   saleSizeFilterBarChart.dimension(hotelDim).group(salesByHotel).width(300).height(220).elasticX(true);
+//   saleSizeFilterBarChart.x(d3.scaleOrdinal());
+//   saleSizeFilterBarChart.render();
 // }
 
 /****************************************** UI *****************************************
@@ -611,8 +615,6 @@ function createUI() {
         return d;
     });
     dropDownRollingPeriod.on("change", dropDownRollingPeriodChanged);
-
-
     /************************
     * Functions support UI
     *************************/
