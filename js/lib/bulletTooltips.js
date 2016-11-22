@@ -89,8 +89,12 @@ d3.bullet = function() {
       var measure = wrap.selectAll("rect.measure")
           .data(measurez);
       var shortfall = measurez[0]-measurez[1];
+
+//Hack in and customize Zen, Duong
+      thisYear = d.Year;
       measure.enter().append("rect")
           .attr("class", function(d, i) { return "measure s" + i; })
+          .attr("id", function(d, i) { return "dimension_y" + thisYear; })
           .attr("width", w0)
           .attr("height", extentY / 3)
           .attr("x", reverse ? x0 : 0)

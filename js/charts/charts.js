@@ -85,7 +85,7 @@ d3.csv(inputSaleTrans, function(data) {
 
     // Draw all charts
     drawProductBarChart(xfProductSaleData);
-    drawyearSaleBulletChart(xfProductSaleData);
+    drawYearSaleBulletChart(xfProductSaleData);
     drawMonthlyPerformanceBarChart(xfProductSaleData);
     drawHotelQuadBubbleChart(xfProductSaleData);
     // drawsaleSizeFilterBarChart(xfProductSaleData);
@@ -132,8 +132,10 @@ function drawProductBarChart(xfProductSaleData) {
 }
 
 function updateChartByYear(year) {
+    low = +year;
+    high = + year + 1;
     yearDim.filter(null);
-    yearDim.filter(year);
+    yearDim.filterRange([low, high]);
     dc.redrawAll(groupname);
 }
 
@@ -147,7 +149,7 @@ function resetAll() {
     dc.redrawAll(groupname);
 }
 
-function drawyearSaleBulletChart(datacf) {
+function drawYearSaleBulletChart(datacf) {
     var margin = {
             top: 5,
             right: 5,
@@ -328,6 +330,21 @@ function randomizer(d) {
     };
 }
 
+function updateBulletChart(yearList) {
+    //Reset css
+    d3.selectAll(".measure-active.s0").attr("class", "measure s0");
+    d3.selectAll(".measure-active.s1").attr("class", "measure s1");
+    for(i = 0; i < yearList.length; i++){
+        selectYear = yearList[i];
+          //console.log("selectYear=" +selectYear);
+          rectg = d3.selectAll("#dimension_y"+selectYear);
+          for (j=0; j<2;j++) {
+            rectg.attr("class","measure-active s"+j);
+          }
+
+    }
+}
+
 function updateNumbers(d) {
     var o = d3.selectAll("#opportunity .value");
     var c = d3.selectAll("#coverage .value");
@@ -347,14 +364,50 @@ function drawMonthlyPerformanceBarChart(xfProductSaleData) {
     minDate = strmDateExtent[0];
     maxDate = strmDateExtent[1];
 
-    monthlyPerformanceChart.height(250).width(700).margins({top: 0, right: 50, bottom: 60, left: 60}).dimension(monthFmtDim).group(productSalesByMonth).centerBar(true)
-        .x(d3.time.scale().domain([minDate, maxDate])).elasticY(true).elasticX(true).round(d3.time.month.round).xUnits(d3.time.months);
+    monthlyPerformanceChart.height(150).width(550).margins({top: 0, right: 50, bottom: 60, left: 60}).dimension(monthFmtDim).group(productSalesByMonth).centerBar(true)
+        .x(d3.time.scale().domain([minDate, maxDate])).elasticY(true).elasticX(true).xUnits(d3.time.months);
     monthlyPerformanceChart.renderlet(function(monthlyPerformanceChart) {
         // rotate x-axis labels
         //monthlyPerformanceChart.selectAll('g.x text').attr('transform', 'translate(-10,20) rotate(270)');
     });
+    monthlyPerformanceChart.on("filtered", function(){
+      var high = +yearDim.top(1)[0].Year;
+      var low = +yearDim.bottom(1)[0].Year;
+      //console.log(high+"--"+low);
+      updateIt(low, high);
+
+    });
     monthlyPerformanceChart.render();
 }
+
+
+/**
+* Update on Brushing
+*/
+var beg=0;
+var end=0;
+function updateIt(low, high) {
+  if (beg=="") {
+    beg = low;
+    end = high;
+  } else if (low == beg && high == end ) {
+    return;
+  } else {
+    //updateBulletChart
+     var yearList = [];
+     l = +low;
+     h = +high;
+     j=0;
+     for (i=l-1; i++; i<=h) {
+       if (i>h) {break};
+       if (j>20) {return}
+       else {j++;}
+       yearList.push(i);
+     }
+     updateBulletChart(yearList);
+  }
+}
+
 
 function drawHotelQuadBubbleChart(xfProductSaleData) {
       var states = xfProductSaleData.dimension(function (d) {
