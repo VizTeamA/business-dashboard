@@ -48,6 +48,9 @@ d3.csv(inputSaleTrans, function(data) {
     yearDim = xfProductSaleData.dimension(function(d) {
         return d[yearCol]
     });
+    monthDim = xfProductSaleData.dimension(function(d) {
+        return d[monthCol]
+    });
     productDim = xfProductSaleData.dimension(function(d) {
         return d[productCol]
     });
@@ -59,7 +62,7 @@ d3.csv(inputSaleTrans, function(data) {
     // });
     saleByProductGroup = productDim.group().reduceSum(function(d) {
       //  return d[saleCol]
-        return numberFormat(d[saleCol]);
+        return Math.round(d[saleCol]);
     });
     // saleBySaleCodeGroup = saleCodeDim.group().reduceSum(function(d) {
     //   return numberFormat(d[saleCol]);
@@ -75,7 +78,6 @@ d3.csv(inputSaleTrans, function(data) {
         return d.dateFull
     });
     productSalesByMonth = monthFmtDim.group().reduceSum(function(d) {
-        //return d[saleCol]
         return numberFormat(d[saleCol]);
     });
     productSalesByYear = yearFmtDim.group().reduceSum(function(d) {
@@ -334,15 +336,42 @@ function updateBulletChart(yearList) {
     //Reset css
     d3.selectAll(".measure-active.s0").attr("class", "measure s0");
     d3.selectAll(".measure-active.s1").attr("class", "measure s1");
-    for(i = 0; i < yearList.length; i++){
-        selectYear = yearList[i];
-          //console.log("selectYear=" +selectYear);
-          rectg = d3.selectAll("#dimension_y"+selectYear);
-          for (j=0; j<2;j++) {
-            rectg.attr("class","measure-active s"+j);
-          }
-
+    if (yearList != null) {
+      for(i = 0; i < yearList.length; i++){
+            selectYear = yearList[i];
+            objName_0 = "rect#dimension_y" + selectYear+".measure.s0";
+            objName_1 = "rect#dimension_y" + selectYear+".measure.s1";
+            //console.log("selectYear=" +selectYear);
+            d3.selectAll(objName_0).attr("class","measure-active s0");
+            d3.selectAll(objName_1).attr("class","measure-active s1");
+      }
     }
+
+}
+//function updateRange
+
+/**
+* Update on Brushing
+*/
+var beg=0;
+var end=0;
+function updateOnBrush(low, high) {
+  if (beg=="") {
+    beg = low;
+    end = high;
+  } else if (low == beg && high == end ) {
+    return;
+  } else {
+    //updateBulletChart
+     var yearList = [];
+     l = +low;
+     h = +high;
+     for (i=l-1; i++; i<=h) {
+       if (i>h) {break};
+       yearList.push(i);
+     }
+     updateBulletChart(yearList);
+  }
 }
 
 function updateNumbers(d) {
@@ -364,50 +393,38 @@ function drawMonthlyPerformanceBarChart(xfProductSaleData) {
     minDate = strmDateExtent[0];
     maxDate = strmDateExtent[1];
 
-    monthlyPerformanceChart.height(150).width(550).margins({top: 0, right: 50, bottom: 60, left: 60}).dimension(monthFmtDim).group(productSalesByMonth).centerBar(true)
+    monthlyPerformanceChart.height(150).width(550).margins({top: 0, right: 50, bottom: 60, left: 60}).dimension(monthFmtDim).group(productSalesByMonth)
+    monthlyPerformanceChart.centerBar(true)
         .x(d3.time.scale().domain([minDate, maxDate])).elasticY(true).elasticX(true).xUnits(d3.time.months);
-    monthlyPerformanceChart.renderlet(function(monthlyPerformanceChart) {
-        // rotate x-axis labels
-        //monthlyPerformanceChart.selectAll('g.x text').attr('transform', 'translate(-10,20) rotate(270)');
-    });
+    monthlyPerformanceChart.yAxis().tickFormat(function (s) {
+        return s/1000 + "k$";
+    }).ticks(3);
+  
     monthlyPerformanceChart.on("filtered", function(){
-      var high = +yearDim.top(1)[0].Year;
-      var low = +yearDim.bottom(1)[0].Year;
-      //console.log(high+"--"+low);
-      updateIt(low, high);
+      updateBulletChart(null);
+      if (yearDim.top(Infinity).length!=0) {
+        var highYear = +yearDim.top(1)[0].Year;
+        var lowYear = +yearDim.bottom(1)[0].Year;
+        var highMonth = yearDim.top(1)[0].Month;
+        var lowMonth = yearDim.top(1)[0].Month;
+        //console.log(high+"--"+low);
+        updateOnBrush(lowYear, highYear);
+        updateBrushRange(lowMonth + "/" +lowYear, highMonth+"/" +highYear);
+      }
 
     });
     monthlyPerformanceChart.render();
 }
 
-
-/**
-* Update on Brushing
-*/
-var beg=0;
-var end=0;
-function updateIt(low, high) {
-  if (beg=="") {
-    beg = low;
-    end = high;
-  } else if (low == beg && high == end ) {
-    return;
+function updateBrushRange(low, high) {
+  // console.log("brush:" + low + "-->" + high)
+  if (low!=null) {
+      d3.selectAll("#monthly-performance-chart-selected-range").text("Range: ["+low+" - " +high +"]");
   } else {
-    //updateBulletChart
-     var yearList = [];
-     l = +low;
-     h = +high;
-     j=0;
-     for (i=l-1; i++; i<=h) {
-       if (i>h) {break};
-       if (j>20) {return}
-       else {j++;}
-       yearList.push(i);
-     }
-     updateBulletChart(yearList);
+     d3.selectAll("#monthly-performance-chart-selected-range").text("");
   }
-}
 
+}
 
 function drawHotelQuadBubbleChart(xfProductSaleData) {
       var states = xfProductSaleData.dimension(function (d) {

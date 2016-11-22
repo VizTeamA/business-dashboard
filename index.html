@@ -16,73 +16,7 @@
     <!--Start Here: Added by HY: to create the header to link to the wiki page. Attempted to do it in CSS page, doesnt work -->
 
     <style>
-        #App_Header1 {
-            float: left;
-            width: 100%;
-            padding: 10px;
-        }
 
-        img {
-            float: left;
-        }
-
-        table,
-        th {
-            width: 10%;
-            border-radius: 7px
-        }
-
-        th {
-            font size: 3px;
-            font-family: sans-serif;
-            text-align: center;
-            background-color: #B1DDA1;
-            color: White;
-        }
-
-        h100 {
-            font size: 10px;
-            color: #668D3C;
-            font-weight: 700;
-            border-bottom: 3px solid #668D3C;
-        }
-
-        h99 {
-            font size: 10px;
-            font-weight: 300;
-            font-family: sans-serif;
-            padding-top: 3px;
-            padding-bottom: 10px;
-        }
-
-        h98 {
-            font size: 2px;
-            font-family: sans-serif;
-            text-align: center;
-        }
-
-        a {
-            font size: 3px;
-            font-weight: 300;
-            color: white;
-            font-family: sans-serif;
-            text-align: center;
-            text-decoration: none;
-        }
-
-        th:hover,
-        th:active,
-        h100:hover {
-            background-color: #668D3C;
-            color: white;
-        }
-
-        a:hover,
-        a:active,
-        h100:hover {
-            background-color: #668D3C;
-            color: white;
-        }
     </style>
     <!--End Here: Added by HY: to create the header to link to the wiki page. Attempted to do it in CSS page, doesnt work -->
 
@@ -120,78 +54,87 @@
 
             </div>
             <!--End Here: Added by HY: to create the header to link to the wiki page -->
-            <div id="container">
-                <!--Start Here: Added in by HY: Description-->
-                <h98><b>Description:</b><br>
-                    <font size=1>This is an integrated business dashboard for an interior furnishing business (Company A) in Singapore so as to to conduct customers, sales, and product analysis through visual analytics.
-                        <br>The dashboard will also compare current business performance with the current market's potential and identify untapped market opportunities </font>
-                </h98>
-                <h4>Updated version: 20.NOV.2016 7:13PM </h4>
-                <h3 style="clear:both;" id="market-sector-selection">Market Sector: </h3>
-                <h3 style="clear:both;" id="overview-header">Overview</h3>
-                <div id="overview">
-                    <div class="chart-cart">
-                        <div id="sales-year-chart" class="chart-container">
-                            <div class="chart-title">
-                                <span>Sale performance</span>
-                                <span class="subtitle">(in Millions)</span>
-                                <a class="subtitle" href="javascript:resetAll();dc.redrawAll();" style="display: ;">reset</a>
-                            </div>
-                        </div>
-                        <br>
-                        <div id="monthly-performance-chart" class="chart-container">
-                          <!--  <div class="chart-title">Sales by Month</div> -->
-                        </div>
-                    </div>
-                    <div id="text-info" class="chart-container">
-                        <div class="chart-title">Performance Indices</div>
-                        <div id="opportunity" class="text-box">
-                            <div class="header">OPPORTUNITIES</div>
-                            <div class="value">500</div>
-                        </div>
-                        <div id="coverage" class="text-box">
-                            <div class="header">COVERAGE %</div>
-                            <div class="value">20%</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="clear-fix"></div>
-                <h3 id="sale-by-product-header">Sales by Product</h3>
-                <div id="sale-by-product">
-                    <div class="chart-cart">
-                        <div class="chart-title">Sales by Product</div>
-                        <div id="sales-product-chart" class="chart-container"></div>
-                    </div>
-                </div>
-                <h3 style="clear:both;" id="detail-analysis-header">Detail Analysis</h3>
-                <div id="detail-analysis">
-                    <div class="chart-cart">
-                        <div id="chart-map" class="chart-container">
-                            <div id="geographical-chart"></div>
-                            <div id="quadratic-bubble-chart"></div>
-                            <div id="sale-size-filter-silder"></div>
-                            <div class="clear-fix"></div>
-                            <div id="filter-market-sector">
-                                <div id="market-sector"></div>
-                                <br>
-                                <div id="hospitality-filter-market-sector" class="content-pannel-visible">
-                                    <!--<h4>GEORAPHICAL</h4>-->
-                                    <div id="filter-customer"></div>
-                                    <div id="prospect-filter" class="content-pannel-hidden">lead...</div>
-                                    <div id="customer-filter" class="content-pannel-visible">
-                                        <div id="rolling-period-filter">Rolling Period</div>
-                                        <div id="gain-loss-chart"></div>
-                                    </div>
-                                </div>
-                                <div id="residential-filter-market-sector" class="content-pannel-hidden">
-                                    <!--<h4>RESIDENTIAL</h4>-->
-                                    <div>something here?</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div id = "container">
+              <div id = "left-menu">
+                <h3>CONTROL PANEL</h3>
+                <div id="overview-header">Overview</div>
+                <div id="sale-by-product-header">Sales by Product</div>
+                <div id="detail-analysis-header">Detail Analysis</div>
 
+              </div>
+              <div id="dashboard-container">
+                  <!--Start Here: Added in by HY: Description-->
+                  <h98><b>Description:</b><br>
+                      <font size=1>This is an integrated business dashboard for an interior furnishing business (Company A) in Singapore so as to to conduct customers, sales, and product analysis through visual analytics.
+                          <br>The dashboard will also compare current business performance with the current market's potential and identify untapped market opportunities </font>
+                  </h98>
+                  <h4>Updated version: 20.NOV.2016 7:13PM </h4>
+                  <h3 style="clear:both;" id="market-sector-selection">Market Sector: </h3>
+                  <h3 style="clear:both;" id="overview-header">Overview</h3>
+                  <div id="overview">
+                      <div class="chart-cart">
+                          <div class="chart-title">
+                              <span>Sale performance</span>
+                              <span class="subtitle">(in Millions)</span>
+                              <a class="subtitle" href="javascript:resetAll();dc.redrawAll();" style="display: ;">reset</a>
+                          </div>
+                          <div id="sales-year-chart" class="chart-container" style="padding-left:35px">
+                          </div>
+                          <br>
+                          <div id="monthly-performance-chart-selected-range" class= "note-text" style="clear:both "></div>
+                          <div id="monthly-performance-chart" class="chart-container"></div>
+
+                      </div>
+                      <div id="text-info" class="chart-container">
+                          <div class="chart-title">Performance Indices</div>
+                          <div id="opportunity" class="text-box">
+                              <div class="header">OPPORTUNITIES</div>
+                              <div class="value">500</div>
+                          </div>
+                          <div id="coverage" class="text-box">
+                              <div class="header">COVERAGE %</div>
+                              <div class="value">20%</div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="clear-fix"></div>
+                  <h3 id="sale-by-product-header">Sales by Product</h3>
+                  <div id="sale-by-product">
+                      <div class="chart-cart">
+                          <div class="chart-title">Sales by Product</div>
+                          <div id="sales-product-chart" class="chart-container"></div>
+                      </div>
+                  </div>
+                  <h3 style="clear:both;" id="detail-analysis-header">Detail Analysis</h3>
+                  <div id="detail-analysis">
+                      <div class="chart-cart">
+                          <div id="chart-map" class="chart-container">
+                              <div id="geographical-chart"></div>
+                              <div id="quadratic-bubble-chart"></div>
+                              <div id="sale-size-filter-silder"></div>
+                              <div class="clear-fix"></div>
+                              <div id="filter-market-sector">
+                                  <div id="market-sector"></div>
+                                  <br>
+                                  <div id="hospitality-filter-market-sector" class="content-pannel-visible">
+                                      <!--<h4>GEORAPHICAL</h4>-->
+                                      <div id="filter-customer"></div>
+                                      <div id="prospect-filter" class="content-pannel-hidden">lead...</div>
+                                      <div id="customer-filter" class="content-pannel-visible">
+                                          <div id="rolling-period-filter">Rolling Period</div>
+                                          <div id="gain-loss-chart"></div>
+                                      </div>
+                                  </div>
+                                  <div id="residential-filter-market-sector" class="content-pannel-hidden">
+                                      <!--<h4>RESIDENTIAL</h4>-->
+                                      <div>something here?</div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
             </div>
             <script type="text/javascript" src="js/lib/d3.js"></script>
             <script type="text/javascript" src="js/lib/crossfilter.js"></script>
