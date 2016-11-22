@@ -495,7 +495,7 @@ function drawHotelQuadBubbleChart(xfProductSaleData) {
           return s + " %";
       });
       hotelQuadBubbleChart.xAxis().tickFormat(function (s) {
-          return s + "M";
+          return numberFormat(s/1000000) + "M";
       });
       hotelQuadBubbleChart.render();
 
