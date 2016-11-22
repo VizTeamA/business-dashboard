@@ -6,10 +6,10 @@
 .bullet .range.s0 { fill: #eee; }
 .bullet .range.s1 { fill: #ddd; }
 .bullet .range.s2 { fill: #ccc; }
-.bullet .measure.s0 { fill: #C0362C; }
-.bullet .measure.s1 { fill: #0097ac; }
-.bullet .measure-active.s0 { fill: #FF5F53; }
-.bullet .measure-active.s1 { fill: #38f; }
+.bullet .measure.s0 { fill: #FF9642; }
+.bullet .measure.s1 { fill: grey; }
+.bullet .measure-active.s0 { fill: #FF9642; }
+.bullet .measure-active.s1 { fill: #2431A8; }
 .bullet .title { font-size: 10px; font-weight: bold; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
 .bullet .subtitle { fill: #999; }
 
