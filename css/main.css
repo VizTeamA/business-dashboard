@@ -110,7 +110,7 @@ h4 {
   visibility: visible;;
 }
 
-/* ***********HEADER SETTING CSS ********/
+/* ***********HEADER SETTING CSS ********
 #App_Header1 {
     float: left;
     width: 100%;
@@ -132,7 +132,7 @@ th {
     font-family: sans-serif;
     text-align: center;
     background-color: #B1DDA1;
-    /*color: White;*/
+    /*color: White;* /
 }
 
 h100 {
@@ -159,7 +159,7 @@ h98 {
 a {
     font size: 3px;
     font-weight: 300;
-    /*color: white;*/
+    /*color: white;* /
     font-family: sans-serif;
     text-align: center;
     text-decoration: none;
@@ -169,14 +169,14 @@ th:hover,
 th:active,
 h100:hover {
     background-color: #668D3C;
-    /*color: white;*/
+    /*color: white;* /
 }
 
 a:hover,
 a:active,
 h100:hover {
     background-color: #668D3C;
-    /*color: white;*/
+    /*color: white;* /
 }
 */
 /* ***********CAHRT SETTING CSS ********/

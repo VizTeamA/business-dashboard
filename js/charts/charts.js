@@ -537,6 +537,7 @@ function toggleOptionPannel() {
 
 //function to load UI
 function createUI() {
+  /*
     // Add section
     var headerNames = ["#overview-header", "#detail-analysis-header", "#sales-by-product-header"];
     var toggleSections = ["#overview", "#detail-analysis", "#sales-by-product"];
@@ -568,7 +569,7 @@ function createUI() {
         d3.selectAll("#sale-by-product").attr("class", "section-hide");
         //console.log("-" + toggleSection + ">>" + "section-hide");
     });
-
+*/
     // Add reset Button
     d3.selectAll("#button-control button#reset-chart").on("click", function() {
         yearDim.filter(null);
