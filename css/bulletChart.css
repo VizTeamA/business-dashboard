@@ -9,7 +9,7 @@
 .bullet .measure.s0 { fill: #FF9642; }
 .bullet .measure.s1 { fill: grey; }
 .bullet .measure-active.s0 { fill: #FF9642; }
-.bullet .measure-active.s1 { fill: #2431A8; }
+.bullet .measure-active.s1 { fill: #0078a8; }
 .bullet .title { font-size: 10px; font-weight: bold; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
 .bullet .subtitle { fill: #999; }
 
