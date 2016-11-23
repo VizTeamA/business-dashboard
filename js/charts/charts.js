@@ -500,10 +500,12 @@ function drawHotelQuadBubbleChart(xfProductSaleData) {
       hotelQuadBubbleChart.render();
 
 }
-//
+
 // function drawsaleSizeFilterBarChart(xfProductSaleData) {
-//   saleSizeFilterBarChart.dimension(hotelDim).group(salesByHotel).width(300).height(220).elasticX(true);
-//   saleSizeFilterBarChart.x(d3.scaleOrdinal());
+//   totalSalesByHotel = hotelDim.group().reduceSum(function(d){ return d.Sales});
+//   saleSizeFilterBarChart.dimension(hotelDim).group(totalSalesByHotel).width(800).height(100).elasticX(true);
+//   saleSizeFilterBarChart.x(d3.scale.ordinal()).xUnits(dc.units.ordinal).yAxis().ticks(3);
+//   saleSizeFilterBarChart.xAxis().ticks(3);
 //   saleSizeFilterBarChart.render();
 // }
 

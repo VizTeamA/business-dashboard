@@ -9,7 +9,7 @@
   clear:both;
 }
 #dashboard-container {
-  width: 80%;
+  width: 100%;
   padding-left:5px;
   float: left;
   /*overflow:scroll;*/
@@ -108,6 +108,60 @@ h4 {
 
 .content-pannel-visible {
   visibility: visible;;
+}
+
+div#box-desc {
+  max-width: 50%;
+  height: 80px;
+  margin: 5px;
+  padding: 5px;
+  border: #e7ecf1;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 2px;
+  background-color: #f3f3f3;
+  float:left;
+}
+
+div#box-sys-info {
+  max-width: 100px;
+  height: 80px;
+  margin: 5px;
+  padding: 5px;
+  border: #e7ecf1;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 2px;
+  background-color: #f3f3f3;
+  float:left;
+}
+
+div#box-user-info {
+  width: 100px;
+  height: 80px;
+  margin: 5px;
+  padding: 5px;
+  border: #e7ecf1;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 2px;
+  background-color: #f3f3f3;;
+  float:left;
+}
+
+div .box-header {
+
+}
+
+div .box-content {
+  font-size:10px;
+}
+
+i#user_icon {
+  font-size:35px;
+  text-align: center;
+  padding:20% 30% 15% 30%;
+  color:#FF9642;
 }
 
 /* ***********HEADER SETTING CSS ********
