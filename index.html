@@ -23,7 +23,7 @@
     <link type="text/css" href="js/lib/leaflet.markercluster.css" rel="stylesheet" />
     <link type="text/css" href="js/lib/dc.css" rel="stylesheet" />
     <link type="text/css" href="css/bulletChart.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,600,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,600,900" rel="stylesheet">
     <!--- END CSS CHART -->
 </head>
 
@@ -32,14 +32,16 @@
     <div class="container-fluid">
         <div class="title-header">
             <div class="havbar-header">
-                <!-- BEGIN LOGO -->
-                <a id="index" class="navbar-brand" href="start.html">
-                    <img src="img/logo.png" alt="Logo" style="width:80px;"></a>
-                <!-- END LOGO -->
-                <span class="page-title" style="margin-left:20%; font-size:20px">Project A - The Non-Conventional Sales Dashboard for Company A</span>
                 <div>
-
+                  <div style=" float:left;">
+                  <!-- BEGIN LOGO -->
+                  <a id="index" class="navbar-brand" href="start.html">
+                      <img src="img/logo.png" alt="Logo" style="width:150px; padding:10px; border-right-style:solid; border-right-width:1px; border-right-color: lightgrey;"></a>
+                  <!-- END LOGO -->
                 </div>
+                  <div class="page-title" style="margin-left:5%; font-size:30px; float:left;padding-top:20px;font-family:'roboto';font-weight: 300;">Project A - The Non-Conventional Sales Dashboard for Company A</div>
+                </div>
+                <div class="clear-fix"></div>
                 <div class="page-content page-content-popup">
                     <div class="page-content-fixed-header">
                         <!-- BEGIN BREADCRUMBS -->
@@ -65,7 +67,7 @@
                             <ul class="page-sidebar-menu  page-header-fixed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
                                 <li class="nav-item start active open">
                                     <a href="javascript:;" class="nav-link-nav-toggle">
-                                        <i class="icon-home"></i>
+                                        <i class="icon-user"></i>
                                         <span class="title">User</span>
                                         <!--<span class="selected"></span>-->
                                         <!--<span class="arrow open"></span>-->
@@ -131,13 +133,28 @@
                         <div id="dashboard-container">
                             <!--Start Here: Added in by HY: Description-->
                             <div id="description" class="section">
-                                <h98><b>Description:</b><br>
+                              <div id="box-desc">
+                                <div class="box-header">Description</b></div>
+                                <div class="box-content">
+                                  <h98>
                                     <font size=1>This is an integrated business dashboard for an interior furnishing business (Company A) in Singapore so as to to conduct customers, sales, and product analysis through visual analytics.
                                         <br>The dashboard will also compare current business performance with the current market's potential and identify untapped market opportunities </font>
                                 </h98>
-                                <h4>Updated version: 22.NOV.2016 5:02PM </h4>
+                              </div>
+                              </div>
+                              <div id="box-user-info">
+                                <div class="box-header">Current View</div>
+                                <div class="box-content">
+                                  <i id="user_icon" class="icon-diamond"></i>
+                                </div>
+                              </div>
+                              <div id="box-sys-info">
+                                <div class="box-header">Version</div>
+                                <div class="box-content">22.NOV.2016 5:02PM</div>
+                              </div>
                             </div>
-                            <div id=""overview"">
+                            <div class="clear-fix"></div>
+                            <div id="overview" class="section" >
                               <h3 style="clear:both;" id="market-sector-selection">Market Sector: </h3>
                               <a class="subtitle" href="javascript:resetAll();" style="display: ;">reset all filter</a>
                                 <h3 style="clear:both;" id="overview-header">Overview</h3>
@@ -167,15 +184,15 @@
                                 </div>
                             </div>
                             <div class="clear-fix"></div>
-                            <div id="sale-by-product">
+                            <div id="sale-by-product" class="section">
                                 <h3 id="sale-by-product-header">Sales by Product</h3>
                                 <div class="chart-cart">
                                     <div class="chart-title">Sales by Product</div>
                                     <div id="sales-product-chart" class="chart-container"></div>
                                 </div>
                             </div>
-
-                            <div id="detail-analysis">
+                            <div class="clear-fix"></div>
+                            <div id="detail-analysis" class="section">
                                 <h3 style="clear:both;" id="detail-analysis-header">Detail Analysis</h3>
                                 <div class="chart-cart">
                                     <div id="chart-map" class="chart-container">

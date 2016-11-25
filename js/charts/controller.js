@@ -35,4 +35,11 @@ function toggleDetailAnalysis() {
 
 function userUpdate(userId) {
   d3.selectAll("#user").text(userId);
+  if (userId=="CEO") {
+    d3.selectAll("#user_icon").attr("class","icon-diamond");
+  } else if (userId=="Product Director") {
+    d3.selectAll("#user_icon").attr("class","icon-puzzle");
+  } else if (userId=="Sale Director") {
+    d3.selectAll("#user_icon").attr("class","icon-briefcase");
+  }
 }
