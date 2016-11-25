@@ -10,6 +10,7 @@ var yearSaleBulletChart = d3.bullet();
 var productSaleChart = dc.rowChart("#sales-product-chart", groupname);
 var monthlyPerformanceChart = dc.barChart('#monthly-performance-chart', groupname);
 var hotelQuadBubbleChart = dc.bubbleChart('#quadratic-bubble-chart', groupname);
+var productDataTable = dc.dataTable('#table-data', groupname);
 // var saleSizeFilterBarChart = dc.barChart('#sale-size-filter-bar-chart', groupname);
 //var mapChart = dc.leafletMarkerChart("#chart-map .map", groupname);
 
@@ -21,6 +22,8 @@ var yearCol = 'Year';
 var monthCol = 'Month';
 var sectorCol = 'Sector';
 var saleCodeCol = 'Sale_Code';
+var itemCodeCol = 'Item_number';
+var itemTyleCol = 'Item_Type';
 var propertyCol = 'Property';
 
 
@@ -44,6 +47,7 @@ d3.csv(inputSaleTrans, function(data) {
         d.yearFmt = d3.time.year(d.dateFull); // pre-calculate year for better performance
         d.Sales = numberFormat(d[saleCol]);
         d.propertyNameFmt = d[propertyCol];
+        d.Item_number = d.Item_number;
     });
     xfProductSaleData = crossfilter(data);
     // Set up dinmensions and groups that commonly used
@@ -62,6 +66,10 @@ d3.csv(inputSaleTrans, function(data) {
 
     hotelDim = xfProductSaleData.dimension(function (d) {
         return d.propertyNameFmt;
+    });
+
+    itemDim = xfProductSaleData.dimension(function(d){
+        return d.Item_number;
     });
 
     salesByProductGroup = productDim.group().reduceSum(function(d) {
@@ -103,13 +111,18 @@ d3.csv(inputSaleTrans, function(data) {
             }
     );
 
+    salesByItem = itemDim.group().reduceSum(function(d){
+      return d.Sales;
+    });
 
     // Draw all charts
     drawProductBarChart(xfProductSaleData);
     drawYearSaleBulletChart(xfProductSaleData);
     drawMonthlyPerformanceBarChart(xfProductSaleData);
     drawHotelQuadBubbleChart(xfProductSaleData);
+    drawTableData();
     // drawsaleSizeFilterBarChart(xfProductSaleData);
+
     /*
     d3.csv(inputFile2, function(data) {
         drawMapChart(data);
@@ -361,6 +374,97 @@ function drawYearSaleBulletChart(datacf) {
     });
 }
 
+function drawTableData() {
+
+//
+//   itemGroupedDim = productDim.group().reduce(
+//       function (p, v) {
+//           ++p.number;
+//           p.total += +v.Sales;
+//           p.avg = Math.round(p.total / p.number);
+//           return p;
+//       },
+//       function (p, v) {
+//           --p.number;
+//           p.total -= +v.Sales;
+//           p.avg = (p.number == 0) ? 0 : Math.round(p.total / p.number);
+//           return p;
+//       },
+//       function () {
+//           return {number: 0, total: 0, avg: 0}
+//   });
+//
+//   productDataTable.width(100)
+//     .height(480)
+//     .dimension(itemGroupedDim)
+//     .group(function() {return ""})
+//     .columns([function (d) { return d.key },
+//               function (d) { return d.value.number },
+//               function (d) { return d.value.avg }])
+//     .sortBy(function (d) { return d.value.avg })
+//     .order(d3.descending)
+//     productDataTable.render();
+
+exptDimension    = xfProductSaleData.dimension(function(d) {return d.Item_number;}),
+groupedDimension = exptDimension.group().reduce(
+    function (p, v) {
+        if(v.Item_Type!='Material') {
+          p.product = '_SERVICE_';
+        } else {
+          p.product = v.Product;
+        }
+        ++p.number;
+        p.sales += Math.round(v.Sales);
+        p.avg = Math.round(p.sales / p.number);
+        return p;
+    },
+    function (p, v) {
+      if(v.Item_Type!='Material') {
+        p.product = '_SERVICE_';
+      } else {
+        p.product = v.Product;
+      }
+      --p.number;
+      p.sales -= Math.round(v.Sales);
+      p.avg = (p.number == 0) ? 0 : Math.round(p.sales / p.number);
+        return p;
+
+    },
+    function () {
+        return {number: 0, product:"", sales: 0, avg: 0}
+});
+rank = function (p) {
+  return "" };
+
+productDataTable
+.width(768)
+.height(480)
+.dimension(groupedDimension)
+.group(rank)
+.columns([
+        function (p) { return p.value.product },
+        function (p) { return p.key},
+        function (p) {
+          itemId = p.key;
+          if (itemId==null) {return ""};
+          url = "img\\item\\" + itemId + ".jpeg";
+          imgStr = "<img src=\"" + url + "\" width=50px; height=50px;>";
+           return imgStr },
+        function (p) { return p.value.number },
+        function (p) { return p.value.sales },
+        function (p) { return p.value.avg }])
+
+
+.sortBy(function (p) { return p.value.number })
+.order(d3.descending)
+productDataTable.render();
+
+
+}
+
+
+
+
 
 function updateBulletChart(yearList) {
     //Reset css
@@ -378,6 +482,8 @@ function updateBulletChart(yearList) {
     }
 
 }
+
+
 //function updateRange
 
 /**

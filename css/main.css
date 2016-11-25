@@ -192,3 +192,32 @@ div#filter-market-sector {
   border-width: 1px;
   border-radius: 2px;
 }
+
+td {
+  padding:10px;
+  /*border-style: solid;
+  border-color: grey;
+  border-width: 0.5px;*/
+  width: 30px;
+  height: 30px;
+}
+
+th {
+  border-style: solid;
+  border-color: grey;
+  border-width: 0.5px;
+}
+
+tr {
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+table {
+  margin: 0 0 40px 0;
+  width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  display: table;
+  border-collapse: collapse;
+}
