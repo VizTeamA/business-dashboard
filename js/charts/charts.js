@@ -3,17 +3,13 @@
 * Avoid using Global Vars as much as we can ok.
 *************************************************************************************************/
 /*     Markers      */
-var groupname = "marker-select2";
-var inputFile2 = 'data/tables/hotelsg-sales.csv';
-var inputSaleTrans = 'data/tables/SALES_TRANS_v2.0.csv';
+var groupname = "marker-select";
+var inputSaleTrans = 'data/tables/SALE_TRANS.csv';
 var yearSaleBulletChart = d3.bullet();
-var productSaleChart = dc.rowChart("#sales-product-chart", groupname);
+var productSaleRowChart = dc.rowChart("#sales-product-chart", groupname);
 var monthlyPerformanceChart = dc.barChart('#monthly-performance-chart', groupname);
 var hotelQuadBubbleChart = dc.bubbleChart('#quadratic-bubble-chart', groupname);
 var productDataTable = dc.dataTable('#table-data', groupname);
-// var saleSizeFilterBarChart = dc.barChart('#sale-size-filter-bar-chart', groupname);
-//var mapChart = dc.leafletMarkerChart("#chart-map .map", groupname);
-
 var yearDim;
 
 var productCol = 'Product';
@@ -26,8 +22,8 @@ var itemCodeCol = 'Item_number';
 var itemTyleCol = 'Item_Type';
 var propertyCol = 'Property';
 
-
 numberFormat = d3.format('.2f');
+yearFormat = d3.time.format("%Y");
 
 /****************************************** MAIN ************************************************
 * Main ()
@@ -64,16 +60,16 @@ d3.csv(inputSaleTrans, function(data) {
         return d[sectorCol]
     });
 
-    hotelDim = xfProductSaleData.dimension(function (d) {
+    hotelDim = xfProductSaleData.dimension(function(d) {
         return d.propertyNameFmt;
     });
 
-    itemDim = xfProductSaleData.dimension(function(d){
+    itemDim = xfProductSaleData.dimension(function(d) {
         return d.Item_number;
     });
 
     salesByProductGroup = productDim.group().reduceSum(function(d) {
-      //  return d[saleCol]
+        //  return d[saleCol]
         return Math.round(d[saleCol]);
     });
 
@@ -86,6 +82,11 @@ d3.csv(inputSaleTrans, function(data) {
     dateMonthYearFmtDim = xfProductSaleData.dimension(function(d) {
         return d.dateFull
     });
+
+    saleCodeDim = xfProductSaleData.dimension(function(d) {
+        return d[saleCodeCol]
+    });
+
     productSalesByMonth = monthFmtDim.group().reduceSum(function(d) {
         return Math.round(d[saleCol]);
     });
@@ -94,40 +95,33 @@ d3.csv(inputSaleTrans, function(data) {
         return numberFormat(d[saleCol]);
     });
 
-    salesByHotel = hotelDim.group().reduce(
-            function (p, v) {
-                p.Sales += +v["Sales"];
-                p.Growth += +v["Growth"];
-                return p;
-            },
-            function (p, v) {
-                p.Sales -= +v["Sales"];
-                //if (p.Sales < 0.001) p.Sales = 0; // do some clean up
-                p.Growth -= +v["Growth"];
-                return p;
-            },
-            function () {
-                return {Sales: 0, Growth: 0}
-            }
-    );
+    productSalesByHotel = hotelDim.group().reduce(function(p, v) {
+        p.Sales += + v["Sales"];
+        p.Growth += + v["Growth"];
+        return p;
+    }, function(p, v) {
+        p.Sales -= + v["Sales"];
+        //if (p.Sales < 0.001) p.Sales = 0; // do some clean up
+        p.Growth -= + v["Growth"];
+        return p;
+    }, function() {
+        return {Sales: 0, Growth: 0}
+    });
 
-    salesByItem = itemDim.group().reduceSum(function(d){
-      return d.Sales;
+    productSalesBySaleCode = saleCodeDim.group().reduceSum(function(d) {
+        return Math.round((d[saleCol]));
     });
 
     // Draw all charts
     drawProductBarChart(xfProductSaleData);
-    drawYearSaleBulletChart(xfProductSaleData);
+    drawYearSaleBulletChart();
     drawMonthlyPerformanceBarChart(xfProductSaleData);
     drawHotelQuadBubbleChart(xfProductSaleData);
     drawTableData();
-    // drawsaleSizeFilterBarChart(xfProductSaleData);
+    drawSparkLines();
+    drawSaleTargetBulletChartHospitality();
+    drawSaleTargetBulletChartResidential();
 
-    /*
-    d3.csv(inputFile2, function(data) {
-        drawMapChart(data);
-    });
-    */
 });
 
 //Select All radio buttons that used for Market Sector Selection
@@ -140,35 +134,23 @@ d3.selectAll("market-sector").on("click", function() {
 *
 *******************************************************************************************/
 
-function drawMapChart(data) {
-    var xf = crossfilter(data);
-    var groupname = "marker-select";
-    var facilities = xf.dimension(function(d) {
-        return d.geo;
-    });
-    var facilitiesGroup = facilities.group().reduceCount();
-    mapChart.dimension(facilities).group(facilitiesGroup).width(800).height(1400).center([1.35, 103.8198]).zoom(12).cluster(true);
-    mapChart.render();
-}
 
 function drawProductBarChart(xfProductSaleData) {
-    productSaleChart.dimension(productDim).group(salesByProductGroup).on("click", function(d) {
-        console.log("Pressed");
-    }).width(300).height(220).elasticX(true)
+    productSaleRowChart.dimension(productDim).group(salesByProductGroup).width(300).height(220).elasticX(true)
     //.controlsUseVisibility(true)
         .xAxis().ticks(3);
-    productSaleChart.colors(['#0078a8']);
-    productSaleChart.render();
+    productSaleRowChart.colors("#0078a8");
+    productSaleRowChart.render();
 
     function AddXAxis(chartToUpdate, displayText, offsetY) {
         chartToUpdate.svg().append("text").attr("class", "x-axis-label").attr("text-anchor", "middle").attr("x", chartToUpdate.width() - 25).attr("y", chartToUpdate.height() + offsetY).text(displayText).style("font-size", "10px");
     }
-    AddXAxis(productSaleChart, "Sale ($)", -5);
+    AddXAxis(productSaleRowChart, "Sale ($)", -5);
 }
 
 function updateChartByYear(year) {
     low = +year;
-    high = + year + 1;
+    high = +year + 1;
     yearDim.filter(null);
     yearDim.filterRange([low, high]);
     dc.redrawAll(groupname);
@@ -209,7 +191,7 @@ function resetAll() {
     dc.redrawAll(groupname);
 }
 
-function drawYearSaleBulletChart(datacf) {
+function drawYearSaleBulletChart() {
     var margin = {
             top: 5,
             right: 5,
@@ -340,12 +322,7 @@ function drawYearSaleBulletChart(datacf) {
     var datacf = crossfilter(targetDataJson),
         titleDimension = datacf.dimension(function(d) {
             return d.Year;
-        }),
-        statusGroup = {
-            all: function() {
-                return dataExample;
-            }
-        };
+        });
 
     data = titleDimension.bottom(Infinity);
     lastYear = titleDimension.top(1)[0].Year;
@@ -369,145 +346,211 @@ function drawYearSaleBulletChart(datacf) {
         //alert(d.Year);
     });
 
-    d3.selectAll("#button-control button#rand-bullet-chart").on("click", function() {
-        bulletChartSvg.datum(randomize).transition().duration(1000).call(yearSaleBulletChart);
-    });
 }
 
 function drawTableData() {
-
-//
-//   itemGroupedDim = productDim.group().reduce(
-//       function (p, v) {
-//           ++p.number;
-//           p.total += +v.Sales;
-//           p.avg = Math.round(p.total / p.number);
-//           return p;
-//       },
-//       function (p, v) {
-//           --p.number;
-//           p.total -= +v.Sales;
-//           p.avg = (p.number == 0) ? 0 : Math.round(p.total / p.number);
-//           return p;
-//       },
-//       function () {
-//           return {number: 0, total: 0, avg: 0}
-//   });
-//
-//   productDataTable.width(100)
-//     .height(480)
-//     .dimension(itemGroupedDim)
-//     .group(function() {return ""})
-//     .columns([function (d) { return d.key },
-//               function (d) { return d.value.number },
-//               function (d) { return d.value.avg }])
-//     .sortBy(function (d) { return d.value.avg })
-//     .order(d3.descending)
-//     productDataTable.render();
-
-exptDimension    = xfProductSaleData.dimension(function(d) {return d.Item_number;}),
-groupedDimension = exptDimension.group().reduce(
-    function (p, v) {
-        if(v.Item_Type!='Material') {
-          p.product = '_SERVICE_';
+    exptDimension = xfProductSaleData.dimension(function(d) {
+        return d.Item_number;
+    }),
+    groupedDimension = exptDimension.group().reduce(function(p, v) {
+        if (v.Item_Type == 'Service') {
+            p.product = '_SERVICE_';
         } else {
-          p.product = v.Product;
+            p.product = v.Product;
         }
         ++p.number;
-        p.sales += Math.round(v.Sales);
-        p.avg = Math.round(p.sales / p.number);
+        p.sales += + v.Sales;
         return p;
-    },
-    function (p, v) {
-      if(v.Item_Type!='Material') {
-        p.product = '_SERVICE_';
-      } else {
-        p.product = v.Product;
-      }
-      --p.number;
-      p.sales -= Math.round(v.Sales);
-      p.avg = (p.number == 0) ? 0 : Math.round(p.sales / p.number);
+    }, function(p, v) {
+        if (v.Item_Type == 'Service') {
+            p.product = '_SERVICE_';
+        } else {
+            p.product = v.Product;
+        }
+        --p.number;
+        p.sales -= + v.Sales;
         return p;
 
-    },
-    function () {
-        return {number: 0, product:"", sales: 0, avg: 0}
-});
-rank = function (p) {
-  return "" };
+    }, function() {
+        return {number: 0, product: "", sales: 0}
+    });
+    rank = function(p) {
+        return ""
+    };
 
-productDataTable
-.width(768)
-.height(480)
-.dimension(groupedDimension)
-.group(rank)
-.columns([
-        function (p) { return p.value.product },
-        function (p) { return p.key},
-        function (p) {
-          itemId = p.key;
-          if (itemId==null) {return ""};
-          url = "img\\item\\" + itemId + ".jpeg";
-          imgStr = "<img src=\"" + url + "\" width=50px; height=50px;>";
-           return imgStr },
-        function (p) { return p.value.number },
-        function (p) { return p.value.sales },
-        function (p) { return p.value.avg }])
+    productDataTable.width(800).height(480).dimension(groupedDimension).group(rank).columns([
+        {
+            label: "Product Type",
+            format: function(p) {
+                return p.value.product
+            }
+        }, {
+            label: "Item #",
+            format: function(p) {
+                return p.key
+            }
+        }, {
+            label: "Item Image",
+            format: function(p) {
+                itemId = p.key;
+                if (itemId == null) {
+                    return ""
+                };
+                url = "img\\item\\" + itemId + ".jpeg";
+                imgStr = "<img src=\"" + url + "\" width=50px; height=50px;>";
+                return imgStr
+            }
+        }, {
+            label: "Revenue",
+            format: function(p) {
+                return formatBigNum(p.value.sales)
+            }
+        }
 
-
-.sortBy(function (p) { return p.value.number })
-.order(d3.descending)
-productDataTable.render();
-
-
+    ]).sortBy(function(p) {
+        return p.value.sales
+    }).order(d3.descending);
+    productDataTable.showGroups(false).size(10);
+    productDataTable.render();
 }
 
+function drawSparkLines() {
+    //Sorting Sale Code by total Sales
+    saleCodeArr = productSalesBySaleCode.orderNatural().top(Infinity);
 
+    visibleLengthMax = 10;
+    visibleLength = Math.min(saleCodeArr.length, visibleLengthMax);
+    //visibleLength = saleCodeList.length;
+    for (i = 0; i < visibleLength; i++) {
+        saleCode = saleCodeArr[i].key;
+        saleTotal = +saleCodeArr[i].value;
+        saleTotalFmt = formatBigNum(saleTotal);
+        saleCodeDim.filterAll();
+        saleCodeDim.filter(saleCode);
+        var saleCodeChartId = "sale-code-sparkline" + saleCode;
+        d3.selectAll("#sale-code-spark-line-chart").append("div").attr("id", saleCodeChartId).style("clear", "both").append("text").text("[" + (i + 1) + "]  " + "Id:" + saleCode + "\t\t $" + saleTotalFmt + "\t");
 
-
+        var lineChart = dc.lineChart("#" + saleCodeChartId, saleCode);
+        lineChart.width(100).height(20).margins({left: 0, top: 0, right: 0, bottom: 0}).x(d3.time.scale().domain([minDate, maxDate])).elasticY(false).brushOn(false).dimension(yearFmtDim).group(productSalesByYear).title(function(d) {
+            return "Year:" + yearFormat(d.key) + "\nSales: $" + formatBigNum(d.value);
+        });
+        dc.renderAll(saleCode);
+        lineChart.selectAll("g.axis").attr("display", "none");
+        saleCodeDim.filterAll();
+    }
+}
 
 function updateBulletChart(yearList) {
     //Reset css
     d3.selectAll(".measure-active.s0").attr("class", "measure s0");
     d3.selectAll(".measure-active.s1").attr("class", "measure s1");
     if (yearList != null) {
-      for(i = 0; i < yearList.length; i++){
+        for (i = 0; i < yearList.length; i++) {
             selectYear = yearList[i];
-            objName_0 = "rect#dimension_y" + selectYear+".measure.s0";
-            objName_1 = "rect#dimension_y" + selectYear+".measure.s1";
+            objName_0 = "rect#dimension_y" + selectYear + ".measure.s0";
+            objName_1 = "rect#dimension_y" + selectYear + ".measure.s1";
             //console.log("selectYear=" +selectYear);
-            d3.selectAll(objName_0).attr("class","measure-active s0");
-            d3.selectAll(objName_1).attr("class","measure-active s1");
-      }
+            d3.selectAll(objName_0).attr("class", "measure-active s0");
+            d3.selectAll(objName_1).attr("class", "measure-active s1");
+        }
     }
 
 }
 
+function drawSaleTargetBulletChartResidential() {
+  // Target market share:
+  // all : 60% total of total
+  var pTitle, pRangeMax, pMeasureActual, pMeasureExpect, pMarker, targetMarketShare;
+  var chartData = [];
+  var data = [];
+  var datacf;
+  var titleDimension;
+
+
+  //Total hotel
+  targetMarketShare = 0.6;
+  pTitle = "Private Condo";
+  pRangeMax = 3420;
+  pMeasureActual = 2950;
+  pMeasureExpect = Math.round(pRangeMax * targetMarketShare);
+  data = getBulletData(pTitle, pRangeMax, pMeasureActual, pMeasureExpect);
+  chartData.push(data);
+
+  var targetBulletChartResidential = d3.bullet();
+  drawTargetBulletChart(targetBulletChartResidential, chartData, "#sales-target-residential-chart");
+}
+
+function drawSaleTargetBulletChartHospitality() {
+    // Target market share:
+    // 5 star: 75% total of 5 stars
+    // 4 star: 50% total of 4 stars
+    // all : 60% total of total
+    var pTitle, pRangeMax, pMeasureActual, pMeasureExpect, pMarker, targetMarketShare;
+    var chartData = [];
+    var data = [];
+    var datacf;
+    var titleDimension;
+
+
+    //Total hotel
+    targetMarketShare = 0.6;
+    pTitle = "Hotel Market";
+    pRangeMax = 1420;
+    pMeasureActual = 1250;
+    pMeasureExpect = Math.round(pRangeMax * targetMarketShare);
+    data = getBulletData(pTitle, pRangeMax, pMeasureActual, pMeasureExpect);
+    chartData.push(data);
+
+
+    //4 Star hotel
+    targetMarketShare = 0.5;
+    pTitle = "4-Star Hotel";
+    pRangeMax = 771;
+    pMeasureActual = 500;
+    pMeasureExpect = Math.round(pRangeMax * targetMarketShare);
+    data = getBulletData(pTitle, pRangeMax, pMeasureActual, pMeasureExpect);
+    chartData.push(data);
+
+    //5 Star hotel
+    targetMarketShare = 0.75;
+    pTitle = "5-Star Hotel";
+    pRangeMax = 420;
+    pMeasureActual = 250;
+    pMeasureExpect = Math.round(pRangeMax * targetMarketShare);
+    data = getBulletData(pTitle, pRangeMax, pMeasureActual, pMeasureExpect);
+    chartData.push(data);
+
+    var targetBulletChart2 = d3.bullet();
+    drawTargetBulletChart(targetBulletChart2, chartData, "#sales-target-hospitality-chart");
+
+}
 
 //function updateRange
 
 /**
 * Update on Brushing
 */
-var beg=0;
-var end=0;
+var beg = 0;
+var end = 0;
 function updateOnBrush(low, high) {
-  if (beg=="") {
-    beg = low;
-    end = high;
-  } else if (low == beg && high == end ) {
-    return;
-  } else {
-    //updateBulletChart
-     var yearList = [];
-     l = +low;
-     h = +high;
-     for (i=l-1; i++; i<=h) {
-       if (i>h) {break};
-       yearList.push(i);
-     }
-     updateBulletChart(yearList);
-  }
+    if (beg == "") {
+        beg = low;
+        end = high;
+    } else if (low == beg && high == end) {
+        return;
+    } else {
+        //updateBulletChart
+        var yearList = [];
+        l = +low;
+        h = +high;
+        for (i = l - 1; i++; i <= h) {
+            if (i > h) {
+                break
+            };
+            yearList.push(i);
+        }
+        updateBulletChart(yearList);
+    }
 }
 
 function updateNumbers(d) {
@@ -530,154 +573,154 @@ function drawMonthlyPerformanceBarChart(xfProductSaleData) {
     maxDate = strmDateExtent[1];
 
     monthlyPerformanceChart.height(150).width(550).margins({top: 0, right: 50, bottom: 60, left: 60}).dimension(monthFmtDim).group(productSalesByMonth)
-    monthlyPerformanceChart.centerBar(true)
-        .x(d3.time.scale().domain([minDate, maxDate])).elasticY(true).elasticX(true).xUnits(d3.time.months);
-    monthlyPerformanceChart.yAxis().tickFormat(function (s) {
-        return s/1000 + "k$";
+    monthlyPerformanceChart.centerBar(true).x(d3.time.scale().domain([minDate, maxDate])).elasticY(true).elasticX(true).xUnits(d3.time.months);
+    monthlyPerformanceChart.yAxis().tickFormat(function(s) {
+        return s / 1000 + "k$";
     }).ticks(3);
     monthlyPerformanceChart.colors(['#0078a8']);
-    monthlyPerformanceChart.on("filtered", function(){
-      updateBulletChart(null);
-      if (yearDim.top(Infinity).length!=0) {
-        var highYear = +yearDim.top(1)[0].Year;
-        var lowYear = +yearDim.bottom(1)[0].Year;
-        var highMonth = dateMonthYearFmtDim.top(1)[0].Month;
-        var lowMonth = dateMonthYearFmtDim.bottom(1)[0].Month;
-        //console.log(lowMonth + "/" +lowYear +" --> " + highMonth+"/" +highYear);
-        updateOnBrush(lowYear, highYear);
-        updateBrushRange(lowMonth + "/" +lowYear, highMonth+"/" +highYear);
-      }
+    monthlyPerformanceChart.on("filtered", function() {
+        updateBulletChart(null);
+        if (yearDim.top(Infinity).length != 0) {
+            var highYear = +yearDim.top(1)[0].Year;
+            var lowYear = +yearDim.bottom(1)[0].Year;
+            var highMonth = dateMonthYearFmtDim.top(1)[0].Month;
+            var lowMonth = dateMonthYearFmtDim.bottom(1)[0].Month;
+            //console.log(lowMonth + "/" +lowYear +" --> " + highMonth+"/" +highYear);
+            updateOnBrush(lowYear, highYear);
+            updateBrushRange(lowMonth + "/" + lowYear, highMonth + "/" + highYear);
+        }
 
     });
     monthlyPerformanceChart.render();
 }
 
 function updateBrushRange(low, high) {
-  // console.log("brush:" + low + "-->" + high)
-  if (low!=null) {
-      d3.selectAll("#monthly-performance-chart-selected-range").text("Range: ["+low+" - " +high +"]");
-  } else {
-     d3.selectAll("#monthly-performance-chart-selected-range").text("");
-  }
+    // console.log("brush:" + low + "-->" + high)
+    if (low != null) {
+        d3.selectAll("#monthly-performance-chart-selected-range").text("Range: [" + low + " - " + high + "]");
+    } else {
+        d3.selectAll("#monthly-performance-chart-selected-range").text("");
+    }
 
 }
 
 function drawHotelQuadBubbleChart(xfProductSaleData) {
-      hotelQuadBubbleChart.width(990)
-              .height(500)
-              .margins({top: 10, right: 50, bottom: 30, left: 60})
-              .dimension(hotelDim)
-              .group(salesByHotel)
-              //.colors(d3.scale.category10())
-              .colors(['#0078a8'])
-              .keyAccessor(function (p) {
-                  return p.value.Sales;
-              })
-              .valueAccessor(function (p) {
-                  return p.value.Growth;
-              })
-              .radiusValueAccessor(function (p) {
-                  return p.value.Sales;
-              })
-              .x(d3.scale.linear().domain([0, 4000000]))
-              .r(d3.scale.linear().domain([0, 10000000]))
-              .minRadiusWithLabel(15)
-              .elasticY(true)
-              .yAxisPadding(1000)
-              .elasticX(true)
-              .xAxisPadding(100000)
-              .maxBubbleRelativeSize(0.15)
-              .renderHorizontalGridLines(true)
-              .renderVerticalGridLines(true)
-              .renderLabel(true)
-              .renderTitle(true)
-              .title(function (p) {
-                  return p.key
-                          + "\n"
-                          + "Sales: " + numberFormat(p.value.Sales/1000000) + "M\n"
-                          + "Growth: " + numberFormat(p.value.Growth);
-              });
-      hotelQuadBubbleChart.yAxis().tickFormat(function (s) {
-          return s + " %";
-      });
-      hotelQuadBubbleChart.xAxis().tickFormat(function (s) {
-          return numberFormat(s/1000000) + "M";
-      });
-      hotelQuadBubbleChart.render();
+    hotelQuadBubbleChart.width(990).height(500).margins({top: 10, right: 50, bottom: 30, left: 60}).dimension(hotelDim).group(productSalesByHotel)
+    //.colors(d3.scale.category10())
+        .colors(['#0078a8']).keyAccessor(function(p) {
+        return p.value.Sales;
+    }).valueAccessor(function(p) {
+        return p.value.Growth;
+    }).radiusValueAccessor(function(p) {
+        return p.value.Sales;
+    }).x(d3.scale.linear().domain([0, 4000000])).r(d3.scale.linear().domain([0, 10000000])).minRadiusWithLabel(15).elasticY(true).yAxisPadding(1000).elasticX(true).xAxisPadding(100000).maxBubbleRelativeSize(0.15).renderHorizontalGridLines(true).renderVerticalGridLines(true).renderLabel(true).renderTitle(true).title(function(p) {
+        return p.key + "\n" + "Sales: " + numberFormat(p.value.Sales / 1000000) + "M\n" + "Growth: " + numberFormat(p.value.Growth);
+    });
+    hotelQuadBubbleChart.yAxis().tickFormat(function(s) {
+        return s + " %";
+    });
+    hotelQuadBubbleChart.xAxis().tickFormat(function(s) {
+        return numberFormat(s / 1000000) + "M";
+    });
+    hotelQuadBubbleChart.render();
 
 }
 
-// function drawsaleSizeFilterBarChart(xfProductSaleData) {
-//   totalSalesByHotel = hotelDim.group().reduceSum(function(d){ return d.Sales});
-//   saleSizeFilterBarChart.dimension(hotelDim).group(totalSalesByHotel).width(800).height(100).elasticX(true);
-//   saleSizeFilterBarChart.x(d3.scale.ordinal()).xUnits(dc.units.ordinal).yAxis().ticks(3);
-//   saleSizeFilterBarChart.xAxis().ticks(3);
-//   saleSizeFilterBarChart.render();
-// }
+/****************************************** Utilities **********************************
+* UTILITIES SECTION: reuseable utility libraries
+*
+****************************************************************************************/
 
+function drawTargetBulletChart(targetBulletChart, data, containerObjectName) {
+    var margin = {
+            top: 5,
+            right: 5,
+            bottom: 40,
+            left: 40
+        },
+        width = 80 - margin.left - margin.right,
+        height = 180 - margin.top - margin.bottom;
+    targetBulletChart.orient("bottom").width(width).height(height);
+    bulletChartSvg = d3.select(containerObjectName).selectAll("svg").data(data).enter().append("svg").attr("class", "bullet").attr("width", width + margin.left + margin.right).attr("height", height + margin.top + margin.bottom)
+        .append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")").call(targetBulletChart);
+    var title = bulletChartSvg.append("g").style("text-anchor", "end").attr("transform", "translate(" + width + "," + (height + 20) + ")");
+    title.append("text").attr("class", "title").text(function(d) {
+        return d.title
+    });
+
+}
+
+function getBulletData(pTitle, pRangeMax, pMeasureActual, pMeasureExpect) {
+    var title,
+        range_min,
+        range_mid,
+        range_max,
+        measure_actual,
+        measure_expect,
+        marker;
+
+    title = pTitle;
+    range_min = Math.round(pRangeMax * 60 / 100);
+    range_mid = Math.round(pRangeMax * 75 / 100);
+    range_max = Math.round(pRangeMax * 100 / 100);
+    measure_actual = +pMeasureActual;
+    measure_expect = +pMeasureExpect;
+    marker = +pMeasureExpect;
+
+    var dataObj = new Object();
+    dataObj["title"] = title;
+    dataObj["ranges"] = [range_min, range_mid, range_max];
+    dataObj["measures"] = [measure_actual, measure_expect];
+    dataObj["markers"] = [marker];
+    return dataObj;
+
+}
+
+function formatBigNum(number) {
+    if (number < 999) {
+        return numberFormat(number);
+    } else if (number < 999999) {
+        return numberFormat(number / 1000) + "K";
+    } else {
+        return numberFormat(number / 1000000)+ "M";
+    }
+}
 /****************************************** UI *****************************************
 * UI SECTION: Options, Class update, Drop list, ratio button, ect...
 *
 ****************************************************************************************/
-// activeObjectName is "hospitality" or else (residential)
-function toggleOptionPannel() {
-    //var containerObjectName = "filter-market-sector";
-    var selectedObjectName = d3.select('input[name=' +
-    'marketSector' +
-    ']:checked').node().value;
+// toggle between 2 views: Hospitality or Residential. Default: Hospitality
+function toggleMarketSectorView() {
+    var isHospitality = d3.select('input[name=' +
+    'onoffswitch' +
+    ']').node().checked;
     var containerHospitality = d3.selectAll("#hospitality-filter-market-sector");
+    var bulletChartHospitality = d3.selectAll("#sales-target-hospitality-chart");
     var containerResidential = d3.selectAll("#residential-filter-market-sector");
-    if (selectedObjectName == "Hospitality") {
+    var bulletChartResidential = d3.selectAll("#sales-target-residential-chart");
+    if (isHospitality) {
         containerHospitality.attr("class", "content-pannel-visible");
         containerResidential.attr("class", "content-pannel-hidden");
+        bulletChartHospitality.style("display","");
+        bulletChartResidential.style("display","none");
         sectorDim.filter("Hospitality");
         dc.redrawAll(groupname);
-        //console.log("visibile containerHospitality");
     } else {
         containerHospitality.attr("class", "content-pannel-hidden");
         containerResidential.attr("class", "content-pannel-visible");
+        bulletChartHospitality.style("display","none");
+        bulletChartResidential.style("display","");
         sectorDim.filter("Residential");
         dc.redrawAll(groupname);
         //console.log("visibile containerResidential");
     }
 
+
+
 }
 
 //function to load UI
 function createUI() {
-  /*
-    // Add section
-    var headerNames = ["#overview-header", "#detail-analysis-header", "#sales-by-product-header"];
-    var toggleSections = ["#overview", "#detail-analysis", "#sales-by-product"];
-    var classNameVisible = "section";
-    var classNameHide = "section-hide";
-    d3.selectAll("#overview-header").append("text").text(" [show] ").on("click", function() {
-        d3.selectAll("#overview").attr("class", "section");
-        //console.log("+" + toggleSection + ">>" + "section");
-    });
-    d3.selectAll("#overview-header").append("text").text(" [hide] ").on("click", function() {
-        d3.selectAll("#overview").attr("class", "section-hide");
-        //console.log("-" + toggleSection + ">>" + "section-hide");
-    });
-
-    d3.selectAll("#detail-analysis-header").append("text").text(" [show] ").on("click", function() {
-        d3.selectAll("#detail-analysis").attr("class", "section");
-        //console.log("+" + "#detail-analysis" + ">>" + "section");
-    });
-    d3.selectAll("#detail-analysis-header").append("text").text(" [hide] ").on("click", function() {
-        d3.selectAll("#detail-analysis").attr("class", "section-hide");
-        //console.log("-" + toggleSection + ">>" + "section-hide");
-    });
-
-    d3.selectAll("#sale-by-product-header").append("text").text(" [show] ").on("click", function() {
-        d3.selectAll("#sale-by-product").attr("class", "section");
-        //console.log("+" + toggleSection + ">>" + "section");
-    });
-    d3.selectAll("#sale-by-product-header").append("text").text(" [hide] ").on("click", function() {
-        d3.selectAll("#sale-by-product").attr("class", "section-hide");
-        //console.log("-" + toggleSection + ">>" + "section-hide");
-    });
-*/
     // Add reset Button
     d3.selectAll("#button-control button#reset-chart").on("click", function() {
         yearDim.filter(null);
@@ -688,42 +731,45 @@ function createUI() {
     });
 
     // Options for Market Sector
-    var shapeData = [
-            "Hospitality", "Residential"
-        ],
-        selectedId = "Hospitality"; // Choose the rectangle as default
+    // var shapeData = [
+    //         "Hospitality", "Residential"
+    //     ],
+    //     selectedId = "Hospitality"; // Choose the rectangle as default
 
     // Create the shape selectors
-    var formMarketSector = d3.select("#market-sector").append("form");
-    var labelEnter = formMarketSector.selectAll("label").data(shapeData).enter().append("label");
-    labelEnter.append("input").attr({
-        type: "radio",
-        class: "shape",
-        name: "marketSector",
-        value: function(d, i) {
-            return d;
-        }
-    }).property("checked", function(d) {
-        return (d === selectedId);
-    }).on("click", function(d) {
-        //console.log("hey click"+ d);
-        toggleOptionPannel();
-    });
-    labelEnter.append("label").text(function(d) {
-        return d;
-    });
-    labelEnter.append("br");
-    //toggleOptionPannel();
+    // var formMarketSector = d3.select("#market-sector").append("form");
+    // var labelEnter = formMarketSector.selectAll("label").data(shapeData).enter().append("label");
+    // labelEnter.append("input").attr({
+    //     type: "radio",
+    //     class: "shape",
+    //     name: "marketSector",
+    //     value: function(d, i) {
+    //         return d;
+    //     }
+    // }).property("checked", function(d) {
+    //     return (d === selectedId);
+    // }).on("click", function(d) {
+    //     //console.log("hey click"+ d);
+    //     toggleMarketSectorView();
+    // });
+    // labelEnter.append("label").text(function(d) {
+    //     return d;
+    // });
+    // labelEnter.append("br");
 
-    var listRollingPeriod = ["Quarter", "Year", "2 Years"];
-    var dropDownRollingPeriod = d3.select("#rolling-period-filter").append("select").attr("name", "country-list");
-    var optionsRollingPeriod = dropDownRollingPeriod.selectAll("option").data(listRollingPeriod).enter().append("option");
-    optionsRollingPeriod.text(function(d) {
-        return d;
-    }).attr("value", function(d) {
-        return d;
-    });
-    dropDownRollingPeriod.on("change", dropDownRollingPeriodChanged);
+    d3.selectAll('input[name="onoffswitch"]').on("click", function() {toggleMarketSectorView();});
+
+    // var listRollingPeriod = ["Quarter", "Year", "2 Years"];
+    // var dropDownRollingPeriod = d3.select("#rolling-period-filter").append("select").attr("name", "country-list");
+    // var optionsRollingPeriod = dropDownRollingPeriod.selectAll("option").data(listRollingPeriod).enter().append("option");
+    // optionsRollingPeriod.text(function(d) {
+    //     return d;
+    // }).attr("value", function(d) {
+    //     return d;
+    // });
+    // dropDownRollingPeriod.on("change", dropDownRollingPeriodChanged);
+
+
     /************************
     * Functions support UI
     *************************/

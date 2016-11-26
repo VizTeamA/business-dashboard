@@ -166,82 +166,14 @@ div .box-content {
 }
 
 i#user_icon {
-  font-size:35px;
+  font-size:25px;
   text-align: center;
-  padding:20% 30% 15% 30%;
+  padding:15% 35% 10% 35%;
   color:#FF9642;
 }
 
-/* ***********HEADER SETTING CSS ********
-#App_Header1 {
-    float: left;
-    width: 100%;
-    padding: 10px;
-}
 
-img {
-    float: left;
-}
-
-table,
-th {
-    width: 10%;
-    border-radius: 7px
-}
-
-th {
-    font size: 3px;
-    font-family: sans-serif;
-    text-align: center;
-    background-color: #B1DDA1;
-    /*color: White;* /
-}
-
-h100 {
-    font size: 10px;
-    color: #668D3C;
-    font-weight: 700;
-    border-bottom: 3px solid #668D3C;
-}
-
-h99 {
-    font size: 10px;
-    font-weight: 300;
-    font-family: sans-serif;
-    padding-top: 3px;
-    padding-bottom: 10px;
-}
-
-h98 {
-    font size: 2px;
-    font-family: sans-serif;
-    text-align: center;
-}
-
-a {
-    font size: 3px;
-    font-weight: 300;
-    /*color: white;* /
-    font-family: sans-serif;
-    text-align: center;
-    text-decoration: none;
-}
-
-th:hover,
-th:active,
-h100:hover {
-    background-color: #668D3C;
-    /*color: white;* /
-}
-
-a:hover,
-a:active,
-h100:hover {
-    background-color: #668D3C;
-    /*color: white;* /
-}
-*/
-/* ***********CAHRT SETTING CSS ********/
+/* ***********CAHRT SETTING CSS *****************/
 
 div#filter-market-sector {
   float:left;
@@ -278,8 +210,58 @@ tr {
 
 table {
   margin: 0 0 40px 0;
-  width: 100%;
+  /*width: 100%;*/
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   display: table;
   border-collapse: collapse;
 }
+
+/*****************************Toggle Buttons**********************/
+.onoffswitch {
+    position: relative; width: 95px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 1px solid #C2C2C2; border-radius: 0px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 21px; padding: 0; line-height: 17px;
+    font-size: 12px; color: white;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+.onoffswitch-inner:before {
+    content: "Hospitality";
+    padding-left: 5px;
+    background-color: #f3f3f3; color: #FF9642;
+}
+.onoffswitch-inner:after {
+    content: "Residential";
+    padding-right: 5px;
+    background-color: #f3f3f3; color: #0078A8;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 8px; margin: 0px;
+    background: #0078A8;
+    position: absolute; top: 0; bottom: 0;
+    right: 87px;
+    transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px;
+    background-color: #FF9642;
+}
+/*Toggle Buttons - END*/
