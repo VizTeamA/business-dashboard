@@ -23,7 +23,8 @@
     <link type="text/css" href="js/lib/leaflet.markercluster.css" rel="stylesheet" />
     <link type="text/css" href="js/lib/dc.css" rel="stylesheet" />
     <link type="text/css" href="css/bulletChart.css" rel="stylesheet" />
-    <link type="text/css" href="css/treemap.css" rel="stylesheet" /> 
+    <link type="text/css" href="css/treemap.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" src="css/legend.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,600,900" rel="stylesheet">
     <!--- END CSS CHART -->
 </head>
@@ -203,12 +204,17 @@
                             <div id="detail-analysis" class="section">
                                 <h3 style="clear:both;" id="detail-analysis-header">Detail Analysis</h3>
                                 <div class="chart-cart">
-                                    <div class="chart-title">Existing Hotels</div>
+                                    <div class="chart-title">Existing Customers</div>
                                     <div id="quadratic-bubble-chart" class="chart-container"></div>
                                 </div>
                                 <div class="chart-cart">
-                                    <div class="chart-title">New Hotels</div>
-                                    <div id="sale-size-filter-bar-chart" class="chart-container"></div>
+                                    <div class="chart-title">Prospect Hotels</div>
+                                    <div id="prospect-hotel-table" class="chart-container" style = "overflow: scroll;height: 500px;  width: 400px;"></div>
+                                </div>
+                                <div class="clear-fix"></div>
+                                <div class="chart-cart">
+                                    <div class="chart-title">Geographical</div>
+                                    <div id="residental-geo-chart" class="chart-container" style="width: 900px; height: 400px;" >residental-geo-chart</div>
                                 </div>
                                 <div class="clear-fix"></div>
                                 <div class="chart-cart">
@@ -247,8 +253,13 @@
             <script type="text/javascript" src="js/lib/bulletTooltips.js"></script>
             <script type="text/javascript" src="js/lib/browserdetect.js"></script>
             <script type="text/javascript" src="js/lib/underscore-min.js"></script>
+
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+          	<script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+
             <script type="text/javascript" src="js/charts/charts.js"></script>
             <script type="text/javascript" src="js/charts/treemap.js"></script>
+            <script type="text/javascript" src="js/charts/geomap.js"></script>
             <script type="text/javascript" src="js/charts/controller.js"></script>
             <!-- END JS -->
 </body>

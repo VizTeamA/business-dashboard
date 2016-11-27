@@ -120,12 +120,14 @@ d3.csv(inputSaleTrans, function(data) {
     // Draw all charts
     drawProductBarChart(xfProductSaleData);
     drawYearSaleBulletChart();
+    drawProspectHotelTable();
     drawMonthlyPerformanceBarChart(xfProductSaleData);
     drawHotelQuadBubbleChart(xfProductSaleData);
     drawTableData();
     drawSparkLines();
     drawSaleTargetBulletChartHospitality();
     drawSaleTargetBulletChartResidential();
+    userUpdate('CEO');
 
 });
 
@@ -472,6 +474,20 @@ function drawSparkLines() {
 
 }
 
+function drawProspectHotelTable() {
+  var prospectHotelDbFile = "data/tables/PROSPECT_HOTELS.csv";
+  // var prosHotelData ;
+  d3.csv(prospectHotelDbFile, function (data) {
+
+    data.forEach(function(d) {
+      d.Website = "<a href= '"+d.Website+"'>URL</a>"
+    });
+
+    tabulate(data, ["Hotel","Stars", "Rooms","Website","Telephone","Manager"], "#prospect-hotel-table");
+  })
+
+}
+
 function updateBulletChart(yearList) {
     //Reset css
     d3.selectAll(".measure-active.s0").attr("class", "measure s0");
@@ -638,7 +654,7 @@ function updateBrushRange(low, high) {
 }
 
 function drawHotelQuadBubbleChart(xfProductSaleData) {
-    hotelQuadBubbleChart.width(550).height(500).margins({top: 10, right: 50, bottom: 30, left: 60})
+    hotelQuadBubbleChart.width(600).height(500).margins({top: 10, right: 50, bottom: 30, left: 60})
     .dimension(hotelDim)
     .group(productSalesByHotel)
     .colors(['#0078a8'])
@@ -649,12 +665,12 @@ function drawHotelQuadBubbleChart(xfProductSaleData) {
     }).radiusValueAccessor(function(p) {
         return p.value.Sales;
     }).x(d3.scale.linear().domain([0, 4000000])).r(d3.scale.linear().domain([0, 10000000]))
-    .minRadiusWithLabel(15).elasticY(true).yAxisPadding(1000)
+    .minRadiusWithLabel(15).elasticY(true).yAxisPadding(50)
     .elasticX(true).xAxisPadding(200000).maxBubbleRelativeSize(0.15)
     .renderHorizontalGridLines(true).renderVerticalGridLines(true)
     .renderLabel(true).renderTitle(true)
     .title(function(p) {
-        return p.key + "\n" + "Sales: " + numberFormat(p.value.Sales / 1000000) + "M\n" + "Growth: " + numberFormat(p.value.Growth);
+        return p.key + "\n" + "Sales: " + numberFormat(p.value.Sales / 1000000) + "M\n" + "Growth: " + numberFormat(p.value.Growth) +"%";
     });
     hotelQuadBubbleChart.yAxis().tickFormat(function(s) {
         return s + " %";
@@ -817,9 +833,8 @@ function createUI() {
     });
 
     // Options for Market Sector
-
     d3.selectAll('input[name="onoffswitch"]').on("click", function() {toggleMarketSectorView();});
-
+    d3.selectAll('.chart-title').append("i").attr("class","icon-question");
     /************************
     * Functions support UI
     *************************/

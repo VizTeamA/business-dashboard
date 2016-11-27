@@ -37,9 +37,19 @@ function userUpdate(userId) {
   d3.selectAll("#user").text(userId);
   if (userId=="CEO") {
     d3.selectAll("#user_icon").attr("class","icon-diamond");
+    d3.selectAll("#overview").attr("class", classNameVisible);
+    d3.selectAll("#sale-by-product").attr("class", classNameHide);
+    d3.selectAll("#detail-analysis").attr("class", classNameHide);
+
   } else if (userId=="Product Director") {
     d3.selectAll("#user_icon").attr("class","icon-puzzle");
+    d3.selectAll("#overview").attr("class", classNameVisible);
+    d3.selectAll("#sale-by-product").attr("class", classNameVisible);
+    d3.selectAll("#detail-analysis").attr("class", classNameHide);
   } else if (userId=="Sale Director") {
     d3.selectAll("#user_icon").attr("class","icon-briefcase");
+    d3.selectAll("#overview").attr("class", classNameVisible);
+    d3.selectAll("#sale-by-product").attr("class", classNameHide);
+    d3.selectAll("#detail-analysis").attr("class", classNameVisible);
   }
 }
