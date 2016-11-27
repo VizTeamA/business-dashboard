@@ -133,7 +133,7 @@ d3.csv(inputSaleTrans, function(data) {
     drawSparkLines();
     drawSaleTargetBulletChartHospitality();
     drawSaleTargetBulletChartResidential();
-    userUpdate('CEO');
+    userUpdate('CEO'); // Load CEO view at the begging
     toggleMarketSectorView();
 
 });
@@ -497,7 +497,7 @@ function drawSparkLines() {
 function drawProspectHotelTable() {
   var prospectHotelDbFile = "data/tables/PROSPECT_HOTELS.csv";
   // var prosHotelData ;
-  
+
   //Switch to SQL if needed
   //sql = 'select hotel_name as Hotel, stars as Stars, rooms as Rooms, website as Website, telephone as Telephone, general_manager as Manager from dashboard_hotels_cached';
   //d3.json("data.php?sql="+sql, function(data) {
@@ -717,7 +717,7 @@ function drawHotelQuadBubbleChart(xfProductSaleData) {
 
 function loadExistingHotel() {
   existingHotelFile = "data/tables/EXISTING_HOTELS.csv";
-  
+
   //Switch to SQL if needed
   //sql = 'select hotel_name as Hotel, stars as Stars, rooms as Rooms, website as Website, telephone as Telephone, general_manager as Manager from dashboard_hotels_existing_cached';
   //d3.json("data.php?sql="+sql, function(data) {
