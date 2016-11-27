@@ -141,7 +141,7 @@ d3.selectAll("market-sector").on("click", function() {
 
 
 function drawProductBarChart(xfProductSaleData) {
-    productSaleRowChart.dimension(productDim).group(salesByProductGroup).width(300).height(220).elasticX(true)
+    productSaleRowChart.dimension(productDim).group(salesByProductGroup).width(300).height(400).elasticX(true)
     //.controlsUseVisibility(true)
         .xAxis().ticks(3);
     productSaleRowChart.colors("#0078a8");

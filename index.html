@@ -23,6 +23,7 @@
     <link type="text/css" href="js/lib/leaflet.markercluster.css" rel="stylesheet" />
     <link type="text/css" href="js/lib/dc.css" rel="stylesheet" />
     <link type="text/css" href="css/bulletChart.css" rel="stylesheet" />
+    <link type="text/css" href="css/treemap.css" rel="stylesheet" /> 
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,600,900" rel="stylesheet">
     <!--- END CSS CHART -->
 </head>
@@ -181,9 +182,22 @@
                             <div id="sale-by-product" class="section">
                                 <h3 id="sale-by-product-header">Sales by Product</h3>
                                 <div class="chart-cart">
-                                    <div class="chart-title">Sales by Product</div>
+                                    <div class="chart-title">Sales by Product Group</div>
                                     <div id="sales-product-chart" class="chart-container"></div>
                                 </div>
+                                <div class="chart-cart">
+                                  <div class="chart-title">Sales by Item</div>
+                                  <div id="treemap-chart"></div>
+                                  <div id="treemap-tooltip" class="hidden">
+                                    <p><strong id="item-heading"></strong></p>
+                                    <table>
+                                  	  <tr>
+                                  		  <td><span id="itemimage"></span></td>
+                                  		  <td valign="top"><span id="iteminfo"></span></td>
+                                  	  </tr>
+                                    </table>
+                                  </div>
+                              </div>
                             </div>
                             <div class="clear-fix"></div>
                             <div id="detail-analysis" class="section">
@@ -231,7 +245,10 @@
             <script type="text/javascript" src="js/lib/leaflet.markercluster.js"></script>
             <script type="text/javascript" src="js/lib/dc.leaflet.js"></script>
             <script type="text/javascript" src="js/lib/bulletTooltips.js"></script>
+            <script type="text/javascript" src="js/lib/browserdetect.js"></script>
+            <script type="text/javascript" src="js/lib/underscore-min.js"></script>
             <script type="text/javascript" src="js/charts/charts.js"></script>
+            <script type="text/javascript" src="js/charts/treemap.js"></script>
             <script type="text/javascript" src="js/charts/controller.js"></script>
             <!-- END JS -->
 </body>
