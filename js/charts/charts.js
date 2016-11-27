@@ -12,6 +12,7 @@ var monthlyPerformanceChart = dc.barChart('#monthly-performance-chart', groupnam
 var hotelQuadBubbleChart = dc.bubbleChart('#quadratic-bubble-chart', groupname);
 var productDataTable = dc.dataTable('#table-data', groupname);
 var yearDim;
+var xfHotelData;
 
 var productCol = 'Product';
 var saleCol = 'Sales';
@@ -33,6 +34,9 @@ yearFormat = d3.time.format("%Y");
 
 //Create UI
 createUI()
+
+// var sql = 'select salesperson as Sale_Code, Item_number, product_group as Product, yr as Year, mth as Month, Item_Type, revenue as Sales,Sector,  Property from dashboard_sales_cached';
+// d3.json("datanew.php?sql="+sql, function(data) {
 
 d3.csv(inputSaleTrans, function(data) {
     // Since its a csv file we need to format the data a bit.
@@ -117,6 +121,7 @@ d3.csv(inputSaleTrans, function(data) {
         return Math.round((d[saleCol]));
     });
 
+    loadExistingHotel();
     // Draw all charts
     drawProductBarChart(xfProductSaleData);
     drawYearSaleBulletChart();
@@ -128,6 +133,7 @@ d3.csv(inputSaleTrans, function(data) {
     drawSaleTargetBulletChartHospitality();
     drawSaleTargetBulletChartResidential();
     userUpdate('CEO');
+    toggleMarketSectorView();
 
 });
 
@@ -197,8 +203,21 @@ function resetAll() {
     d3.selectAll(".measure-active.s1").attr("class", "measure s1");
     //Reset all dimension filters
     yearDim.filter(null);
+    yearDim.filter(null);
+    monthDim.filter(null);
+    productDim.filter(null);
+    sectorDim.filter(null);
+    hotelDim.filter(null);
+    itemDim.filter(null);
+    itemTypeDim.filter(null);
+    yearFmtDim.filter(null);
+    monthFmtDim.filter(null);
+    dateMonthYearFmtDim.filter(null);
+    saleCodeDim.filter(null);
+    drawSparkLines();
     dc.filterAll(groupname);
     dc.redrawAll(groupname);
+
 }
 
 function filterItemType() {
@@ -478,11 +497,11 @@ function drawProspectHotelTable() {
   var prospectHotelDbFile = "data/tables/PROSPECT_HOTELS.csv";
   // var prosHotelData ;
   d3.csv(prospectHotelDbFile, function (data) {
-
     data.forEach(function(d) {
-      d.Website = "<a href= '"+d.Website+"'>URL</a>"
+      d.Website = "<a href= '"+d.Website+"'>URL</a>";
+      d.Title = (d.Hotel).toUpperCase();
     });
-
+  xfHotelData = crossfilter(data);
     tabulate(data, ["Hotel","Stars", "Rooms","Website","Telephone","Manager"], "#prospect-hotel-table");
   })
 
@@ -680,6 +699,7 @@ function drawHotelQuadBubbleChart(xfProductSaleData) {
     });
     hotelQuadBubbleChart.on("filtered", function() {
       drawSparkLines();
+      drawAccountInfo();
     });
     hotelQuadBubbleChart.label(function(d) {
       var hotelStgFull = d.key;
@@ -688,6 +708,43 @@ function drawHotelQuadBubbleChart(xfProductSaleData) {
     });
     hotelQuadBubbleChart.render();
 
+}
+
+function loadExistingHotel() {
+  existingHotelFile = "data/tables/EXISTING_HOTELS.csv";
+  d3.csv(existingHotelFile, function (data) {
+    data.forEach(function(d) {
+      d.Title = (d.Hotel).toUpperCase();
+    })
+    xfExistingHotelData = crossfilter(data);
+  }) ;
+
+}
+
+function drawAccountInfo() {
+
+  var selectedHotelTitle =  (hotelDim.top(1)[0].Hotel).toUpperCase();
+    var hotelTitleDim = xfExistingHotelData.dimension(function(d) {
+      return d.Title;
+    })
+    hotelTitleDim.filter(null);
+  hotelTitleDim.filter(selectedHotelTitle);
+
+  var hotelTitle = hotelTitleDim.top(1)[0].Title;
+  var hotelStars = hotelTitleDim.top(1)[0].Stars;
+  var hotelRooms = hotelTitleDim.top(1)[0].Rooms;
+  var hotelWebsite = hotelTitleDim.top(1)[0].Website;
+  var hotelTelephone = hotelTitleDim.top(1)[0].Telephone;
+  var hotelManager = hotelTitleDim.top(1)[0].Manager;
+
+  hotelTitleDim.filter(null);
+
+  d3.selectAll("#account-information.chart-container div.title").text("Hotel: " + hotelTitle);
+  d3.selectAll("#account-information.chart-container div.star").text("Star: " +hotelStars);
+  d3.selectAll("#account-information.chart-container div.rooms").text("Room count: " +hotelRooms);
+  d3.selectAll("#account-information.chart-container div.address").text("Website: " + hotelWebsite);
+  d3.selectAll("#account-information.chart-container div.website").text("Tel: " + hotelTelephone);
+  d3.selectAll("#account-information.chart-container div.website").text("General Manager: " + hotelManager);
 }
 
 /****************************************** Utilities **********************************
@@ -805,6 +862,9 @@ function toggleMarketSectorView() {
         containerResidential.attr("class", "content-pannel-hidden");
         bulletChartHospitality.style("display","");
         bulletChartResidential.style("display","none");
+        d3.selectAll("#residential-detail-analysis").style("display","none");
+        d3.selectAll("#hotel-detail-analysis-table").style("display","");
+        d3.selectAll("#hotel-detail-analysis-bubble").style("display","");
         sectorDim.filter("Hospitality");
         dc.redrawAll(groupname);
     } else {
@@ -812,6 +872,9 @@ function toggleMarketSectorView() {
         containerResidential.attr("class", "content-pannel-visible");
         bulletChartHospitality.style("display","none");
         bulletChartResidential.style("display","");
+        d3.selectAll("#residential-detail-analysis").style("display","");
+        d3.selectAll("#hotel-detail-analysis-table").style("display","none");
+        d3.selectAll("#hotel-detail-analysis-bubble").style("display","none");
         sectorDim.filter("Residential");
         dc.redrawAll(groupname);
         //console.log("visibile containerResidential");

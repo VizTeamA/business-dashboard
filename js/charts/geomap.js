@@ -11,7 +11,7 @@ function numberWithCommas(x) {
 
 //sql = 'select * from dashboard_markers_cached';
 //d3.json('datanew.php?sql='+sql, function (markersdata) {
-d3.csv('data/dashboard_markers_cached.csv', function (markersdata) {
+d3.csv('data/tables/dashboard_markers_cached.csv', function (markersdata) {
 
   var HomeIcon = L.Icon.extend({
     options: {
@@ -47,12 +47,12 @@ d3.csv('data/dashboard_markers_cached.csv', function (markersdata) {
 
 });
 
-d3.json('data/singapore.geojson', function(geodata) {
+d3.json('data/tables/singapore.geojson', function(geodata) {
 
 
     //sql = 'select * from dashboard_planning_area_cached';
     //d3.json('datanew.php?sql='+sql, function (geosupportdata) {
-    d3.csv('data/dashboard_planning_area.csv', function (geosupportdata) {
+    d3.csv('data/tables/dashboard_planning_area.csv', function (geosupportdata) {
 
       geosupportdata.forEach(function(d) {
         d.avg_price_psm = +d.avg_price_psm;
@@ -119,8 +119,8 @@ d3.json('data/singapore.geojson', function(geodata) {
 
       function onEachFeature(feature, layer) {
         var popupContent = "<font size='3' color='black'><b>Planning Area:  	</b>" +
-          //feature.properties.Name + "<br/> <b>Average Price PSM: $</b> " + numberWithCommas(Math.round(getPrice(feature.properties.Name))) +"</font>";
-          feature.properties.Name + "<br/> <b>Average Price PSM: </b>" + getQualitativeRangeDesc(getPrice(feature.properties.Name)) +"</font>";
+          feature.properties.Name + "<br/> <b>Average Price PSM: $</b> " + numberWithCommas(Math.round(getPrice(feature.properties.Name))) +"</font>";
+          // feature.properties.Name + "<br/> <b>Average Price PSM: </b>" + getQualitativeRangeDesc(getPrice(feature.properties.Name)) +"</font>";
 
         /*if (feature.properties && feature.properties.popupContent) {
           popupContent += feature.properties.popupContent;
@@ -205,8 +205,8 @@ var baseMaps = {
 
 var overlayMaps = {
   "Average Price PSM":geojsonLayer,
-  "Existing Homes": existingMarkersLayer,
-  "New Homes": newMarkersLayer
+  "Customer": existingMarkersLayer,
+  "Prospect": newMarkersLayer
 };
 
 L.control.layers(baseMaps, overlayMaps, { collapsed: false} ).addTo(mymap);	//set by default to show the layers available to toggle
