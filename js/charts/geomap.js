@@ -9,8 +9,9 @@ function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
 
+//Switch to SQL if needed
 //sql = 'select * from dashboard_markers_cached';
-//d3.json('datanew.php?sql='+sql, function (markersdata) {
+//d3.json('data.php?sql='+sql, function (markersdata) {
 d3.csv('data/tables/dashboard_markers_cached.csv', function (markersdata) {
 
   var HomeIcon = L.Icon.extend({
@@ -30,14 +31,14 @@ d3.csv('data/tables/dashboard_markers_cached.csv', function (markersdata) {
     var marker;
     if (markersdata[x].existing == 'Y') {
       marker = new L.marker([markersdata[x].latitude,markersdata[x].longitude], {icon: existingIcon})
-                  .bindPopup("<u><b>Existing</b></u><br/><b>Project Name:</b>" + markersdata[x].project_name +
+                  .bindPopup("<u><b>Customer</b></u><br/><b>Project Name:</b>" + markersdata[x].project_name +
                         "<br/><b>Street Name:</b> " + markersdata[x].street_name +
                         "<br/><b>Developer Name:</b>" + markersdata[x].developer )
                   .addTo(existingMarkersLayer);
     }
     else {
       marker = new L.marker([markersdata[x].latitude,markersdata[x].longitude], {icon: newIcon})
-                  .bindPopup("<u><b>New</b></u><br/><b>Project Name:</b>" + markersdata[x].project_name +
+                  .bindPopup("<u><b>Prospect</b></u><br/><b>Project Name:</b>" + markersdata[x].project_name +
                         "<br/><b>Street Name:</b> " + markersdata[x].street_name +
                         "<br/><b>Developer Name:</b>" + markersdata[x].developer )
                   .addTo(newMarkersLayer);
@@ -49,9 +50,9 @@ d3.csv('data/tables/dashboard_markers_cached.csv', function (markersdata) {
 
 d3.json('data/tables/singapore.geojson', function(geodata) {
 
-
+	//Switch to SQL if needed
     //sql = 'select * from dashboard_planning_area_cached';
-    //d3.json('datanew.php?sql='+sql, function (geosupportdata) {
+    //d3.json('data.php?sql='+sql, function (geosupportdata) {
     d3.csv('data/tables/dashboard_planning_area.csv', function (geosupportdata) {
 
       geosupportdata.forEach(function(d) {

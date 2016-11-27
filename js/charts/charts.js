@@ -35,8 +35,9 @@ yearFormat = d3.time.format("%Y");
 //Create UI
 createUI()
 
+//Switch to SQL if needed
 // var sql = 'select salesperson as Sale_Code, Item_number, product_group as Product, yr as Year, mth as Month, Item_Type, revenue as Sales,Sector,  Property from dashboard_sales_cached';
-// d3.json("datanew.php?sql="+sql, function(data) {
+// d3.json("data.php?sql="+sql, function(data) {
 
 d3.csv(inputSaleTrans, function(data) {
     // Since its a csv file we need to format the data a bit.
@@ -496,6 +497,10 @@ function drawSparkLines() {
 function drawProspectHotelTable() {
   var prospectHotelDbFile = "data/tables/PROSPECT_HOTELS.csv";
   // var prosHotelData ;
+  
+  //Switch to SQL if needed
+  //sql = 'select hotel_name as Hotel, stars as Stars, rooms as Rooms, website as Website, telephone as Telephone, general_manager as Manager from dashboard_hotels_cached';
+  //d3.json("data.php?sql="+sql, function(data) {
   d3.csv(prospectHotelDbFile, function (data) {
     data.forEach(function(d) {
       d.Website = "<a href= '"+d.Website+"'>URL</a>";
@@ -712,6 +717,10 @@ function drawHotelQuadBubbleChart(xfProductSaleData) {
 
 function loadExistingHotel() {
   existingHotelFile = "data/tables/EXISTING_HOTELS.csv";
+  
+  //Switch to SQL if needed
+  //sql = 'select hotel_name as Hotel, stars as Stars, rooms as Rooms, website as Website, telephone as Telephone, general_manager as Manager from dashboard_hotels_existing_cached';
+  //d3.json("data.php?sql="+sql, function(data) {
   d3.csv(existingHotelFile, function (data) {
     data.forEach(function(d) {
       d.Title = (d.Hotel).toUpperCase();

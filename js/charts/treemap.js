@@ -32,7 +32,7 @@
 
 	 //Switch to SQL if needed
 	 //var sql = 'select * from dashboard_treemap_cached';
-	 //d3.json("datanew.php?sql=" + sql, function(data) {
+	 //d3.json("data.php?sql=" + sql, function(data) {
 	 d3.csv("./data/dashboard_treemap_cached.csv", function(data) {
 
 		//set the size (revenue) as number
