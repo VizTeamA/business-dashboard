@@ -1,0 +1,543 @@
+Sale_Code,Item_number,Product,Year_Ori,Month_Ori,Year,Month,Item_Type,Sales,Sector,Hotel,Residence,Property,Growth
+981,132073,Fabric,2011,Mar,2011,MAR,Material,71.3,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,24
+981,132073,Fabric,2011,Mar,2011,MAR,Material,414,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,29
+981,30420280,Fabric,2011,Mar,2011,MAR,Material,120,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-82
+815,AZ52838,Wallcovering,2015,Nov,2015,NOV,Material,150,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,100
+705,AZ52979,Wallcovering,2016,Sep,2016,SEP,Material,2257.2,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-32
+705,AZ52979,Wallcovering,2016,Sep,2016,SEP,Material,2445.3,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,73
+705,AZ52979,Wallcovering,2016,Sep,2016,SEP,Material,3009.6,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-80
+705,AZ52979,Wallcovering,2016,Sep,2016,SEP,Material,3461.04,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,97
+705,AZ52979,Wallcovering,2016,Sep,2016,SEP,Material,4213.44,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,20
+814,AZ52987,Wallcovering,2011,Feb,2011,FEB,Material,1800,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,24
+814,AZ52987,Wallcovering,2011,Feb,2011,FEB,Material,3600,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,5
+814,AZ52987,Wallcovering,2011,Feb,2011,FEB,Material,3600,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-15
+814,AZ52987,Wallcovering,2011,Feb,2011,FEB,Material,5400,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-74
+814,AZ52987,Wallcovering,2011,Feb,2011,FEB,Material,5760,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,60
+814,AZ52987,Wallcovering,2011,Jan,2011,JAN,Material,120,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-25
+814,AZ52987,Wallcovering,2011,Jan,2011,JAN,Material,120,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,88
+814,AZ52987,Wallcovering,2011,Jan,2011,JAN,Material,120,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,54
+815,AZ52992,Wallcovering,2016,Mar,2016,MAR,Material,2541.76,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,46
+815,AZ52992,Wallcovering,2016,Mar,2016,MAR,Material,2541.76,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-10
+815,AZ52992,Wallcovering,2016,Mar,2016,MAR,Material,2541.76,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,45
+815,AZ52992,Wallcovering,2016,Mar,2016,MAR,Material,2541.76,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,67
+815,AZ52992,Wallcovering,2016,Mar,2016,MAR,Material,81694.2,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,48
+955,AZ53035,Wallcovering,2012,Jun,2012,JUN,Material,403,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-50
+955,AZ53035,Wallcovering,2012,Sep,2012,SEP,Material,558,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,83
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,1.28,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,12
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,1.28,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-52
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,153.72,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,52
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,153.72,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,82
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,543.145,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-60
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,543.145,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-29
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,660.355,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,100
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,660.355,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,28
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,863.18,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-60
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,1985.55,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-27
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,1985.55,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-82
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,1989.395,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,8
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,1989.395,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,1
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2139.27,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,58
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2139.27,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,0
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2160.405,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-14
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2160.405,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-16
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2371.13,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-34
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2371.13,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,26
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2516.525,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,65
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2516.525,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-85
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2536.38,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-28
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2536.38,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-75
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2638.86,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-26
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2638.86,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,46
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2640.14,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-17
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2640.14,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,40
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2646.545,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-76
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2646.545,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-6
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2646.545,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,27
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2646.545,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-28
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2646.545,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,92
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2646.545,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-35
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2646.545,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-59
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2646.545,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,20
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2702.27,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-61
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2702.27,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-49
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2703.55,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,88
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2703.55,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,26
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2745.825,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-8
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2745.825,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-89
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2774.645,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,92
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2774.645,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-53
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2774.645,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-25
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2774.645,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-98
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2928.365,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-64
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2928.365,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-49
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2928.365,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-48
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2928.365,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-34
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2928.365,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,88
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,2928.365,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-11
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,3035.33,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-19
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,3035.33,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,98
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,3215.95,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,91
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,3215.95,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,96
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,3351.095,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-94
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,3351.095,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,21
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,3495.85,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-81
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,3495.85,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,98
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,3495.85,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-88
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,3495.85,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,56
+815,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,4348.355,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,60
+939,BW01 CHARCOAL,Carpet,2013,May,2013,MAY,Material,4348.355,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-5
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,14.4,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-69
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,162,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,20
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,288,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,74
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,288,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-7
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,288,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-22
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,288,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,10
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,288,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-77
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,288,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,3
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,378,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,9
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,378,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-44
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,378,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-5
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,378,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,73
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,378,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-95
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,378,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-8
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,378,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-66
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,378,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-16
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,378,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-1
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,378,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-64
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,378,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-30
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,378,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-5
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,378,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-67
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,378,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,16
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,378,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,51
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,446.4,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,17
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,504,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,43
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,504,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-10
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,504,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-4
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,504,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,25
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,504,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-62
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,504,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-34
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,504,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-90
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,504,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,81
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,504,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,59
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,504,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,30
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,504,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,43
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,504,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-25
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,504,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,2
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,504,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-92
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,504,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-90
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,504,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-58
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,504,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,96
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,504,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,28
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,504,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,95
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,504,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-65
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,504,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,94
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,504,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-85
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,540,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-78
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,561.6,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-95
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,576,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,2
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,576,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-13
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,576,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-7
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,576,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-49
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,576,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,57
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,576,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-33
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,576,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-70
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,576,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-44
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,576,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-70
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,576,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-75
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,576,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,44
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,576,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-53
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,576,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-91
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,576,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,68
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,576,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,19
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,576,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,72
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,576,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-60
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,630,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-45
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,630,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,36
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,630,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,81
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,630,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-70
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,630,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-60
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,630,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,80
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,630,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,27
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,630,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,16
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,630,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-33
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,630,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,97
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,630,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-29
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,630,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,99
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,630,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-39
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,630,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-96
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,630,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-11
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,630,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-24
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,630,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-58
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,630,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-32
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,648,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-55
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,720,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,98
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,720,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,2
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,720,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,82
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,720,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-83
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,720,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-20
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,720,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,1
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,720,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-28
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,720,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-57
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,756,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,23
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,828,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,99
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,828,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-63
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,828,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,2
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,828,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-55
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,828,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-43
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,828,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,63
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,828,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-72
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,828,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-6
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,828,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-94
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,828,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,95
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,828,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,13
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,828,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,67
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,828,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,50
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,828,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-92
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,828,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,25
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,828,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-37
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,828,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,5
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,828,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,49
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,954,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,95
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1008,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-52
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1008,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-2
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1008,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-27
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1008,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-3
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1008,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,89
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1008,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-54
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1008,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,79
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1008,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-33
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1008,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,99
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1008,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-79
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1260,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,38
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1260,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,63
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1260,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,83
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1260,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,90
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1440,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-79
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1440,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,8
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1551.6,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,86
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1602,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-76
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1602,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-14
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1602,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,93
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1602,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-61
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1602,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,22
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1602,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,5
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1602,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-19
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1602,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-13
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1602,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-51
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1602,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,50
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1602,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,20
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1602,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,100
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1602,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,93
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1602,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-58
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1602,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,70
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1602,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,0
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,1602,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-97
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,2016,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,22
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,2700,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,94
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,2700,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-35
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,2700,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-17
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,2700,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,80
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,2700,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-19
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,3456,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-24
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,4500,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-14
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,4500,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,60
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,4500,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,7
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,4500,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,39
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,4500,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-93
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,4500,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,99
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,4500,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-20
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,4500,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-4
+814,BW05 LAGOON,Carpet,2011,Apr,2011,APR,Material,5220,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,0
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,310.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-23
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,310.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-85
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,310.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-91
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,310.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,14
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,310.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-83
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,310.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-20
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,310.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-52
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,310.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,43
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,414.4,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,45
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,414.4,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-19
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,414.4,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-15
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,414.4,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-89
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,414.4,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-1
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,414.4,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,79
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,414.4,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-68
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,414.4,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-20
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,414.4,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,49
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,414.4,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-48
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,414.4,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,83
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,414.4,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-87
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,414.4,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-1
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,414.4,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-54
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,414.4,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-99
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,414.4,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-14
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,414.4,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,13
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,414.4,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-89
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,444,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,18
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,473.6,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,82
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,473.6,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,18
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,473.6,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,77
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,473.6,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,14
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,473.6,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-20
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,473.6,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,62
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,473.6,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,27
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,473.6,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,29
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,473.6,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,8
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,473.6,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-93
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,473.6,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,25
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,473.6,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-68
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,473.6,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,23
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,473.6,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,38
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,473.6,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,79
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,473.6,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-74
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,473.6,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-16
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,473.6,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,93
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,518,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-30
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,518,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-47
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,518,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-57
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,518,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-80
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,518,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-31
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,518,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,41
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,518,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-70
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,518,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-93
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,518,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-32
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,518,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-43
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,518,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-65
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,518,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,96
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,518,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,98
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,518,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,62
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,518,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-70
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,518,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-56
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,518,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-28
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,518,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,65
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,680.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,59
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,680.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,23
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,680.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,7
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,680.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-71
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,680.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-74
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,680.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,96
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,680.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-5
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,680.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,24
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,680.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-40
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,680.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-65
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,680.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-33
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,680.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-66
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,680.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,21
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,680.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-65
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,680.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,32
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,680.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,98
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,680.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-50
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,680.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,30
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,740,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,38
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,740,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,8
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,740,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,57
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,740,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,29
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,740,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,75
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,740,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-71
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,740,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,77
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,740,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,66
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,740,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,2
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,740,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,61
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,740,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,41
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,740,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,55
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,740,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,95
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,740,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,69
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,740,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-78
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,740,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,1
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,740,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-54
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,740,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,70
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,814,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,33
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,828.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,100
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,828.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,83
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,828.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,10
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,828.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-9
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,828.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-43
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,828.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,42
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,828.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-98
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,828.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-99
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,828.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,25
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,828.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,35
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,828.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,65
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,828.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,77
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,828.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-100
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,828.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-33
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,828.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,47
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,828.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-95
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,828.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-74
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,828.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-71
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,873.2,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,83
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,1317.2,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-63
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,1317.2,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-38
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,1317.2,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-56
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,1317.2,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,71
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,1317.2,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,97
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,1317.2,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,34
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,1317.2,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,72
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,1317.2,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-12
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,1317.2,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-5
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,1317.2,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,42
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,1317.2,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,50
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,1317.2,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,44
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,1317.2,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-73
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,1317.2,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,89
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,1317.2,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,39
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,1480,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-95
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,1998,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-95
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,2220,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,85
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,2220,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,41
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,2220,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,61
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,2220,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-33
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,2220,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,1
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,2220,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-89
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,2220,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-37
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,2220,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,30
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,2220,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,28
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,2516,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-91
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,2812,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-58
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,2812,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,53
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,2812,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,27
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,2812,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-46
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,2812,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,78
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,2812,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-86
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,2812,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-55
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,2812,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-99
+814,BW05 LAGOON,Carpet,2011,Aug,2011,AUG,Material,17937.6,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-55
+814,BW05 LAGOON,Carpet,2013,May,2013,MAY,Material,414.4,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-37
+814,BW05 LAGOON,Carpet,2013,May,2013,MAY,Material,414.4,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,38
+814,BW05 LAGOON,Carpet,2013,May,2013,MAY,Material,414.4,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-71
+814,BW05 LAGOON,Carpet,2013,May,2013,MAY,Material,828.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-50
+814,BW05 LAGOON,Carpet,2013,May,2013,MAY,Material,828.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-8
+814,BW05 LAGOON,Carpet,2013,May,2013,MAY,Material,888,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-39
+814,BW05 LAGOON,Carpet,2013,May,2013,MAY,Material,888,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-52
+814,BW05 LAGOON,Carpet,2013,May,2013,MAY,Material,962,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,82
+814,BW05 LAGOON,Carpet,2013,May,2013,MAY,Material,962,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-37
+814,BW08 RUBY,Carpet,2013,May,2013,MAY,Material,431.18,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-8
+814,BW08 RUBY,Carpet,2013,May,2013,MAY,Material,608.88,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,91
+814,BW08 RUBY,Carpet,2013,May,2013,MAY,Material,653.3,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,1
+814,BW08 RUBY,Carpet,2013,May,2013,MAY,Material,705.56,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,11
+814,BW08 RUBY,Carpet,2013,May,2013,MAY,Material,797.03,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-21
+814,BW08 RUBY,Carpet,2013,May,2013,MAY,Material,934.22,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-6
+814,BW08 RUBY,Carpet,2013,May,2013,MAY,Material,940.75,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-33
+814,BW08 RUBY,Carpet,2013,May,2013,MAY,Material,940.75,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-40
+814,BW08 RUBY,Carpet,2013,May,2013,MAY,Material,993.02,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,82
+815,ca23,Wallcovering,2013,May,2013,MAY,Material,4330.94,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-30
+939,ca23,Wallcovering,2013,May,2013,MAY,Material,4330.94,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,1
+815,ca41,Wallcovering,2016,Aug,2016,AUG,Material,210,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-100
+814,ca45,Wallcovering,2011,Jun,2011,JUN,Material,140,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,39
+814,ca45,Wallcovering,2013,Apr,2013,APR,Material,245,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,13
+815,ca62,Wallcovering,2014,Mar,2014,MAR,Material,150,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-78
+815,CB01 STONE,Carpet,2014,Sep,2014,SEP,Material,440,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,31
+705,CB04 SEA SQUIRT,Carpet,2016,Aug,2016,AUG,Material,3784,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-70
+705,CB04 SEA SQUIRT,Carpet,2016,Aug,2016,AUG,Material,3784,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,22
+814,CC04 WOOD,Carpet,2011,Apr,2011,APR,Material,1350,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,70
+814,CC04 WOOD,Carpet,2011,Apr,2011,APR,Material,1350,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,21
+814,CC04 WOOD,Carpet,2011,Apr,2011,APR,Material,1350,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-74
+814,CC04 WOOD,Carpet,2011,Apr,2011,APR,Material,1350,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,53
+814,CC04 WOOD,Carpet,2011,Apr,2011,APR,Material,1350,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-87
+814,CC04 WOOD,Carpet,2011,Apr,2011,APR,Material,1350,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-3
+814,CC04 WOOD,Carpet,2011,Apr,2011,APR,Material,1350,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,10
+814,CC04 WOOD,Carpet,2011,Apr,2011,APR,Material,1350,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-21
+814,CC04 WOOD,Carpet,2011,Apr,2011,APR,Material,1350,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-64
+814,CC04 WOOD,Carpet,2011,Apr,2011,APR,Material,8100,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-67
+814,CC04 WOOD,Carpet,2011,Aug,2011,AUG,Material,1205.35,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-1
+814,CC04 WOOD,Carpet,2011,Aug,2011,AUG,Material,1205.35,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,17
+814,CC04 WOOD,Carpet,2011,Aug,2011,AUG,Material,1205.35,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-43
+814,CC04 WOOD,Carpet,2011,Aug,2011,AUG,Material,1205.35,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,89
+814,CC04 WOOD,Carpet,2011,Aug,2011,AUG,Material,1205.35,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-58
+814,CC04 WOOD,Carpet,2011,Aug,2011,AUG,Material,1205.35,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-43
+814,CC04 WOOD,Carpet,2011,Aug,2011,AUG,Material,1205.35,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,22
+814,CC04 WOOD,Carpet,2011,Aug,2011,AUG,Material,1205.35,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-16
+814,CC04 WOOD,Carpet,2011,Aug,2011,AUG,Material,1205.35,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-96
+814,CC04 WOOD,Carpet,2011,Aug,2011,AUG,Material,9401.73,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-25
+992,CC04 WOOD,Carpet,2011,Jul,2011,JUL,Material,450,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-5
+815,CC04 WOOD,Carpet,2013,May,2013,MAY,Material,450,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,60
+815,CC07 OLIVE,Carpet,2013,May,2013,MAY,Material,500,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-88
+939,CC07 OLIVE,Carpet,2013,May,2013,MAY,Material,500,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-18
+814,CC07 OLIVE,Carpet,2013,May,2013,MAY,Material,578.3,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,21
+814,CC07 OLIVE,Carpet,2013,May,2013,MAY,Material,651.6,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,76
+815,CC07 OLIVE,Carpet,2013,May,2013,MAY,Material,812.5,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,44
+939,CC07 OLIVE,Carpet,2013,May,2013,MAY,Material,812.5,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-27
+815,CC07 OLIVE,Carpet,2013,May,2013,MAY,Material,1000,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-69
+939,CC07 OLIVE,Carpet,2013,May,2013,MAY,Material,1000,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,94
+815,CC07 OLIVE,Carpet,2013,May,2013,MAY,Material,1937.5,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-74
+939,CC07 OLIVE,Carpet,2013,May,2013,MAY,Material,1937.5,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-20
+815,CC07 OLIVE,Carpet,2013,May,2013,MAY,Material,2125,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-55
+939,CC07 OLIVE,Carpet,2013,May,2013,MAY,Material,2125,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-21
+815,CC07 OLIVE,Carpet,2013,May,2013,MAY,Material,3750,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-24
+939,CC07 OLIVE,Carpet,2013,May,2013,MAY,Material,3750,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,68
+815,CC07 OLIVE,Carpet,2013,May,2013,MAY,Material,4375,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,21
+939,CC07 OLIVE,Carpet,2013,May,2013,MAY,Material,4375,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,85
+815,CC07 OLIVE,Carpet,2014,Mar,2014,MAR,Material,270,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,90
+815,CC07 OLIVE,Carpet,2014,Sep,2014,SEP,Material,1704.92,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-92
+763,CS05 PURPLE,Carpet,2016,Sep,2016,SEP,Material,4200,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,28
+992,ES05 ASH,Carpet,2011,Jul,2011,JUL,Material,836.21,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,38
+992,ES05 ASH,Carpet,2011,May,2011,MAY,Material,179.83,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,8
+814,ES06 MOCHA,Carpet,2011,Apr,2011,APR,Material,28855.1,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,57
+814,ES06 MOCHA,Carpet,2011,Aug,2011,AUG,Material,28848.72,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-21
+815,FR2301 SOIL,Carpet,2013,May,2013,MAY,Material,350,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,78
+815,FR2302 SILVERFISH,Carpet,2014,Mar,2014,MAR,Material,1885,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,48
+815,FR2304 CAMEL,Carpet,2014,Dec,2014,DEC,Material,843.9,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,94
+815,FR4802 URBAN GREY,Carpet,2014,Dec,2014,DEC,Material,2077.83,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,80
+815,FR4802 URBAN GREY,Carpet,2014,Dec,2014,DEC,Material,2516.48,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-96
+815,FR4802 URBAN GREY,Carpet,2014,Dec,2014,DEC,Material,2678.09,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,88
+815,FR4806 RUSTIC BROWN,Carpet,2014,Sep,2014,SEP,Material,9336.22,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,20
+815,FR4806 RUSTIC BROWN,Carpet,2014,Sep,2014,SEP,Material,9336.22,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-6
+992,jua332,Wallcovering,2011,Mar,2011,MAR,Material,1800,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-32
+805,jua402,Wallcovering,2012,Oct,2012,OCT,Material,93.6,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-76
+805,jua402,Wallcovering,2012,Oct,2012,OCT,Material,109.2,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-80
+763,LN03 STONE,Carpet,2016,Sep,2016,SEP,Material,913,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-36
+763,LN03 STONE,Carpet,2016,Sep,2016,SEP,Material,913,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-20
+763,LN03 STONE,Carpet,2016,Sep,2016,SEP,Material,913,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,17
+763,LN03 STONE,Carpet,2016,Sep,2016,SEP,Material,913,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-61
+763,LN03 STONE,Carpet,2016,Sep,2016,SEP,Material,913,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-19
+763,LN03 STONE,Carpet,2016,Sep,2016,SEP,Material,913,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,65
+763,LN03 STONE,Carpet,2016,Sep,2016,SEP,Material,957,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,64
+763,LN03 STONE,Carpet,2016,Sep,2016,SEP,Material,976.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-84
+763,LN03 STONE,Carpet,2016,Sep,2016,SEP,Material,979,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,26
+763,LN03 STONE,Carpet,2016,Sep,2016,SEP,Material,979,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,81
+763,LN03 STONE,Carpet,2016,Sep,2016,SEP,Material,979,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,85
+763,LN03 STONE,Carpet,2016,Sep,2016,SEP,Material,1331,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-84
+763,LN03 STONE,Carpet,2016,Sep,2016,SEP,Material,1606,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-19
+763,LN03 STONE,Carpet,2016,Sep,2016,SEP,Material,1672,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-26
+763,LN03 STONE,Carpet,2016,Sep,2016,SEP,Material,1936,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,80
+763,LN03 STONE,Carpet,2016,Sep,2016,SEP,Material,1936,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,85
+763,LN03 STONE,Carpet,2016,Sep,2016,SEP,Material,1958,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-38
+763,LN03 STONE,Carpet,2016,Sep,2016,SEP,Material,2123,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-85
+763,LN03 STONE,Carpet,2016,Sep,2016,SEP,Material,3630,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,32
+763,LN03 STONE,Carpet,2016,Sep,2016,SEP,Material,3916,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-96
+815,nai5606,Wallcovering,2014,Feb,2014,FEB,Material,274.5,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-60
+815,raa413,Wallcovering,2014,Feb,2014,FEB,Material,1012.5,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,18
+815,Y46999,Wallcovering,2014,Feb,2014,FEB,Material,669,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,8
+705,Y47160,Wallcovering,2016,Sep,2016,SEP,Material,1128.6,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,9
+705,Y47160,Wallcovering,2016,Sep,2016,SEP,Material,1279.08,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,65
+705,Y47160,Wallcovering,2016,Sep,2016,SEP,Material,1692.9,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-11
+705,Y47160,Wallcovering,2016,Sep,2016,SEP,Material,2934.36,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-48
+814,,Carpet,2011,Dec,2011,DEC,Service,380,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-77
+814,,Carpet,2011,Feb,2011,FEB,Service,150,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-61
+814,,Wallcovering,2011,Feb,2011,FEB,Service,5101.95,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,70
+814,,Carpet,2011,Jan,2011,JAN,Service,506.46,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,30
+814,,Carpet,2011,Jan,2011,JAN,Service,1012.92,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-29
+814,,Wallcovering,2011,Jan,2011,JAN,Service,280,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,25
+814,,Wallcovering,2011,Jan,2011,JAN,Service,280,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,96
+992,,Carpet,2011,Jul,2011,JUL,Service,350,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-59
+814,,Wallcovering,2011,Jul,2011,JUL,Service,350,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-62
+981,,Fabric,2011,Mar,2011,MAR,Service,165,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,87
+981,,Fabric,2011,Mar,2011,MAR,Service,230,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-84
+992,,Wallcovering,2011,Mar,2011,MAR,Service,350,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,41
+992,,Carpet,2011,May,2011,MAY,Service,200,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-61
+992,,Carpet,2011,May,2011,MAY,Service,280,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,63
+814,,Wallcovering,2011,Sep,2011,SEP,Service,250,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,35
+955,,Wallcovering,2012,Jun,2012,JUN,Service,250,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,82
+955,,Wallcovering,2012,Sep,2012,SEP,Service,350,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-34
+815,,Carpet,2013,May,2013,MAY,Service,11148.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-12
+939,,Carpet,2013,May,2013,MAY,Service,11148.8,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-14
+815,,Wallcovering,2014,Feb,2014,FEB,Service,280,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-55
+815,,Wallcovering,2014,Feb,2014,FEB,Service,350,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-47
+815,,Carpet,2014,Mar,2014,MAR,Service,265,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,17
+815,,Carpet,2014,Mar,2014,MAR,Service,638,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-80
+815,,Carpet,2014,Sep,2014,SEP,Service,5610,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,21
+763,,Carpet,2016,Sep,2016,SEP,Service,700,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-22
+763,,Carpet,2016,Sep,2016,SEP,Service,1540,Hospitality,Holiday Inn Singapore Atrium,,HOLIDAY INN SINGAPORE ATRIUM,-90
+815,jua105,Wallcovering,2015,Dec,2015,DEC,Material,25122.4,Hospitality,Holiday Inn Express Singapore Katong,,HOLIDAY INN EXPRESS SINGAPORE KATONG,78
+815,jua105,Wallcovering,2016,Feb,2016,FEB,Material,50650000000,Hospitality,Holiday Inn Express Singapore Katong,,HOLIDAY INN EXPRESS SINGAPORE KATONG,95
