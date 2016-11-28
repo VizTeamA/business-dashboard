@@ -60,6 +60,7 @@
                             <!-- BEGIN SIDEBAR MENU -->
                             <ul class="page-sidebar-menu page-header-fixed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
                                 <li class="nav-item start active open">
+                                  <!-- Section User  -->
                                     <a href="javascript:;" class="nav-link-nav-toggle">
                                         <i class="icon-user"></i>
                                         <span class="title">User</span>
@@ -88,7 +89,7 @@
                                         </li>
                                     </ul>
                                 </li>
-
+                                <!-- Section Analytic  -->
                                 <li class="heading">
                                     <h3 class="uppercase">Analytics</h3>
                                 </li>
@@ -100,7 +101,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a href="javascript:toggleOverview();" class="nav-link nav-toggle">
-                                        <i class="icon-bar-chart"></i>
+                                        <i class="icon-chart"></i>
                                         <span class="title" id="nav-overview">Overview</span>
                                     </a>
                                 </li>
@@ -116,6 +117,34 @@
                                         <span class="title" id="nav-detail-analysis">Detail Analysis</span>
                                     </a>
                                 </li>
+                                <li class="heading">
+                                    <h3 class="uppercase">References</h3>
+                                </li>
+                                <li class="nav-item  ">
+                                    <a href="https://cdn.rawgit.com/VizTeamA/vizpjtreport/master/index.html" class="nav-link nav-toggle">
+                                        <i class="icon-support"></i>
+                                        <span class="title" id="nav-description">User Guide (Help)</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="https://wiki.smu.edu.sg/1617t1ISSS608g1/ISSS608_2016-17_T1_Project_Team_11" class="nav-link nav-toggle">
+                                        <i class="icon-note"></i>
+                                        <span class="title" id="nav-overview">Project Wiki</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="javascript:toggleSaleByProduct();" class="nav-link nav-toggle">
+                                        <i class="icon-cup"></i>
+                                        <span class="title" id="nav-sale-by-product">Developement Team</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="javascript:toggleSaleByProduct();" class="nav-link nav-toggle">
+                                        <i class="icon-social-github"></i>
+                                        <span class="title" id="nav-sale-by-product">Our GitHub</span>
+                                    </a>
+                                </li>
+                                <!-- Section External links  -->
                             </ul>
                             <!-- END SIDEBAR MENU -->
                         </div>
@@ -155,7 +184,7 @@
                             </div>
                             <div class="clear-fix"></div>
                             <div id="overview" class="section" >
-                              <a class="subtitle" href="javascript:resetAll();" style="display: ;">reset all filter</a>
+                              <a class="subtitle" href="javascript:window.location.reload();;" style="display: ;">Reload All</a>
                                 <h3 style="clear:both;" id="overview-header">Overview</h3>
                                 <div class="chart-cart">
                                     <div class="chart-title">
@@ -262,11 +291,11 @@
 
             <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
           	<script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
-
+            <script type="text/javascript" src="js/charts/controller.js"></script>
             <script type="text/javascript" src="js/charts/charts.js"></script>
             <script type="text/javascript" src="js/charts/treemap.js"></script>
             <script type="text/javascript" src="js/charts/geomap.js"></script>
-            <script type="text/javascript" src="js/charts/controller.js"></script>
+
             <!-- END JS -->
 </body>
 

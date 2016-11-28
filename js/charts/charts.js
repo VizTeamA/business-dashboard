@@ -121,8 +121,9 @@ d3.csv(inputSaleTrans, function(data) {
     productSalesBySaleCode = saleCodeDim.group().reduceSum(function(d) {
         return Math.round((d[saleCol]));
     });
-
     loadExistingHotel();
+    // userUpdate('CEO'); // Load CEO view at the begging
+    // toggleMarketSectorView();
     // Draw all charts
     drawProductBarChart(xfProductSaleData);
     drawYearSaleBulletChart();

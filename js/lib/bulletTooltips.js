@@ -71,11 +71,11 @@ d3.bullet = function() {
           .text(function(d, i) {
             var toolTipString ="";
             if (i==0) {
-              toolTipString = "Max: " + d;
+              toolTipString = "Max: " + formatBigNum(d);
             } else if (i==1) {
-              toolTipString = "Medium: " + d;
+              toolTipString = "Medium: " + formatBigNum(d);
             } else if (i==2) {
-              toolTipString = "Bad: " + d;
+              toolTipString = "Bad: $" + formatBigNum(d);
             }
             return toolTipString;
           });
@@ -104,9 +104,9 @@ d3.bullet = function() {
           .text(function(d, i) {
             var toolTipString ="";
             if (i==0) {
-              toolTipString = "Shortfall: " + shortfall;
+              toolTipString = "Shortfall: $" + formatBigNum(shortfall);
             } else if (i==1) {
-              toolTipString = "Actual Sales: " + d;
+              toolTipString = "Actual Sales: $" + formatBigNum(d);
             }
             return toolTipString;
           });
@@ -214,6 +214,16 @@ function toggleSelectColor(container) {
     d3.selectAll(".measure-active.s1").attr("class","measure s1");
     container.selectAll(".measure.s0").attr("class","measure-active s0");
     container.selectAll(".measure.s1").attr("class","measure-active s1");
+}
+
+function formatBigNum(number) {
+    if (number < 999) {
+        return numberFormat(number);
+    } else if (number < 999999) {
+        return numberFormat(number / 1000) + "K";
+    } else {
+        return numberFormat(number / 1000000)+ "M";
+    }
 }
 
 })();
