@@ -159,6 +159,9 @@ function drawProductBarChart(xfProductSaleData) {
     productSaleRowChart.on("filtered",function(){
       drawSparkLines();
     })
+    .title(function (d) {
+              return d.key + ": $" + formatBigNum(d.value);
+        })
     function AddXAxis(chartToUpdate, displayText, offsetY) {
         chartToUpdate.svg().append("text").attr("class", "x-axis-label").attr("text-anchor", "middle").attr("x", chartToUpdate.width() - 25).attr("y", chartToUpdate.height() + offsetY).text(displayText).style("font-size", "10px");
     }
@@ -917,4 +920,8 @@ function createUI() {
         console.log("dropDownRollingPeriodChanged" +
             "option selected = " + selectedValue);
     }
+}
+
+function updateMenuStatus() {
+
 }
