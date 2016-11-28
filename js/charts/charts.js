@@ -571,8 +571,8 @@ function drawSaleTargetBulletChartHospitality() {
     //Total hotel
     targetMarketShare = 0.6;
     pTitle = "Hotel Market";
-    pRangeMax = 1420;
-    pMeasureActual = 1250;
+    pRangeMax = 910;
+    pMeasureActual = 123;
     pMeasureExpect = Math.round(pRangeMax * targetMarketShare);
     data = getBulletData(pTitle, pRangeMax, pMeasureActual, pMeasureExpect);
     chartData.push(data);
@@ -581,8 +581,8 @@ function drawSaleTargetBulletChartHospitality() {
     //4 Star hotel
     targetMarketShare = 0.5;
     pTitle = "4-Star Hotel";
-    pRangeMax = 771;
-    pMeasureActual = 500;
+    pRangeMax = 355;
+    pMeasureActual = 75;
     pMeasureExpect = Math.round(pRangeMax * targetMarketShare);
     data = getBulletData(pTitle, pRangeMax, pMeasureActual, pMeasureExpect);
     chartData.push(data);
@@ -590,8 +590,8 @@ function drawSaleTargetBulletChartHospitality() {
     //5 Star hotel
     targetMarketShare = 0.75;
     pTitle = "5-Star Hotel";
-    pRangeMax = 420;
-    pMeasureActual = 250;
+    pRangeMax = 70;
+    pMeasureActual = 47;
     pMeasureExpect = Math.round(pRangeMax * targetMarketShare);
     data = getBulletData(pTitle, pRangeMax, pMeasureActual, pMeasureExpect);
     chartData.push(data);
@@ -804,6 +804,7 @@ function tabulate(data, columns, containerId) {
 }
 
 function drawTargetBulletChart(targetBulletChart, data, containerObjectName) {
+  console.log(data);
     var margin = {
             top: 5,
             right: 5,
