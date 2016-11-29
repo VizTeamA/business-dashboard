@@ -53,3 +53,15 @@ function userUpdate(userId) {
     d3.selectAll("#detail-analysis").attr("class", classNameVisible);
   }
 }
+
+function toggleMenu() {
+	var statusON = "page-sidebar navbar-collapse open";
+	var statusOFF = "page-sidebar navbar-collapse collapse";
+	var leftMenuStatus = d3.selectAll("#left-menu-control").attr("class") ;
+	if (leftMenuStatus==statusON) {
+		leftMenuStatus = statusOFF;
+	} else {
+		leftMenuStatus = statusON
+	}
+	d3.selectAll("#left-menu-control").attr("class",leftMenuStatus);
+}
