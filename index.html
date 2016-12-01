@@ -27,7 +27,10 @@
     <link rel="stylesheet" type="text/css" src="css/legend.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,600,900" rel="stylesheet">
     <!--- END CSS CHART -->
-
+	<!-- SUPPORTING-->
+    <script src='js/lib/nprogress.js'></script>
+    <link rel='stylesheet' href='js/lib/nprogress.css'/>
+	<!-- SUPPORTING-->
 </head>
 
 <body class="">
@@ -38,15 +41,13 @@
                 <div>
                   <div style=" float:left;">
                   <!-- BEGIN LOGO -->
-                  <a id="index" class="navbar-brand" href="start.html">
+                  <a id="index" class="navbar-brand" href="index.html">
                       <img src="img/logo.png" alt="Logo" style="width:150px; padding:10px; border-right-style:solid; border-right-width:1px; border-right-color: lightgrey;"></a>
                   <!-- END LOGO -->
                   </div>
 
 				    <!-- BEGIN LOGO -->
                     <div class="page-logo">
-                        <!-- <a href="#"> -->
-                            <!-- <img src="img/logo.png" style="width:150px;" alt="logo" class="logo-default"> </a> -->
                         <div class="menu-toggler sidebar-toggler">
                             <span></span>
                         </div>
@@ -83,21 +84,21 @@
                                         <span class="title">User</span>
                                     </a>
                                     <ul class="sub-menu">
-                                        <li class="nav-item start ">
+                                        <li class="nav-item active" id="nav-ceo-user">
                                             <a href="javascript:userUpdate('CEO');" class="nav-link ">
                                                 <i class="icon-diamond"></i>
                                                 <span class="title">CEO</span>
                                                 <!--<span class="badge badge-success">+</span>-->
                                             </a>
                                         </li>
-                                        <li class="nav-item start ">
+                                        <li class="nav-item inactive" id="nav-product-manager-user">
                                             <a href="javascript:userUpdate('Product Director');" class="nav-link ">
                                                 <i class="icon-puzzle"></i>
                                                 <span class="title">Product Director</span>
                                                 <!--<span class="badge badge-success">+</span>-->
                                             </a>
                                         </li>
-                                        <li class="nav-item start ">
+                                        <li class="nav-item inactive"  id="nav-sale-manager-user">
                                             <a href="javascript:userUpdate('Sale Director');" class="nav-link ">
                                                 <i class="icon-briefcase"></i>
                                                 <span class="title">Sale Director</span>
@@ -110,28 +111,28 @@
                                 <li class="heading">
                                     <h3 class="uppercase">Analytics</h3>
                                 </li>
-                                <li class="nav-item  ">
+                                <li class="nav-item active" id='nav-description'>
                                     <a href="javascript:toggleDescription();" class="nav-link nav-toggle">
                                         <i class="icon-book-open"></i>
-                                        <span class="title" id="nav-description">Description</span>
+                                        <span class="title">Description</span>
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item active" id="nav-overview">
                                     <a href="javascript:toggleOverview();" class="nav-link nav-toggle">
                                         <i class="icon-chart"></i>
-                                        <span class="title" id="nav-overview">Overview</span>
+                                        <span class="title">Overview</span>
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item inactive" id="nav-sale-by-product">
                                     <a href="javascript:toggleSaleByProduct();" class="nav-link nav-toggle">
                                         <i class="icon-bulb"></i>
-                                        <span class="title" id="nav-sale-by-product">Sales by Product</span>
+                                        <span class="title">Sales by Product</span>
                                     </a>
                                 </li>
-                                <li class="nav-item">
+                                <li class="nav-item inactive"  id="nav-detail-analysis">
                                     <a href="javascript:toggleDetailAnalysis();" class="nav-link nav-toggle">
                                         <i class="icon-graph"></i>
-                                        <span class="title" id="nav-detail-analysis">Detail Analysis</span>
+                                        <span class="title">Detail Analysis</span>
                                     </a>
                                 </li>
                                 <li class="heading">
@@ -196,7 +197,7 @@
                               </div>
                               <div id="box-sys-info">
                                 <div class="box-header">Version</div>
-                                <div class="box-content">v2.2.2 Build 29112307</div>
+                                <div class="box-content">v2.3.0 Build 01121007</div>
                               </div>
                             </div>
                             <div class="clear-fix"></div>
@@ -294,6 +295,7 @@
                 </div>
             </div>
             <!-- END ALL CONTAINER -->
+            <script> NProgress.start(); </script>
             <!-- START JS -->
             <script type="text/javascript" src="js/lib/d3.js"></script>
             <script type="text/javascript" src="js/lib/crossfilter.js"></script>
@@ -305,14 +307,14 @@
             <script type="text/javascript" src="js/lib/bulletTooltips.js"></script>
             <script type="text/javascript" src="js/lib/browserdetect.js"></script>
             <script type="text/javascript" src="js/lib/underscore-min.js"></script>
-
             <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
           	<script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
             <script type="text/javascript" src="js/charts/controller.js"></script>
             <script type="text/javascript" src="js/charts/charts.js"></script>
             <script type="text/javascript" src="js/charts/treemap.js"></script>
             <script type="text/javascript" src="js/charts/geomap.js"></script>
-
+            <!-- <script>NProgress.inc();</script> -->
+            <script> NProgress.done(); </script>
             <!-- END JS -->
 </body>
 

@@ -654,7 +654,7 @@ html {
     display: block;
     margin: 0;
     padding: 0;
-    border: 0
+    /*border: 0*/
 }
 
 .page-sidebar .page-sidebar-menu>li.heading, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu>li.heading {

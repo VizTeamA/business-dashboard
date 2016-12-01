@@ -24,6 +24,19 @@ body{
     padding:5px;
     float: left;
 }
+
+
+.nav-item.active {
+  border-left: 3px solid orange;
+}
+
+.nav-item.inactive {
+  border: none ;
+}
+
+.nav-item.start.active.open {
+    border: none ;
+}
 .clear-fix {
   clear:both;
 }
